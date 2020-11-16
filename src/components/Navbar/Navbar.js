@@ -4,9 +4,6 @@ import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-// to get current route
-import { useLocation } from "react-router-dom";
-
 // Import Variations of Navbar
 import Logo from "./Logo/Logo";
 import BackButton from "./BackButton/BackButton";
@@ -15,10 +12,7 @@ import BackButton from "./BackButton/BackButton";
 import classes from "./Navbar.module.css";
 
 const Navbar = (props) => {
-  // Get route name
-  const location = useLocation();
-  console.log(location.pathname);
-
+  console.log(props.currentLocation);
   // Show and hide navbar components depending on route name
   return (
     <Row>
@@ -27,9 +21,10 @@ const Navbar = (props) => {
         className={classes.logoContainer}
         style={{ padding: "3rem 1rem" }}
       >
-        <Logo isShown={location.pathname === "/" ? true : false} />
+        <Logo isShown={props.currentLocation === "/" ? true : false} />
         <BackButton
-          isShown={location.pathname === "/compose" ? true : false}
+          isShown={props.currentLocation === "/compose" ? true : false}
+          clicked={props.clickedBackButton}
         />
       </Col>
     </Row>

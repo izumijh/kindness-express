@@ -14,7 +14,10 @@ class Layout extends Component {
   render() {
     return (
       <>
-        <Navbar />
+        <Navbar
+          currentLocation={this.props.currentLocation}
+          clickedBackButton={this.props.clickedBackButton}
+        />
         {this.props.children}
         <Clouds />
         <Footer />

@@ -9,8 +9,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // Import Layout
 import Layout from "./hocs/Layout/Layout";
 
-// Import Main Menu
-import MainMenu from "./containers/MainMenu/MainMenu";
+// Import Pages
+import HomePage from "./pages/HomePage/HomePage";
 
 import "./App.css";
 
@@ -18,9 +18,9 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <Layout>
-          <Route path="/" component={MainMenu} />
-        </Layout>
+        <Switch>
+          <Route path="/" component={HomePage} />
+        </Switch>
       </BrowserRouter>
     );
   }

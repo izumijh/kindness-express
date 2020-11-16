@@ -7,6 +7,7 @@ import Image from "react-bootstrap/Image";
 import icon from "../../../assets/images/compose.svg";
 
 // import ActionButtons and ChatBubbles
+import BackButton from "../../../components/Navbar/BackButton/BackButton";
 import ActionButton from "../../../components/ActionButton/ActionButton";
 import ChatBubble from "../../../components/ChatBubble/ChatBubble";
 
@@ -27,6 +28,7 @@ const Compose = (props) => {
         <Image src={icon} alt="compose icon" />
       </div>
       <div className={props.composeMenuisOpen ? classes.active : null}>
+        <BackButton />
         <div className={classes.chatBubble}>
           <ChatBubble>What should I do today?</ChatBubble>
         </div>

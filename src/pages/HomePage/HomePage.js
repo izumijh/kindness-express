@@ -1,0 +1,48 @@
+import React, { Component } from "react";
+
+// import layout
+import Layout from "../../hocs/Layout/Layout";
+
+// Import main menu
+import MainMenu from "../../containers/MainMenu/MainMenu";
+
+// Import Router Props
+import { withRouter } from "react-router-dom";
+
+class HomePage extends Component {
+  state = {
+    composeMenuisOpen: false,
+  };
+
+  toggleComposeMenuHandler = () => {
+    if (this.props.location.pathname === "/compose") {
+      this.props.history.push("/");
+      this.setState({ composeMenuisOpen: false });
+    } else {
+      this.props.history.push("/compose");
+      this.setState({ composeMenuisOpen: true });
+    }
+  };
+
+  render() {
+    return (
+      <>
+        <Layout
+          currentLocation={this.props.location.pathname}
+          clickedBackButton={this.toggleComposeMenuHandler}
+        >
+          <MainMenu
+            composeMenuisOpen={
+              this.props.location.pathname === "/compose"
+                ? true
+                : this.state.composeMenuisOpen
+            }
+            toggleComposeMenu={this.toggleComposeMenuHandler}
+          />
+        </Layout>
+      </>
+    );
+  }
+}
+
+export default withRouter(HomePage);

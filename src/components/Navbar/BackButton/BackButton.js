@@ -1,7 +1,5 @@
 import React from "react";
 
-import { withRouter } from "react-router-dom";
-
 // import React Bootstrap components
 import Image from "react-bootstrap/Image";
 
@@ -11,10 +9,10 @@ import back from "../../../assets/images/Back.svg";
 // Import CSS module
 import classes from "./BackButton.module.css";
 
-const Navbar = (props) => {
+const BackButton = (props) => {
   return (
     <div
-      onClick={() => props.history.push("/")}
+      onClick={props.clicked}
       style={{ padding: "1rem .5rem" }}
       className={
         props.isShown ? `${classes.active} ${classes.wrapper}` : classes.wrapper
@@ -26,4 +24,4 @@ const Navbar = (props) => {
   );
 };
 
-export default withRouter(Navbar);
+export default BackButton;
