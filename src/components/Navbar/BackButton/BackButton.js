@@ -19,7 +19,7 @@ const BackButton = (props) => {
       }
     >
       <Image src={back} alt="back button" />
-      <p className={classes.text}> Go back to home </p>
+      <p className={classes.text}> {props.children} </p>
     </div>
   );
 };

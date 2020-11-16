@@ -21,24 +21,10 @@ import tip from "../../assets/images/tip.svg";
 // import CSS modules
 import classes from "./PostaStory.module.css";
 
-class HomePage extends Component {
-  state = {
-    composeMenuisOpen: false,
-  };
-
+class PostaStory extends Component {
   clickedBackButtonHandler = () => {
     this.props.history.push("/");
     this.setState({ composeMenuisOpen: false });
-  };
-
-  toggleComposeMenuHandler = () => {
-    if (this.props.location.pathname === "/compose") {
-      this.props.history.push("/");
-      this.setState({ composeMenuisOpen: false });
-    } else {
-      this.props.history.push("/compose");
-      this.setState({ composeMenuisOpen: true });
-    }
   };
 
   render() {
@@ -62,7 +48,14 @@ class HomePage extends Component {
                 fluid
                 style={{ padding: "2rem 0" }}
               />
-              <ActionButton fullWidth>Post a Story</ActionButton>
+              <ActionButton
+                fullWidth
+                clicked={() =>
+                  this.props.history.push("/compose/post-a-story/posting")
+                }
+              >
+                Post a Story
+              </ActionButton>
               <div className={classes.tip}>
                 <Image
                   src={tip}
@@ -78,4 +71,4 @@ class HomePage extends Component {
   }
 }
 
-export default withRouter(HomePage);
+export default withRouter(PostaStory);

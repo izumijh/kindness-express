@@ -12,6 +12,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // Import Pages
 import HomePage from "./pages/HomePage/HomePage";
 import PostaStory from "./pages/PostaStory/PostaStory";
+import PostingProcess from "./pages/PostingProcess/PostingProcess";
 
 import "./App.css";
 
@@ -25,8 +26,14 @@ class App extends Component {
           atActive={{ opacity: 1 }}
           className="switch-wrapper"
         >
-          <Route path="/compose/post-a-story" component={PostaStory} />
-          <Route path="/" component={HomePage} />
+          <Route path="/compose/post-a-story" component={PostaStory} exact />
+          <Route
+            path="/compose/post-a-story/posting"
+            component={PostingProcess}
+            exact
+          />
+
+          <Route path="/" component={HomePage} exact />
         </AnimatedSwitch>
       </BrowserRouter>
     );

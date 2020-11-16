@@ -25,13 +25,25 @@ const Navbar = (props) => {
         <BackButton
           isShown={props.currentLocation === "/compose" ? true : false}
           clicked={props.clickedBackButton}
-        />
+        >
+          Go back to Home
+        </BackButton>
         <BackButton
           isShown={
             props.currentLocation === "/compose/post-a-story" ? true : false
           }
           clicked={props.clickedBackButton}
-        />
+        >
+          Go back to Home
+        </BackButton>
+        <BackButton
+          isShown={
+            props.currentLocation === "/compose/post-a-story/posting" ? true : false
+          }
+          clicked={props.clickedBackButton}
+        >
+          Quit Writing
+        </BackButton>
       </Col>
     </Row>
   );
