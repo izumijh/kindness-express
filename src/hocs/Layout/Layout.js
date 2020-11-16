@@ -9,9 +9,7 @@ import Clouds from "../../components/Clouds/Clouds";
 // import Footer Component
 import Footer from "../../components/Footer/Footer";
 
-//Layout Template for Entire Website
 /* Every child is required to be wrapped in <Row></Row>. */
-
 class Layout extends Component {
   render() {
     return (

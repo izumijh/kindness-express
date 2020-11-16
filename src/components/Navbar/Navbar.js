@@ -1,29 +1,39 @@
-import React, { Component } from "react";
+import React from "react";
 
 // import React Bootstrap components
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Image from "react-bootstrap/Image";
 
-// Import SVG Images
-import logo from "../../assets/images/Logo.svg";
+// to get current route
+import { useLocation } from "react-router-dom";
+
+// Import Variations of Navbar
+import Logo from "./Logo/Logo";
+import BackButton from "./BackButton/BackButton";
 
 // Import CSS module
 import classes from "./Navbar.module.css";
 
-// Different prop values passed to navbar, different appearance and function....
-//  each form is a component; use switch case javascript
+const Navbar = (props) => {
+  // Get route name
+  const location = useLocation();
+  console.log(location.pathname);
 
-class Navbar extends Component {
-  render() {
-    return (
-      <Row>
-        <Col xs={10} className={classes.logoContainer}>
-          <Image src={logo} alt="logo" fluid />
-        </Col>
-      </Row>
-    );
-  }
-}
+  // Show and hide components depending on route name
+  return (
+    <Row>
+      <Col
+        xs={10}
+        className={classes.logoContainer}
+        style={{ padding: "3rem 1rem" }}
+      >
+        <Logo isShown={location.pathname === "/" ? true : false} />
+        <BackButton
+          isShown={location.pathname === "/post-a-story" ? true : false}
+        />
+      </Col>
+    </Row>
+  );
+};
 
 export default Navbar;

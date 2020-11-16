@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 
 // import React Router Package
 import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -14,16 +14,18 @@ import MainMenu from "./containers/MainMenu/MainMenu";
 
 import "./App.css";
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Layout>
-        <Switch>
-          <Route path="/" component={MainMenu} />
-        </Switch>
-      </Layout>
-    </BrowserRouter>
-  );
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <Layout>
+          <Switch>
+            <Route path="/" component={MainMenu} />
+          </Switch>
+        </Layout>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;

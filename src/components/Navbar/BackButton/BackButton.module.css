@@ -1,0 +1,16 @@
+.text {
+  display: inline;
+  vertical-align: middle;
+  font-weight: 400;
+  padding-left: .5rem;
+}
+
+.wrapper {
+  position: fixed;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.active {
+  opacity: 1;
+}
