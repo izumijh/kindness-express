@@ -6,3 +6,6 @@
   z-index: 2;
 }
 
+.iconContainer img {
+    width: 25vw;
+}
