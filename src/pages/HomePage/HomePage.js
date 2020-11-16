@@ -14,6 +14,11 @@ class HomePage extends Component {
     composeMenuisOpen: false,
   };
 
+  clickedBackButtonHandler = () => {
+    this.props.history.push("/");
+    this.setState({ composeMenuisOpen: false });
+  };
+
   toggleComposeMenuHandler = () => {
     if (this.props.location.pathname === "/compose") {
       this.props.history.push("/");
@@ -29,7 +34,7 @@ class HomePage extends Component {
       <>
         <Layout
           currentLocation={this.props.location.pathname}
-          clickedBackButton={this.toggleComposeMenuHandler}
+          clickedBackButton={this.clickedBackButtonHandler}
         >
           <MainMenu
             composeMenuisOpen={
@@ -38,6 +43,9 @@ class HomePage extends Component {
                 : this.state.composeMenuisOpen
             }
             toggleComposeMenu={this.toggleComposeMenuHandler}
+            wantToPostStory={() =>
+              this.props.history.push("compose/post-a-story")
+            }
           />
         </Layout>
       </>

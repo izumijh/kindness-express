@@ -2,12 +2,16 @@
     background-color: #FFF89B;
     color: #547394;
     border: 2px dashed #547394;
-    border-radius: 15px;
-    padding: 1rem;
-    margin: .25rem;
+    border-radius: 12px;
+    padding: .9rem 1rem;
+    margin: 0.6rem 0.5rem;
     box-shadow: 0px 3px 15px 0px rgba(255,221,141,0.20);
 
     font-family: "Lato";
     font-weight: bold;
     font-size: 1.1rem;
+}
+
+.fullWidth {
+    width: 80%;
 }

@@ -26,6 +26,12 @@ const Navbar = (props) => {
           isShown={props.currentLocation === "/compose" ? true : false}
           clicked={props.clickedBackButton}
         />
+        <BackButton
+          isShown={
+            props.currentLocation === "/compose/post-a-story" ? true : false
+          }
+          clicked={props.clickedBackButton}
+        />
       </Col>
     </Row>
   );

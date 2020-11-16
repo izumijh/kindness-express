@@ -8,7 +8,7 @@
   position: fixed;
   top: 22%;
   height: 14%;
-  z-index: 0;
+  z-index: -1;
 
   animation: floating 5s linear infinite;
 }

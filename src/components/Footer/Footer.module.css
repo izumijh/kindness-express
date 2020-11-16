@@ -9,5 +9,5 @@
   bottom: -19%;
   height: 50%;
 
-  z-index: 0;
+  z-index: -1;
 }

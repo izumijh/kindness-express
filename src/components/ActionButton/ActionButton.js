@@ -5,7 +5,14 @@ import classes from "./ActionButton.module.css";
 
 const ActionButton = (props) => {
   return (
-    <button className={classes.actionButton} onClick={props.clicked}>
+    <button
+      className={
+        props.fullWidth
+          ? `${classes.actionButton} ${classes.fullWidth}`
+          : `${classes.actionButton}`
+      }
+      onClick={props.clicked}
+    >
       {props.children}
     </button>
   );

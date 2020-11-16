@@ -33,7 +33,9 @@ const Compose = (props) => {
           <ChatBubble>What should I do today?</ChatBubble>
         </div>
         <div className={classes.composeOptions}>
-          <ActionButton>Post a Story</ActionButton>
+          <ActionButton clicked={props.wantToPostStory}>
+            Post a Story
+          </ActionButton>
           <ActionButton>Post Kind Words</ActionButton>
         </div>
       </div>

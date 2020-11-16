@@ -35,9 +35,25 @@ body {
   font-weight: 700;
 }
 
+h1 {
+  font-family: "Lato";
+  font-weight: 700 !important;
+  font-size: 1.8rem !important;
+  color: #547394;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-family: "Lato";
+  font-weight: 700 !important;
+  font-size: 1.5rem !important;
+  color: #547394;
+  line-height: 2rem !important;
+}
+
 p {
   font-family: "Lato";
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #547394;
 }
