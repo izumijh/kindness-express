@@ -19,7 +19,7 @@ const Navbar = (props) => {
   const location = useLocation();
   console.log(location.pathname);
 
-  // Show and hide components depending on route name
+  // Show and hide navbar components depending on route name
   return (
     <Row>
       <Col
@@ -29,7 +29,7 @@ const Navbar = (props) => {
       >
         <Logo isShown={location.pathname === "/" ? true : false} />
         <BackButton
-          isShown={location.pathname === "/post-a-story" ? true : false}
+          isShown={location.pathname === "/compose" ? true : false}
         />
       </Col>
     </Row>

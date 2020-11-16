@@ -19,9 +19,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Layout>
-          <Switch>
-            <Route path="/" component={MainMenu} />
-          </Switch>
+          <Route path="/" component={MainMenu} />
         </Layout>
       </BrowserRouter>
     );

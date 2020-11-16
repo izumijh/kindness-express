@@ -12,7 +12,13 @@ import classes from "./Postman.module.css";
 
 const Postman = (props) => {
   return (
-    <div className={classes.iconContainer}>
+    <div
+      className={
+        props.composeMenuisOpen
+          ? `${classes.iconContainer} ${classes.inactive}`
+          : `${classes.iconContainer}`
+      }
+    >
       <Image src={icon} alt="postman icon" />
     </div>
   );
