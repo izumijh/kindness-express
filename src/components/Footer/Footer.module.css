@@ -1,0 +1,13 @@
+.footerContainer {
+  background: url(../../assets/images/cityscape.png);
+  background-repeat: no-repeat;
+  background-size: 110%;
+  background-position: center;
+
+  width: 100%;
+  position: fixed;
+  bottom: -20%;
+  height: 50%;
+
+  z-index: 0;
+}

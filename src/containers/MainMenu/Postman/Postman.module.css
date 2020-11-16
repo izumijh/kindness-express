@@ -1,0 +1,7 @@
+.iconContainer {
+  position: fixed;
+  bottom: 2.5rem;
+
+  z-index: 2;
+}
+
