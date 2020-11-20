@@ -26,14 +26,14 @@ class App extends Component {
           atActive={{ opacity: 1 }}
           className="switch-wrapper"
         >
-          <Route path="/compose/post-a-story" component={PostaStory} exact />
+          <Route path="/post-a-story" component={PostaStory} exact />
           <Route
-            path="/compose/post-a-story/posting"
+            path="/post-a-story/process"
             component={PostingProcess}
             exact
           />
 
-          <Route path="/" component={HomePage} exact />
+          <Route path="/" component={HomePage} />
         </AnimatedSwitch>
       </BrowserRouter>
     );

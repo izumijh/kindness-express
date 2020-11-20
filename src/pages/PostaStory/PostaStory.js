@@ -51,7 +51,7 @@ class PostaStory extends Component {
               <ActionButton
                 fullWidth
                 clicked={() =>
-                  this.props.history.push("/compose/post-a-story/posting")
+                  this.props.history.push("/post-a-story/process")
                 }
               >
                 Post a Story

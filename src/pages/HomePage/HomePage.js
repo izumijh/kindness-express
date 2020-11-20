@@ -44,7 +44,7 @@ class HomePage extends Component {
             }
             toggleComposeMenu={this.toggleComposeMenuHandler}
             wantToPostStory={() =>
-              this.props.history.push("compose/post-a-story")
+              this.props.history.push("/post-a-story")
             }
           />
         </Layout>

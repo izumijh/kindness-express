@@ -29,16 +29,14 @@ const Navbar = (props) => {
           Go back to Home
         </BackButton>
         <BackButton
-          isShown={
-            props.currentLocation === "/compose/post-a-story" ? true : false
-          }
+          isShown={props.currentLocation === "/post-a-story" ? true : false}
           clicked={props.clickedBackButton}
         >
           Go back to Home
         </BackButton>
         <BackButton
           isShown={
-            props.currentLocation === "/compose/post-a-story/posting" ? true : false
+            props.currentLocation === "/post-a-story/process" ? true : false
           }
           clicked={props.clickedBackButton}
         >
