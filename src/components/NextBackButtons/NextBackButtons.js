@@ -14,8 +14,8 @@ const NextBackButtons = (props) => {
   return (
     <Row className={classes.container}>
       <Col className="d-flex justify-content-between">
-        <ActionButton white> Back </ActionButton>
-        <ActionButton forSubmit> Next </ActionButton>
+        <ActionButton white clicked={props.goBack}> Back </ActionButton>
+        <ActionButton forSubmit clicked={props.nextStep}> Next </ActionButton>
       </Col>
     </Row>
   );

@@ -36,10 +36,16 @@ body {
   font-weight: 700;
 }
 
+@font-face {
+  font-family: "Patrick Hand";
+  src: url(./assets/fonts/PatrickHand-Regular.ttf);
+  font-weight: 400;
+}
+
 h1 {
   font-family: "Lato";
   font-weight: 700 !important;
-  font-size: 1.8rem !important;
+  font-size: 1.6rem !important;
   color: #547394;
   margin-bottom: 0.5rem;
 }
@@ -47,7 +53,15 @@ h1 {
 h2 {
   font-family: "Lato";
   font-weight: 700 !important;
-  font-size: 1.5rem !important;
+  font-size: 1.4rem !important;
+  color: #547394;
+  line-height: 2rem !important;
+}
+
+h3 {
+  font-family: "Lato";
+  font-weight: 700 !important;
+  font-size: 1.2rem !important;
   color: #547394;
   line-height: 2rem !important;
 }
@@ -57,4 +71,33 @@ p {
   font-weight: 400;
   font-size: 1.1rem;
   color: #547394;
+}
+
+textarea {
+  font-family: "Patrick Hand" !important;
+  letter-spacing: 0.03rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #547394;
+}
+
+ ::-webkit-inner-spin-button,
+::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+} 
+
+::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: block;
+  background: url(./assets/images/calendar.svg) no-repeat;
+  background-size: 80%;
+  width: 20px;
+  height: 20px;
+  border-width: thin;
+
+  position: absolute;
+  top: .7rem;
+  left: -.5rem;
 }

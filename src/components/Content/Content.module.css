@@ -1,10 +1,12 @@
 .container {
     display: block;
-    width: 100%;
+    width: 88vw;
     min-height: 10vh;
     background-color: #FDFDFD;
     border-radius: 12px;
     box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
     padding: 1.5rem;
     margin: 2.5% 0;
+
+    transition: 0.3s;
 }

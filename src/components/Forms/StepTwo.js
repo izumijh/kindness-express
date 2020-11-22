@@ -9,15 +9,25 @@ import NextBackButtons from "../NextBackButtons/NextBackButtons";
 // import CSS modules
 import classes from "./StepTwo.module.css";
 
-const StepTwo = (props) => (
-  <div>
+const StepTwo = (props) => {
+  const starters = [
+    `Today is going to be a good day! And here’s why…`,
+    `I did something nice for someone today!`,
+    `I'll write my own custom starter.`,
+  ];
+
+  const starterPicked = sessionStorage.getItem("starter");
+
+  return (
     <Formik
       initialValues={{
-        picked: "",
+        story: "",
       }}
       onSubmit={async (values) => {
-        await new Promise((r) => setTimeout(r, 500));
-        sessionStorage.setItem("starter", values.picked);
+        await new Promise((r) => setTimeout(r, 250));
+        sessionStorage.setItem("story", values.story);
+        console.log(values.story);
+
         props.nextStepHandler();
       }}
     >
@@ -28,28 +38,25 @@ const StepTwo = (props) => (
             aria-labelledby="select-letter-starter"
             className={classes.formWrapper}
           >
-            <label>
-              <Field type="radio" name="picked" value="0" />
-              <p>Today is going to be a good day! And here’s why…”</p>
-            </label>
-            <label>
-              <Field type="radio" name="picked" value="1" />
-              <p>This made my day! So I hope it makes your day better too…”</p>
-            </label>
-            <label>
-              <Field type="radio" name="picked" value="3" />
-              <p>I did something nice today, and it made me feel great!"</p>
-            </label>
-            <label>
-              <Field type="radio" name="picked" value="4" />
-              <p>I'll write my own custom starter.</p>
-            </label>
+            <h2>Tell Us What Happened!</h2>
+            <p className={classes.sampletext}>
+              "Dear Stranger...
+              <span>
+                {starterPicked === "2" ? `"` : starters[starterPicked]}
+              </span>
+            </p>
+
+            <Field
+              component="textarea"
+              name="story"
+              placeholder="Start Writing..."
+            />
           </div>
-          <NextBackButtons />
+          <NextBackButtons goBack={props.goBackHandler} />
         </Form>
       )}
     </Formik>
-  </div>
-);
+  );
+};
 
 export default StepTwo;

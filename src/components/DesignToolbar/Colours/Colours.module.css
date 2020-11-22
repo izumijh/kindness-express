@@ -1,0 +1,7 @@
+.choice {
+  width: 3rem;
+  height: 3rem;
+  border: 2px dashed #547394;
+  border-radius: 6px;
+  transition: 0.3s;
+}

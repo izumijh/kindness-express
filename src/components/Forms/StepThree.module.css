@@ -1,0 +1,64 @@
+.formWrapper h2 {
+  margin: 0 0 2rem;
+}
+
+.formWrapper label {
+  font-size: 1.1rem;
+  color: #547394;
+}
+
+/* the rest of the input fields */
+.formWrapper input {
+  border-radius: 6px;
+  border: 2px dashed #547394;
+  width: 100%;
+  height: 2rem;
+  padding: 1.4rem 1.2rem 1.4rem 3.2rem;
+  font-size: 1.1rem;
+  color: #547394;
+  margin-bottom: 1.4rem;
+
+  /* position calendar logo */
+  position: relative;
+}
+
+.locationInput {
+  background: url(../../assets/images/map-pin.svg) no-repeat;
+  background-size: 8%;
+  background-position: 6% 47%;
+}
+
+/* Hide Name buttons */
+/* label */
+.authorNameButton {
+  border-radius: 6px;
+  border: 2px dashed #547394;
+  width: 48%;
+  font-size: 1.1rem;
+  color: #547394;
+  margin-bottom: 1.2rem;
+  position: relative;
+
+  transition: 0.3s;
+}
+
+.authorNameButton.active {
+  border: 2px dashed #547394;
+  color: #547394;
+  background-color: #fff89b;
+}
+
+.authorNameButton p {
+  line-height: 2.6rem;
+  text-align: center;
+  margin: 0;
+}
+
+/* radio button */
+.authorNameButton input[name="authorName"] {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: auto;
+  visibility: hidden;
+}
