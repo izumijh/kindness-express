@@ -10,6 +10,8 @@ const BalloonFeed = (props) => {
   return (
     <>
       <Balloon BalloonColour="#ABDAEA" currentDesign={0} />
+      <Balloon BalloonColour="#ABDAEA" currentDesign={0} />
+      <Balloon BalloonColour="#ABDAEA" currentDesign={0} />
     </>
   );
 };
