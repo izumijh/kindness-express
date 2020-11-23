@@ -9,6 +9,17 @@
   top: 0;
 }
 
+.quitModal > div {
+  opacity: 0;
+  z-index: -1;
+  transition: 0.3s ease;
+}
+
+.quitModal.active > div {
+  opacity: 1;
+  z-index: 99999;
+}
+
 /* Animation Classes */
 .idle {
   opacity: 0;

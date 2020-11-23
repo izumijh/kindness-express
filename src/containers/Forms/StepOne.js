@@ -3,24 +3,32 @@ import React from "react";
 // import formik - a form library
 import { Formik, Field, Form } from "formik";
 
+// impot Yup - a validation library
+import * as Yup from "yup";
+
 // import required components
 import NextBackButtons from "../NextBackButtons/NextBackButtons";
 
 // import CSS modules
 import classes from "./StepOne.module.css";
 
+const schema = Yup.object().shape({
+  picked: Yup.string().required("*Required"),
+});
+
 const StepOne = (props) => (
   <Formik
     initialValues={{
       picked: "",
     }}
+    validationSchema={schema}
     onSubmit={async (values) => {
       await new Promise((r) => setTimeout(r, 250));
       sessionStorage.setItem("starter", values.picked);
       props.nextStepHandler();
     }}
   >
-    {({ values }) => (
+    {({ values, errors }) => (
       <Form>
         <div
           role="group"
@@ -42,6 +50,7 @@ const StepOne = (props) => (
             <p>I'll write my own custom starter.</p>
           </label>
         </div>
+        {errors.picked ? <p className={classes.error}>{errors.picked}</p> : null}
         <NextBackButtons goBack={props.goBackHandler} />
       </Form>
     )}

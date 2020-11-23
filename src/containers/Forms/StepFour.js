@@ -16,10 +16,12 @@ class StepFour extends Component {
   };
 
   setColour = (colour) => {
+    sessionStorage.setItem("balloonColour", colour);
     this.setState({ balloonColour: colour });
   };
 
   setDesign = (id) => {
+    sessionStorage.setItem("currentDesign", id);
     this.setState({ currentDesign: id });
   };
 
@@ -51,7 +53,10 @@ class StepFour extends Component {
             toggleToolbar={this.toggleToolbarHandler}
           />
         </div>
-        <NextBackButtons goBack={this.props.goBackHandler} nextStep={this.props.submitLetterHandler} />
+        <NextBackButtons
+          goBack={this.props.goBackHandler}
+          nextStep={this.props.submitLetterHandler}
+        />
       </>
     );
   }

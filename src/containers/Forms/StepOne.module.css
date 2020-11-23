@@ -24,6 +24,11 @@
   margin: 1.5% 0% 1.5% 5%;
 }
 
-.formWrapper label:last-child p{
+.formWrapper label:last-child p {
   background-color: rgba(255, 255, 255, 0.5);
+}
+
+.error {
+  color: #f8b67b;
+  margin: .2rem 0 .5rem;
 }

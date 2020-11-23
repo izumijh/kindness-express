@@ -7,7 +7,7 @@ import Image from "react-bootstrap/Image";
 import icon from "../../../assets/images/compose.svg";
 
 // import ActionButtons and ChatBubbles
-import BackButton from "../../../components/Navbar/BackButton/BackButton";
+import BackButton from "../../Navbar/BackButton/BackButton";
 import ActionButton from "../../../components/ActionButton/ActionButton";
 import ChatBubble from "../../../components/ChatBubble/ChatBubble";
 

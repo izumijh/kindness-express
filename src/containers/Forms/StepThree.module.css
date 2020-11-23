@@ -62,3 +62,8 @@
   width: auto;
   visibility: hidden;
 }
+
+.error {
+  color: #f8b67b;
+  margin: -.5rem 0 .5rem;
+}

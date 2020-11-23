@@ -3,11 +3,18 @@ import React from "react";
 // import formik - a form library
 import { Formik, Field, Form } from "formik";
 
+// impot Yup - a validation library
+import * as Yup from "yup";
+
 // import required components
 import NextBackButtons from "../NextBackButtons/NextBackButtons";
 
 // import CSS modules
 import classes from "./StepTwo.module.css";
+
+const schema = Yup.object().shape({
+  story: Yup.string().required("*Required"),
+});
 
 const StepTwo = (props) => {
   const starters = [
@@ -23,6 +30,7 @@ const StepTwo = (props) => {
       initialValues={{
         story: "",
       }}
+      validationSchema={schema}
       onSubmit={async (values) => {
         await new Promise((r) => setTimeout(r, 250));
         sessionStorage.setItem("story", values.story);
@@ -31,7 +39,7 @@ const StepTwo = (props) => {
         props.nextStepHandler();
       }}
     >
-      {({ values }) => (
+      {({ values, errors }) => (
         <Form>
           <div
             role="group"
@@ -52,6 +60,9 @@ const StepTwo = (props) => {
               placeholder="Start Writing..."
             />
           </div>
+          {errors.story ? (
+            <p className={classes.error}>{errors.story}</p>
+          ) : null}
           <NextBackButtons goBack={props.goBackHandler} />
         </Form>
       )}

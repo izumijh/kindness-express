@@ -5,6 +5,7 @@ import Layout from "../../hocs/Layout/Layout";
 
 // Import main menu
 import MainMenu from "../../containers/MainMenu/MainMenu";
+import BalloonFeed from "../../containers/BalloonFeed/BalloonFeed";
 
 // Import Router Props
 import { withRouter } from "react-router-dom";
@@ -36,6 +37,7 @@ class HomePage extends Component {
           currentLocation={this.props.location.pathname}
           clickedBackButton={this.clickedBackButtonHandler}
         >
+          <BalloonFeed />
           <MainMenu
             composeMenuisOpen={
               this.props.location.pathname === "/compose"

@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 // import ActionButton
-import ActionButton from "../ActionButton/ActionButton";
+import ActionButton from "../../components/ActionButton/ActionButton";
 
 // import css modules
 import classes from "./NextBackButtons.module.css";

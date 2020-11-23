@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 // import formik - a form library
 import { Formik, Field, Form } from "formik";
+
+// impot Yup - a validation library
+import * as Yup from "yup";
 
 // import required components
 import NextBackButtons from "../NextBackButtons/NextBackButtons";
@@ -9,11 +12,14 @@ import NextBackButtons from "../NextBackButtons/NextBackButtons";
 // import CSS modules
 import classes from "./StepThree.module.css";
 
+const schema = Yup.object().shape({
+  location: Yup.string().required("*Required"),
+  date: Yup.string().required("*Required"),
+  authorName: Yup.string().required("*Required"),
+});
+
 const StepThree = (props) => {
   const [defaultRadio, setRadio] = useState("");
-  useEffect(() => {
-    setRadio(sessionStorage.getItem("authorName"));
-  }, []);
 
   return (
     <Formik
@@ -22,6 +28,7 @@ const StepThree = (props) => {
         date: "",
         authorName: "",
       }}
+      validationSchema={schema}
       onSubmit={async (values) => {
         await new Promise((r) => setTimeout(r, 250));
         sessionStorage.setItem("location", values.location);
@@ -31,7 +38,7 @@ const StepThree = (props) => {
         props.nextStepHandler();
       }}
     >
-      {({ values }) => (
+      {({ values, errors, touched }) => (
         <Form>
           <div
             role="group"
@@ -46,9 +53,15 @@ const StepThree = (props) => {
               name="location"
               className={classes.locationInput}
             />
+            {errors.location && touched.location ? (
+              <p className={classes.error}>{errors.location}</p>
+            ) : null}
 
             <label htmlFor="date">When did it happen?</label>
             <Field type="date" name="date" placeholder="xx/xx/xx" />
+            {errors.date && touched.date ? (
+              <p className={classes.error}>{errors.date}</p>
+            ) : null}
 
             <p style={{ marginBottom: ".5rem" }}>Show author name as...</p>
 
@@ -76,6 +89,10 @@ const StepThree = (props) => {
               <Field type="radio" name="authorName" value="username" />
               <p>Username</p>
             </label>
+
+            {errors.authorName && touched.authorName ? (
+              <p className={classes.error}>{errors.authorName}</p>
+            ) : null}
           </div>
           <NextBackButtons goBack={props.goBackHandler} />
         </Form>

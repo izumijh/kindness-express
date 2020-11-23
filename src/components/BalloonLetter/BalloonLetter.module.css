@@ -1,0 +1,80 @@
+/* Default Values, Don't Tamper */
+.cls1 {
+    opacity: 0.05;
+    isolation: isolate;
+    transition: 0.3s;
+  }
+  
+  .cls2 {
+    fill: #f7f7f7;
+    transition: 0.3s;
+  }
+  
+  .cls3 {
+    fill: #496d99;
+    transition: 0.3s;
+  }
+  
+  .cls4 {
+    fill: #4e6f95;
+    transition: 0.3s;
+  }
+  
+  .cls5 {
+    fill: #9fd7e8;
+    transition: 0.3s;
+  }
+  
+  .cls6 {
+    fill: #4770a2;
+    transition: 0.3s;
+  }
+  
+  .cls7 {
+    fill: #ffb46d;
+    transition: 0.3s;
+  }
+  
+  .cls8 {
+    fill: #a0daec;
+    transition: 0.3s;
+  }
+  
+  .cls9 {
+    fill: #fbacaa;
+    transition: 0.3s;
+  }
+  
+  .cls10 {
+    fill: #fdfc8c;
+    transition: 0.3s;
+  }
+  
+  /* manual CSS */
+  .wrapper {
+    height: 30vh;
+    display: block;
+    margin: auto;
+    width: 30vw;
+  }
+  
+  .transition {
+    transition: 0.3s;
+  }
+  
+  .animated {
+    animation: floating 3s linear infinite;
+  }
+  
+  @keyframes floating {
+    0% {
+      transform: translateY(0) rotate(4deg);
+    }
+    50% {
+      transform: translateY(0.2rem) rotate(2deg);
+    }
+    100% {
+      transform: translateY(0) rotate(4deg);
+    }
+  }
+  
