@@ -8,8 +8,9 @@ import Image from "react-bootstrap/Image";
 // Import Router Props
 import { withRouter } from "react-router-dom";
 
-// import layout
+// import layout and top spacing component
 import Layout from "../../hocs/Layout/Layout";
+import TopSpacing from "../../components/TopSpacing/TopSpacing";
 
 // import Action Button component
 import ActionButton from "../../components/ActionButton/ActionButton";
@@ -34,6 +35,7 @@ class PostaStory extends Component {
           currentLocation={this.props.location.pathname}
           clickedBackButton={this.clickedBackButtonHandler}
         >
+          <TopSpacing />
           <Row>
             <Col
               xs={12}
@@ -50,9 +52,7 @@ class PostaStory extends Component {
               />
               <ActionButton
                 fullWidth
-                clicked={() =>
-                  this.props.history.push("/post-a-story/process")
-                }
+                clicked={() => this.props.history.push("/post-a-story/process")}
               >
                 Post a Story
               </ActionButton>

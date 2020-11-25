@@ -7,17 +7,18 @@ import Col from "react-bootstrap/Col";
 // Import Router Props
 import { withRouter } from "react-router-dom";
 
-// import layout
+// import layout and TopSpacing
 import Layout from "../../hocs/Layout/Layout";
+import TopSpacing from "../../components/TopSpacing/TopSpacing";
 
 // import required components
 import Content from "../../components/Content/Content";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
-import FormStepOne from "../../components/Forms/StepOne";
-import FormStepTwo from "../../components/Forms/StepTwo";
-import FormStepThree from "../../components/Forms/StepThree";
-import FormStepFour from "../../components/Forms/StepFour";
-import QuitWritingModal from "../../components/QuitWritingModal/QuitWritingModal";
+import FormStepOne from "../../containers/Forms/StepOne";
+import FormStepTwo from "../../containers/Forms/StepTwo";
+import FormStepThree from "../../containers/Forms/StepThree";
+import FormStepFour from "../../containers/Forms/StepFour";
+import QuitWritingModal from "../../containers/QuitWritingModal/QuitWritingModal";
 
 // import CSS modules
 import classes from "./PostingProcess.module.css";
@@ -86,6 +87,7 @@ class PostingProcess extends Component {
           currentLocation={this.props.location.pathname}
           clickedBackButton={this.toggleQuitHandler}
         >
+          <TopSpacing />
           <Row style={{ width: "100vw", padding: ".5rem" }}>
             <Col xs={12}>
               <ProgressBar step={this.state.step} />

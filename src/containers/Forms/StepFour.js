@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 // import required components
 import NextBackButtons from "../NextBackButtons/NextBackButtons";
-import EnvelopePreview from "../EnvelopePreview/EnvelopePreview";
+import EnvelopePreview from "../../components/EnvelopePreview/EnvelopePreview";
 import DesignToolbar from "../DesignToolbar/DesignToolbar";
 
 // import CSS modules

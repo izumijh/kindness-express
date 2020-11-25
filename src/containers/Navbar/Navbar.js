@@ -15,7 +15,13 @@ const Navbar = (props) => {
   console.log(props.currentLocation);
   // Show and hide navbar components depending on route name
   return (
-    <Row>
+    <Row
+      className={
+        props.currentLocation === "/"
+          ? `${classes.navWrapper} ${classes.moreSpace}`
+          : `${classes.navWrapper}`
+      }
+    >
       <Col
         xs={10}
         className={classes.logoContainer}
