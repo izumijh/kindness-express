@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 const TopSpacing = (props) => {
   const style = {
     display: "block",
-    height: "12vh",
+    height: "14vh",
     width: "100vw",
   };
 

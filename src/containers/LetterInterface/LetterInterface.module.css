@@ -1,0 +1,9 @@
+.wrapper {
+  width: 100vw;
+  z-index: 999;
+  outline: 1px red solid;
+  position: absolute;
+
+  /* cancel the side effect of col */
+  max-width: none !important;
+}

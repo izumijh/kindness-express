@@ -4,14 +4,17 @@ import React from "react";
 import classes from "./BalloonLetter.module.css";
 
 const BalloonLetter = (props) => {
+  // default setting
   let balloonColour = { fill: "#abdaea" };
   let badgeColor = { fill: "#FEF79A" };
   let ribbonColor = { fill: "#A4D6E6" };
 
+  // Change Balloon Colour
   if (props.currentColour) {
     balloonColour = { fill: props.currentColour };
   }
 
+  // Change Envelope Design
   if (props.currentDesign === 1) {
     badgeColor = { fill: "#A4D6E6" }; // blue
     ribbonColor = { fill: "#FEF79A" }; // yellow
@@ -26,7 +29,7 @@ const BalloonLetter = (props) => {
   }
 
   return (
-    <svg className={`${classes.wrapper} ${classes.animated}`}>
+    <svg className={`${classes.wrapper} ${classes.animated}`} onClick={props.clicked}>
       <filter xmlns="http://www.w3.org/2000/svg" id="dropshadow" height="130%">
         <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
         <feOffset dx="2" dy="2" result="offsetblur" />

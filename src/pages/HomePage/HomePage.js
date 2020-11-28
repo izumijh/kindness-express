@@ -3,9 +3,10 @@ import React, { Component } from "react";
 // import layout
 import Layout from "../../hocs/Layout/Layout";
 
-// Import main menu
+// Import required components
 import MainMenu from "../../containers/MainMenu/MainMenu";
 import BalloonFeed from "../../containers/BalloonFeed/BalloonFeed";
+import LetterInterface from "../../containers/LetterInterface/LetterInterface";
 
 // Import Router Props
 import { withRouter } from "react-router-dom";
@@ -13,6 +14,7 @@ import { withRouter } from "react-router-dom";
 class HomePage extends Component {
   state = {
     composeMenuisOpen: false,
+    readingLetter: false,
   };
 
   clickedBackButtonHandler = () => {
@@ -37,7 +39,10 @@ class HomePage extends Component {
           currentLocation={this.props.location.pathname}
           clickedBackButton={this.clickedBackButtonHandler}
         >
-          <BalloonFeed />
+          <LetterInterface />
+          <BalloonFeed
+            clickedOnLetter={() => this.setState({ readingLetter: true })}
+          />
           <MainMenu
             composeMenuisOpen={
               this.props.location.pathname === "/compose"
@@ -45,9 +50,7 @@ class HomePage extends Component {
                 : this.state.composeMenuisOpen
             }
             toggleComposeMenu={this.toggleComposeMenuHandler}
-            wantToPostStory={() =>
-              this.props.history.push("/post-a-story")
-            }
+            wantToPostStory={() => this.props.history.push("/post-a-story")}
           />
         </Layout>
       </>
