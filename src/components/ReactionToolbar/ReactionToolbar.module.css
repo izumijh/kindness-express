@@ -1,0 +1,35 @@
+.container {
+  /* center the container */
+  width: 88vw;
+  float: none;
+  display: block;
+  margin: 4% auto;
+  position: relative;
+}
+
+.button {
+  color: #547394;
+  border: 2px dashed #547394;
+  border-radius: 12px;
+  padding: 0.9rem 0 0.9rem 3rem;
+  margin: 0.4rem 0;
+  background: none;
+  width: 100%;
+  position: relative;
+
+  font-family: "Lato";
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.repostBtn {
+  position: absolute;
+  left: 7%;
+  top: 17%;
+}
+
+.sendBtn {
+  position: absolute;
+  left: 7%;
+  top: 23%;
+}

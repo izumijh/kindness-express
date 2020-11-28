@@ -6,7 +6,7 @@ import Layout from "../../hocs/Layout/Layout";
 // Import required components
 import MainMenu from "../../containers/MainMenu/MainMenu";
 import BalloonFeed from "../../containers/BalloonFeed/BalloonFeed";
-import LetterInterface from "../../containers/LetterInterface/LetterInterface";
+import TopSpacing from "../../components/TopSpacing/TopSpacing";
 
 // Import Router Props
 import { withRouter } from "react-router-dom";
@@ -39,9 +39,9 @@ class HomePage extends Component {
           currentLocation={this.props.location.pathname}
           clickedBackButton={this.clickedBackButtonHandler}
         >
-          <LetterInterface />
+          <TopSpacing />
           <BalloonFeed
-            clickedOnLetter={() => this.setState({ readingLetter: true })}
+            clickedOnLetter={() => this.props.history.push("/letter")}
           />
           <MainMenu
             composeMenuisOpen={

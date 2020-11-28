@@ -13,6 +13,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import HomePage from "./pages/HomePage/HomePage";
 import PostaStory from "./pages/PostaStory/PostaStory";
 import PostingProcess from "./pages/PostingProcess/PostingProcess";
+import LetterInterface from "./pages/LetterInterface/LetterInterface";
 
 import "./App.css";
 
@@ -32,7 +33,7 @@ class App extends Component {
             component={PostingProcess}
             exact
           />
-
+          <Route path="/letter" component={LetterInterface} />
           <Route path="/" component={HomePage} />
         </AnimatedSwitch>
       </BrowserRouter>

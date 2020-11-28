@@ -12,7 +12,7 @@ import classes from "./Letter.module.css";
 const Letter = (props) => {
   return (
     <div className={classes.wrapper}>
-      <div style={{ textAlign: "right", marginBottom: "1rem" }}>
+      <div style={{ textAlign: "right", marginBottom: "2rem" }}>
         <Image src={stamp} style={{ width: "50%" }} />
       </div>
       {props.children}

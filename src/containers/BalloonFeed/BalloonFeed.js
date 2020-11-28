@@ -12,17 +12,17 @@ const BalloonFeed = (props) => {
       <BalloonLetter
         BalloonColour="#ABDAEA"
         currentDesign={0}
-        onClick={props.clickedOnLetter}
+        clicked={props.clickedOnLetter}
       />
       <BalloonLetter
         BalloonColour="#ABDAEA"
         currentDesign={0}
-        onClick={props.clickedOnLetter}
+        clicked={props.clickedOnLetter}
       />
       <BalloonLetter
         BalloonColour="#ABDAEA"
         currentDesign={0}
-        onClick={props.clickedOnLetter}
+        clicked={props.clickedOnLetter}
       />
     </>
   );

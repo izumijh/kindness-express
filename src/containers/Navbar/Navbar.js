@@ -17,7 +17,7 @@ const Navbar = (props) => {
   return (
     <Row
       className={
-        props.currentLocation === "/hehe"
+        props.currentLocation === "/"
           ? `${classes.navWrapper} ${classes.moreSpace}`
           : `${classes.navWrapper}`
       }
@@ -27,7 +27,7 @@ const Navbar = (props) => {
         className={classes.logoContainer}
         style={{ padding: "3rem 1rem" }}
       >
-        {/* <Logo isShown={props.currentLocation === "/" ? true : false} /> */}
+        <Logo isShown={props.currentLocation === "/" ? true : false} />
 
         <BackButton
           isShown={props.currentLocation === "/compose" ? true : false}
@@ -36,9 +36,8 @@ const Navbar = (props) => {
           Go back to Home
         </BackButton>
 
-        {/* Temporary */}
         <BackButton
-          isShown={props.currentLocation === "/" ? true : false}
+          isShown={props.currentLocation === "/letter" ? true : false}
           clicked={props.clickedBackButton}
         >
           Go back to Home
@@ -50,6 +49,7 @@ const Navbar = (props) => {
         >
           Go back to Home
         </BackButton>
+        
         <BackButton
           isShown={
             props.currentLocation === "/post-a-story/process" ? true : false
