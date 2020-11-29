@@ -1,0 +1,30 @@
+.wrapper {
+  background: #fdfdfd;
+  width: 88vw;
+  z-index: 9999;
+  border-radius: 12px;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+  padding: 3rem 1.5rem;
+  background: #fdfdfd;
+
+  /* to center the letter */
+  float: none;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+
+  transition: 0.3s;
+}
+
+/* background stripes */
+.wrapper:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url(../../assets/images/letterframe.svg) top left repeat-x,
+    url(../../assets/images/letterframe.svg) bottom left repeat-x;
+}

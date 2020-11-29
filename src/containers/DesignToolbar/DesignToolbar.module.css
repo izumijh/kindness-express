@@ -1,0 +1,58 @@
+/* .toolbarWrapper {
+  background-color: #ecf0f7;
+} */
+
+.toolbarWrapper > * {
+  display: inline-block;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ecf0f7;
+  border-radius: 20px;
+}
+
+.header > h3 {
+  font-size: 1.2rem !important;
+  line-height: 2.5rem !important;
+  margin-bottom: 0;
+}
+
+.backButton,
+.nextButton {
+  background-color: #fff89b;
+  border-radius: 50%;
+  border: 2px solid #547394;
+  color: #547394;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+}
+
+.body {
+  background-color: #f4f8f7;
+  width: 100%;
+  border-radius: 6px;
+  padding: 0.5rem 0.8rem;
+}
+
+.toolbar {
+  opacity: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: scale(0);
+  height: 0;
+  display: none;
+
+  transition: 0.3s ease;
+}
+
+.toolbar.active {
+  opacity: 1;
+  transform: scale(1);
+  height: auto;
+  display: flex;
+
+}

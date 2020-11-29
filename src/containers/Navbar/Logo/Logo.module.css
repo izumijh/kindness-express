@@ -1,0 +1,9 @@
+.wrapper {
+  position: fixed;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.active {
+  opacity: 1;
+}

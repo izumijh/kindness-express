@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="27.159" height="27.159" viewBox="0 0 27.159 27.159">
+  <g id="Group_494" data-name="Group 494" transform="translate(0.5 0.5)">
+    <g id="Group_408" data-name="Group 408">
+      <ellipse id="Ellipse_284-2" data-name="Ellipse 284-2" cx="13.079" cy="13.079" rx="13.079" ry="13.079" fill="#fff89b" stroke="#597685" stroke-miterlimit="10" stroke-width="1"/>
+    </g>
+    <ellipse id="Ellipse_294" data-name="Ellipse 294" cx="1.775" cy="1.003" rx="1.775" ry="1.003" transform="translate(5.821 8.869)" fill="#fffa5a" opacity="0.62"/>
+    <ellipse id="Ellipse_295" data-name="Ellipse 295" cx="1.775" cy="1.003" rx="1.775" ry="1.003" transform="translate(17.139 8.869)" fill="#fffa5a" opacity="0.62"/>
+    <g id="Group_409" data-name="Group 409" transform="translate(5 7.812)">
+      <g id="Ellipse_367" data-name="Ellipse 367" transform="translate(4 7)" fill="#f8b67b" stroke="#597685" stroke-width="1">
+        <ellipse cx="4.5" cy="3.5" rx="4.5" ry="3.5" stroke="none"/>
+        <ellipse cx="4.5" cy="3.5" rx="4" ry="3" fill="none"/>
+      </g>
+      <circle id="Ellipse_369" data-name="Ellipse 369" cx="2.5" cy="2.5" r="2.5" fill="#597685"/>
+      <circle id="Ellipse_372" data-name="Ellipse 372" cx="2.5" cy="2.5" r="2.5" transform="translate(11)" fill="#597685"/>
+      <circle id="Ellipse_370" data-name="Ellipse 370" cx="1" cy="1" r="1" transform="translate(2)" fill="#fff"/>
+      <circle id="Ellipse_373" data-name="Ellipse 373" cx="1" cy="1" r="1" transform="translate(13)" fill="#fff"/>
+    </g>
+    <ellipse id="Ellipse_374" data-name="Ellipse 374" cx="3.5" cy="2" rx="3.5" ry="2" transform="translate(1 12.812)" fill="#f8b67b"/>
+    <ellipse id="Ellipse_375" data-name="Ellipse 375" cx="3.5" cy="2" rx="3.5" ry="2" transform="translate(19 12.812)" fill="#f8b67b"/>
+  </g>
+</svg>

@@ -1,0 +1,7 @@
+.tip {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    box-shadow: 0px 3px 15px 5px rgba(0,0,0,0.05);
+    padding: 1rem .5rem .5rem .5rem;
+    margin-top: 1.5rem;
+}

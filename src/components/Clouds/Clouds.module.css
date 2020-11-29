@@ -1,0 +1,28 @@
+.cloudsContainer {
+  background: url("../../assets/images/clouds.svg");
+  background-repeat: no-repeat;
+  background-size: 110%;
+  background-position: center;
+
+  width: 100%;
+  position: fixed;
+  top: 22%;
+  height: 14%;
+  z-index: -1;
+
+  animation: floating 5s linear infinite;
+}
+
+@keyframes floating {
+  0% {
+    top: 22%;
+  }
+  
+  50% {
+    top: 24%;
+  }
+  
+  100% {
+    top:22%;
+  }
+}

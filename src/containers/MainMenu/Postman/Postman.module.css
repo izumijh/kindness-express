@@ -1,0 +1,15 @@
+.iconContainer {
+  position: fixed;
+  bottom: 2.5rem;
+
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.iconContainer img {
+  width: 26vw;
+}
+
+.iconContainer.inactive {
+  opacity: 0;
+}

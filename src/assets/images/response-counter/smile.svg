@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="27.159" height="27.159" viewBox="0 0 27.159 27.159">
+  <g id="Group_493" data-name="Group 493" transform="translate(0.5 0.5)">
+    <g id="Group_408" data-name="Group 408">
+      <ellipse id="Ellipse_284-2" data-name="Ellipse 284-2" cx="13.079" cy="13.079" rx="13.079" ry="13.079" fill="#fff89b" stroke="#597685" stroke-miterlimit="10" stroke-width="1"/>
+    </g>
+    <ellipse id="Ellipse_294" data-name="Ellipse 294" cx="1.775" cy="1.003" rx="1.775" ry="1.003" transform="translate(5.821 8.869)" fill="#fffa5a" opacity="0.62"/>
+    <ellipse id="Ellipse_295" data-name="Ellipse 295" cx="1.775" cy="1.003" rx="1.775" ry="1.003" transform="translate(17.139 8.869)" fill="#fffa5a" opacity="0.62"/>
+    <g id="Group_409" data-name="Group 409" transform="translate(6 8.812)">
+      <ellipse id="Ellipse_365" data-name="Ellipse 365" cx="1.5" cy="2.5" rx="1.5" ry="2.5" transform="translate(-0.333)" fill="#597685"/>
+      <ellipse id="Ellipse_366" data-name="Ellipse 366" cx="1.5" cy="2.5" rx="1.5" ry="2.5" transform="translate(10.667)" fill="#597685"/>
+      <path id="Path_1567" data-name="Path 1567" d="M3.616,7.785a6.417,6.417,0,0,0,4.3,1.983,5.82,5.82,0,0,0,4.344-1.983" transform="translate(-0.616 0.759)" fill="none" stroke="#597685" stroke-linecap="round" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

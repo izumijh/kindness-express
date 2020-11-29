@@ -1,9 +1,4 @@
 body {
-  margin: 0;
-  font-family: "Lato";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
   background: rgb(242, 247, 255);
   background: linear-gradient(
     rgba(242, 247, 255, 1) 0%,
@@ -11,29 +6,98 @@ body {
     rgba(247, 247, 247, 1) 76%,
     rgba(246, 245, 255, 1) 100%
   );
+
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  font-family: "Lato";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @font-face {
   font-family: "Lato";
   src: url(./assets/fonts/Lato-Regular.ttf);
-  font-weight: normal;
+  font-weight: 400;
 }
 
 @font-face {
   font-family: "Lato";
   src: url(./assets/fonts/Lato-Light.ttf);
-  font-weight: lighter;
+  font-weight: 300;
 }
 
 @font-face {
   font-family: "Lato";
   src: url(./assets/fonts/Lato-Bold.ttf);
-  font-weight: bold;
+  font-weight: 700;
 }
 
 @font-face {
+  font-family: "Patrick Hand";
+  src: url(./assets/fonts/PatrickHand-Regular.ttf);
+  font-weight: 400;
+}
+
+h1 {
   font-family: "Lato";
-  src: url(./assets/fonts/Lato-Italic.ttf);
-  font-weight: normal;
-  font-style: italic;
+  font-weight: 700 !important;
+  font-size: 1.6rem !important;
+  color: #547394;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-family: "Lato";
+  font-weight: 700 !important;
+  font-size: 1.4rem !important;
+  color: #547394;
+  line-height: 2rem !important;
+}
+
+h3 {
+  font-family: "Lato";
+  font-weight: 700 !important;
+  font-size: 1.2rem !important;
+  color: #547394;
+  line-height: 2rem !important;
+}
+
+p {
+  font-family: "Lato";
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #547394;
+}
+
+textarea {
+  font-family: "Patrick Hand" !important;
+  letter-spacing: 0.05rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #547394;
+}
+
+ ::-webkit-inner-spin-button,
+::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+} 
+
+::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: block;
+  background: url(./assets/images/calendar.svg) no-repeat;
+  background-size: 80%;
+  width: 20px;
+  height: 20px;
+  border-width: thin;
+
+  position: absolute;
+  top: .7rem;
+  left: -.5rem;
 }

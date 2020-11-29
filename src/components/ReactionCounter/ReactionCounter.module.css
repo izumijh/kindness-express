@@ -1,0 +1,21 @@
+.container {
+  /* center the container */
+  width: 88vw;
+  float: none;
+  display: block;
+  margin: 4% auto;
+  position: relative;
+}
+
+.reactionWrapper {
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  font-family: "Lato";
+  color: #547394;
+  margin-bottom: 0.5rem;
+}
+
+.reactionWrapper img {
+  margin-right: 0.5rem;
+}
