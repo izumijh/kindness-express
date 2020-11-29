@@ -11,6 +11,9 @@ import TopSpacing from "../../components/TopSpacing/TopSpacing";
 // Import Router Props
 import { withRouter } from "react-router-dom";
 
+// import css module
+import classes from "./HomePage.module.css";
+
 class HomePage extends Component {
   state = {
     composeMenuisOpen: false,
@@ -40,9 +43,17 @@ class HomePage extends Component {
           clickedBackButton={this.clickedBackButtonHandler}
         >
           <TopSpacing />
-          <BalloonFeed
-            clickedOnLetter={() => this.props.history.push("/letter")}
-          />
+          <span
+            className={
+              this.state.composeMenuisOpen
+                ? `${classes.balloons} `
+                : `${classes.balloons} ${classes.active}`
+            }
+          >
+            <BalloonFeed
+              clickedOnLetter={() => this.props.history.push("/letter")}
+            />
+          </span>
           <MainMenu
             composeMenuisOpen={
               this.props.location.pathname === "/compose"

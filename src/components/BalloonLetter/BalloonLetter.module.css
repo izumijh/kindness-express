@@ -65,18 +65,4 @@
   transition: 0.3s;
 }
 
-.animated {
-  animation: floating 3s linear infinite;
-}
 
-@keyframes floating {
-  0% {
-    transform: translateY(0) rotate(4deg);
-  }
-  50% {
-    transform: translateY(0.2rem) rotate(2deg);
-  }
-  100% {
-    transform: translateY(0) rotate(4deg);
-  }
-}

@@ -30,7 +30,7 @@ const BalloonLetter = (props) => {
 
   return (
     <span onClick={props.clicked}>
-      <svg className={`${classes.wrapper} ${classes.animated}`}>
+      <svg className={`${classes.wrapper} ${classes.animation}`}>
         <filter
           xmlns="http://www.w3.org/2000/svg"
           id="dropshadow"
