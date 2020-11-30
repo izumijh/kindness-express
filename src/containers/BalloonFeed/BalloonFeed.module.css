@@ -11,7 +11,7 @@
   position: relative;
   left: -30%;
   animation: float-up 6s linear;
-  animation-delay: 3s;
+  animation-delay: 2s;
 
   opacity: 0;
 }
@@ -20,7 +20,7 @@
   position: relative;
   left: 1%;
   animation: float-up 6s linear;
-  animation-delay: 6s;
+  animation-delay: 4s;
 
   opacity: 0;
 }
@@ -32,12 +32,12 @@
 
 .firstBalloon svg {
   animation: scale 6s linear;
-  animation-delay: 3s;
+  animation-delay: 2s;
 }
 
 .thirdBalloon svg {
   animation: scale 6s linear;
-  animation-delay: 6s;
+  animation-delay: 4s;
 }
 
 /* setting keyframes */
@@ -65,16 +65,20 @@
   10% {
     transform: scale(0.8);
   }
-  50% {
+  100% {
     transform: scale(0.9);
   }
-  80% {
-    transform: scale(1);
+}
+
+@keyframes rotate {
+  0% {
+    transform:rotate(4deg);
   }
-  90% {
-    transform: scale(1);
+  50% {
+    transform:rotate(-4deg);
   }
   100% {
-    transform: scale(0.5);
+    transform:rotate(4deg);
   }
 }
+

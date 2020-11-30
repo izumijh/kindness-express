@@ -26,7 +26,7 @@ class BalloonFeed extends Component {
   generateBalloons() {
     console.log("generating balloons");
 
-    const colours = ["#F8B67B", "#ABDAEA", "#8BD9C4", "#F8E48C", "#F4C3E5"];
+    const colours = ["#F8B67B", "#ABDAEA", "#91D8C9"];
     const newBalloons = [...this.state.balloons];
 
     for (let i = 0; i < newBalloons.length; i++) {

@@ -1,0 +1,47 @@
+.wrapper > div > div {
+  padding: 15% 5% 15%;
+}
+
+.reacts {
+  display: block;
+  width: 100%;
+  margin: 7% 0 1%;
+}
+
+.reacts > svg {
+  width: 30%;
+  height: 30%;
+  margin: 0 1%;
+}
+
+.reacts.active {
+  animation: bounce 1s ease;
+}
+
+.texts {
+  display: block;
+  width: 100%;
+  margin: 0 0 5%;
+}
+
+.texts.active {
+  animation: bounce 1s ease;
+}
+
+.texts > p {
+  display: inline-block;
+  width: 30%;
+  margin: 0 1%;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(0.6);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
