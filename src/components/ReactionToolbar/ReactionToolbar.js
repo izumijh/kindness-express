@@ -15,11 +15,11 @@ const ReactionToolbar = (props) => {
     <div className={classes.container}>
       <Content>
         <p>Feel inspired? Spread the positivity!</p>
-        <button className={classes.button}>
+        <button className={classes.button} onClick={props.clickedRepost}>
           <img src={repost} alt="repost icon" className={classes.repostBtn} />
           Pass this story on
         </button>
-        <button className={classes.button}>
+        <button className={classes.button} onClick={props.clickedReact}>
           <img src={send} alt="send icon" className={classes.sendBtn} />
           Send them a response!
         </button>

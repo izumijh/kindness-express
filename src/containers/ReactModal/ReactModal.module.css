@@ -1,0 +1,76 @@
+.wrapper > div > div {
+  padding: 15% 5% 15%;
+}
+
+.reacts {
+  display: block;
+  width: 100%;
+  margin: 7% 0 1%;
+}
+
+.reacts > svg {
+  width: 30%;
+  height: 30%;
+  margin: 0 1%;
+}
+
+.reacts.active {
+  animation: bounce 1s ease;
+}
+
+.texts {
+  display: block;
+  width: 100%;
+  margin: 0 0 5%;
+}
+
+.texts.active {
+  animation: bounce 1s ease;
+}
+
+.texts > p {
+  display: inline-block;
+  width: 30%;
+  margin: 0 1%;
+}
+
+.reactWrapper {
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.reactWrapper.active {
+  opacity: 1;
+}
+
+.doneWrapper {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  z-index: -1;
+  opacity: 0 !important;
+  transition: 0.3s;
+}
+
+.doneWrapper.active {
+  z-index: inherit;
+  opacity: 1 !important;
+}
+
+.doneWrapper button {
+  width: 40% !important;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(0.6);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

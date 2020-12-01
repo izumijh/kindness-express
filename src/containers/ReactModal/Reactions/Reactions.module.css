@@ -1,0 +1,17 @@
+.smiley {
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.smiley.active {
+  opacity: 1;
+}
+
+.effects {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.effects.active {
+  opacity: 1;
+}
