@@ -25,8 +25,10 @@ import classes from "./LetterInterface.module.css";
 class LetterInterface extends Component {
   state = {
     isReposting: false,
+    doneReposting: false,
     isReacting: false,
     pickedReaction: null,
+    doneReacting: false,
   };
 
   render() {
@@ -69,9 +71,15 @@ class LetterInterface extends Component {
             </Letter>
             <ReactionCounter />
             <ReactionToolbar
-              clickedRepost={() => this.setState({ isReposting: true })}
+              clickedRepost={() =>
+                this.setState({ isReposting: true, doneReposting: false })
+              }
               clickedReact={() =>
-                this.setState({ isReacting: true, pickedReaction: null })
+                this.setState({
+                  isReacting: true,
+                  pickedReaction: null,
+                  doneReacting: false,
+                })
               }
             />
             <ActionButton clicked={() => this.props.history.push("/")}>
@@ -82,6 +90,8 @@ class LetterInterface extends Component {
         </Row>
         <RepostModal
           isReposting={this.state.isReposting}
+          doneReposting={this.state.doneReposting}
+          clickedRepost={() => this.setState({ doneReposting: true })}
           clickedExit={() => this.setState({ isReposting: false })}
         />
         <ReactModal
@@ -89,6 +99,8 @@ class LetterInterface extends Component {
           clickedExit={() => this.setState({ isReacting: false })}
           pickedReaction={(r) => this.setState({ pickedReaction: r })}
           currentReaction={this.state.pickedReaction}
+          doneReacting={this.state.doneReacting}
+          clickedSend={() => this.setState({ doneReacting: true })}
         />
       </Layout>
     );
