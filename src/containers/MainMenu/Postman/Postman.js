@@ -32,14 +32,24 @@ const Postman = (props) => {
 
       <div className={props.postmanMenuisOpen ? classes.active : null}>
         <div className={classes.chatBubble}>
-          <ChatBubble>What should I do today?</ChatBubble>
+          <Image
+            src={icon}
+            alt="postman icon"
+            style={
+              props.inConversation ? { display: "inline" } : { display: "none" }
+            }
+          />
+          <div>
+            <ChatBubble>Hello there!</ChatBubble>
+            <ChatBubble>What can I do for you today?</ChatBubble>
+          </div>
         </div>
         <div className={classes.postmanOptions}>
           <ActionButton clicked={props.wantToPostStory}>
-            Post a Story
+            About this Campaign
           </ActionButton>
           <ActionButton clicked={props.wantToPostMessage}>
-            Post Kind Words
+            What should I do now?
           </ActionButton>
         </div>
       </div>

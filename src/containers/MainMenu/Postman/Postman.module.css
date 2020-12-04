@@ -11,7 +11,7 @@
 }
 
 .iconContainer.active {
-  bottom: 19rem;
+  bottom: 23.3rem;
 }
 
 .iconContainer.inactive {
@@ -21,10 +21,10 @@
 
 .chatBubble {
   position: fixed;
-  right: 15px;
+  left: 20px;
   transition: 0.5s;
 
-  bottom: 0;
+  bottom: -10rem;
   opacity: 0;
   z-index: 2;
 }
@@ -36,7 +36,7 @@
 
 .postmanOptions {
   position: fixed;
-  left: 15px;
+  right: 15px;
   transition: 0.5s;
 
   bottom: -10rem;
@@ -47,6 +47,7 @@
 .postmanOptions > button {
   display: block;
   margin: 0.8rem;
+  margin-left: auto;
 }
 
 .active .postmanOptions {

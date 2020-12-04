@@ -56,9 +56,9 @@ class HomePage extends Component {
           <TopSpacing />
           <span
             className={
-              this.state.composeMenuisOpen || this.state.postmanMenuisOpen
-                ? `${classes.balloons} `
-                : `${classes.balloons} ${classes.active}`
+              this.props.location.pathname === "/"
+                ? `${classes.balloons} ${classes.active}`
+                : `${classes.balloons}`
             }
           >
             <BalloonFeed
