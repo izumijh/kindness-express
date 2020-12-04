@@ -14,6 +14,19 @@ import classes from "./Navbar.module.css";
 const Navbar = (props) => {
   console.log(props.currentLocation);
   // Show and hide navbar components depending on route name
+
+  // Show Go Back To Homepage in These Circumstances
+  let showGoBackToHomepage = false;
+  if (
+    props.currentLocation === "/compose" ||
+    props.currentLocation === "/postman" ||
+    props.currentLocation === "/letter" ||
+    props.currentLocation === "/post-kind-words" ||
+    props.currentLocation === "/post-a-story"
+  ) {
+    showGoBackToHomepage = true;
+  }
+
   return (
     <Row
       className={
@@ -30,28 +43,7 @@ const Navbar = (props) => {
         <Logo isShown={props.currentLocation === "/" ? true : false} />
 
         <BackButton
-          isShown={props.currentLocation === "/compose" ? true : false}
-          clicked={props.clickedBackButton}
-        >
-          Go back to Home
-        </BackButton>
-
-        <BackButton
-          isShown={props.currentLocation === "/letter" ? true : false}
-          clicked={props.clickedBackButton}
-        >
-          Go back to Home
-        </BackButton>
-
-        <BackButton
-          isShown={props.currentLocation === "/post-kind-words" ? true : false}
-          clicked={props.clickedBackButton}
-        >
-          Go back to Home
-        </BackButton>
-
-        <BackButton
-          isShown={props.currentLocation === "/post-a-story" ? true : false}
+          isShown={showGoBackToHomepage}
           clicked={props.clickedBackButton}
         >
           Go back to Home

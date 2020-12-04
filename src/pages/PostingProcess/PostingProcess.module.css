@@ -6,6 +6,7 @@
 
 .stepsContainer > div {
   position: absolute;
+  margin: 2.5%;
   top: 0;
 }
 

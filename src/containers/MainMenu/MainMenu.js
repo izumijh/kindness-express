@@ -12,11 +12,16 @@ const MainMenu = (props) => {
   return (
     <Row>
       <Col>
-        <Postman composeMenuisOpen={props.composeMenuisOpen} />
+        <Postman
+          composeMenuisOpen={props.composeMenuisOpen}
+          postmanMenuisOpen={props.postmanMenuisOpen}
+          clicked={props.togglePostman}
+        />
       </Col>
       <Col>
         <Compose
           composeMenuisOpen={props.composeMenuisOpen}
+          postmanMenuisOpen={props.postmanMenuisOpen}
           clicked={props.toggleComposeMenu}
           wantToPostStory={props.wantToPostStory}
           wantToPostMessage={props.wantToPostMessage}

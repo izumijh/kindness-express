@@ -88,7 +88,7 @@ class PostingProcess extends Component {
           clickedBackButton={this.toggleQuitHandler}
         >
           <TopSpacing />
-          <Row style={{ width: "100vw", padding: ".5rem" }}>
+          <Row>
             <Col xs={12}>
               <ProgressBar step={this.state.step} />
             </Col>
@@ -132,7 +132,7 @@ class PostingProcess extends Component {
               </div>
             </Col>
           </Row>
-          <div
+          <Row
             className={
               this.state.isQuitting
                 ? `${classes.quitModal} ${classes.active}`
@@ -143,7 +143,7 @@ class PostingProcess extends Component {
               quitWriting={this.quitWritingHandler}
               continueWriting={this.toggleQuitHandler}
             />
-          </div>
+          </Row>
         </Layout>
       </>
     );

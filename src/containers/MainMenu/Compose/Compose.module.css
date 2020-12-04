@@ -15,6 +15,11 @@
   bottom: 19rem;
 }
 
+.iconContainer.inactive {
+  opacity: 0;
+  z-index: -1;
+}
+
 .chatBubble {
   position: fixed;
   right: 15px;

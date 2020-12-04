@@ -12,11 +12,9 @@ import classes from "./PopUpModal.module.css";
 
 const PopUpModal = (props) => {
   return (
-    <Row className={classes.wrapper} onClick={props.clicked}>
-      <Col>
-        <Content>{props.children}</Content>
-      </Col>
-    </Row>
+    <Col className={classes.wrapper} onClick={props.clicked}>
+      <Content>{props.children}</Content>
+    </Col>
   );
 };
 

@@ -1,7 +1,21 @@
 .switch-wrapper {
   position: relative;
+
+  /* row settings */
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
 }
 
 .switch-wrapper > div {
   position: absolute;
+
+  /* Col Settings */
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+
+  flex: 0 0 100%;
+  max-width: 100%;
 }
