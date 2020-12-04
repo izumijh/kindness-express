@@ -2,9 +2,6 @@
   width: 100vw;
   z-index: 999;
   position: absolute;
-
-  /* cancel the side effect of col */
-  max-width: none !important;
 }
 
 /* background blur */

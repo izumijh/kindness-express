@@ -25,7 +25,6 @@ import classes from "./PostaStory.module.css";
 class PostaStory extends Component {
   clickedBackButtonHandler = () => {
     this.props.history.push("/");
-    this.setState({ composeMenuisOpen: false });
   };
 
   render() {

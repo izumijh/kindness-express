@@ -38,7 +38,7 @@ class LetterInterface extends Component {
         clickedBackButton={() => this.props.history.push("/")}
       >
         <TopSpacing />
-        <Row>
+        <Row style={{ width: "100vw", padding: ".5rem" }}>
           <Col xs={12} className={classes.wrapper}>
             <Letter>
               <p>

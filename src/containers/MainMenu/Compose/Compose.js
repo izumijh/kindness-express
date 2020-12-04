@@ -36,7 +36,7 @@ const Compose = (props) => {
           <ActionButton clicked={props.wantToPostStory}>
             Post a Story
           </ActionButton>
-          <ActionButton>Post Kind Words</ActionButton>
+          <ActionButton clicked={props.wantToPostMessage}>Post Kind Words</ActionButton>
         </div>
       </div>
     </>

@@ -3,7 +3,7 @@ import React from "react";
 // import formik - a form library
 import { Formik, Field, Form } from "formik";
 
-// impot Yup - a validation library
+// import Yup - a validation library
 import * as Yup from "yup";
 
 // import required components

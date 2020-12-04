@@ -19,6 +19,7 @@ const MainMenu = (props) => {
           composeMenuisOpen={props.composeMenuisOpen}
           clicked={props.toggleComposeMenu}
           wantToPostStory={props.wantToPostStory}
+          wantToPostMessage={props.wantToPostMessage}
         />
       </Col>
     </Row>

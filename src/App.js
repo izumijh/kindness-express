@@ -11,6 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 // Import Pages
 import HomePage from "./pages/HomePage/HomePage";
+import PostaMessage from "./pages/PostaMessage/PostaMessage";
 import PostaStory from "./pages/PostaStory/PostaStory";
 import PostingProcess from "./pages/PostingProcess/PostingProcess";
 import LetterInterface from "./pages/LetterInterface/LetterInterface";
@@ -27,6 +28,7 @@ class App extends Component {
           atActive={{ opacity: 1 }}
           className="switch-wrapper"
         >
+          <Route path="/post-kind-words" component={PostaMessage} exact />
           <Route path="/post-a-story" component={PostaStory} exact />
           <Route
             path="/post-a-story/process"
