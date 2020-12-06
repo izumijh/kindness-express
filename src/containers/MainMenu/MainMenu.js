@@ -11,7 +11,13 @@ import Compose from "./Compose/Compose";
 const MainMenu = (props) => {
   return (
     <Row>
-      <Col>
+      <Col
+        style={
+          props.postmanMenuisOpen
+            ? { position: "fixed", bottom: "0" }
+            : { position: "fixed", bottom: "-30vh" }
+        }
+      >
         <Postman
           composeMenuisOpen={props.composeMenuisOpen}
           postmanMenuisOpen={props.postmanMenuisOpen}
