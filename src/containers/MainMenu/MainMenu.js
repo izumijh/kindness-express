@@ -8,14 +8,17 @@ import Col from "react-bootstrap/Col";
 import Postman from "./Postman/Postman";
 import Compose from "./Compose/Compose";
 
+// import CSS modules
+import classes from "./MainMenu.module.css";
+
 const MainMenu = (props) => {
   return (
     <Row>
       <Col
-        style={
+        className={
           props.postmanMenuisOpen
-            ? { position: "fixed", bottom: "0" }
-            : { position: "fixed", bottom: "-30vh" }
+            ? `${classes.menu} ${classes.active}`
+            : `${classes.menu}`
         }
       >
         <Postman
@@ -24,13 +27,20 @@ const MainMenu = (props) => {
           clicked={props.togglePostman}
         />
       </Col>
-      <Col>
+      <Col
+        className={
+          props.composeMenuisOpen
+            ? `${classes.menu} ${classes.active}`
+            : `${classes.menu}`
+        }
+      >
         <Compose
           composeMenuisOpen={props.composeMenuisOpen}
           postmanMenuisOpen={props.postmanMenuisOpen}
           clicked={props.toggleComposeMenu}
           wantToPostStory={props.wantToPostStory}
           wantToPostMessage={props.wantToPostMessage}
+          startLogin={props.startLogin}
         />
       </Col>
     </Row>

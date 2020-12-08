@@ -82,6 +82,7 @@ class HomePage extends Component {
             wantToPostMessage={() =>
               this.props.history.push("/post-kind-words")
             }
+            startLogin={() => this.props.history.push("/login")}
           />
         </Layout>
       </>

@@ -1,0 +1,10 @@
+.menu {
+  position: fixed;
+  bottom: -70vh;
+
+  transition: 0.4s;
+}
+
+.active {
+  bottom: 0;
+}

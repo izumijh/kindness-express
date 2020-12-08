@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 // import React Router Package
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Redirect } from "react-router-dom";
 
 // import animated routing plugin
 import { AnimatedSwitch } from "react-router-transition";
@@ -15,6 +15,7 @@ import PostaMessage from "./pages/PostaMessage/PostaMessage";
 import PostaStory from "./pages/PostaStory/PostaStory";
 import PostingProcess from "./pages/PostingProcess/PostingProcess";
 import LetterInterface from "./pages/LetterInterface/LetterInterface";
+import RegistrationPage from "./pages/RegistrationPage/RegistrationPage";
 
 import "./App.css";
 
@@ -35,8 +36,10 @@ class App extends Component {
             component={PostingProcess}
             exact
           />
-          <Route path="/letter" component={LetterInterface} />
+          <Route path="/login" component={RegistrationPage} exact />
+          <Route path="/letter" component={LetterInterface} exact />
           <Route path="/" component={HomePage} />
+          <Redirect to="/" />
         </AnimatedSwitch>
       </BrowserRouter>
     );
