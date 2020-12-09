@@ -83,6 +83,7 @@ class HomePage extends Component {
               this.props.history.push("/post-kind-words")
             }
             startLogin={() => this.props.history.push("/login")}
+            routeToProfile={() => this.props.history.push("/profile")}
           />
         </Layout>
       </>

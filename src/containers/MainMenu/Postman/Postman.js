@@ -81,6 +81,7 @@ const Postman = (props) => {
       sessionStorage.removeItem("isNewlyRegisteredUser");
       nextPage(0);
       nextTopic(registered["newDefaultChat"]);
+      props.routeToProfile();
     } else {
       // if command doesn't match the above, it's probably a topic command
       // in which case, we determine if user is registered or not
