@@ -1,0 +1,79 @@
+.carouselPage {
+  padding: 5% 4%;
+  text-align: center;
+}
+
+.carouselPage img {
+  display: block;
+  margin: 0 auto;
+  max-height: 40vh;
+}
+
+.carouselPage h3 {
+  font-size: 1.3rem !important;
+  margin: 8% 0 0 !important;
+}
+
+.carouselPage p {
+  margin: 0 !important;
+}
+
+.loginButtons {
+  display: block;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.loginButtons > button {
+  position: relative;
+  width: 90%;
+  color: #547394;
+  border: 2px dashed #547394;
+  border-radius: 12px;
+  padding: 1rem 1rem 1rem 3rem;
+  box-shadow: 0px 3px 15px 0px rgba(255, 221, 141, 0.3);
+  text-align: center;
+  display: block;
+  margin: 0.5rem auto;
+
+
+  font-family: "Lato";
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.loginButtons button:first-child {
+  background-color: #abdaea;
+}
+
+.loginButtons button:nth-child(2) {
+  background-color: #f8b67b;
+}
+
+.loginButtons button:nth-child(3) {
+  background-color: #fff89b;
+}
+
+.loginButtons button:first-child::before {
+  content: url(../../assets/images/login-methods/instagram.svg);
+  position: absolute;
+  top: 1rem;
+  left: 0.4rem;
+  width: 20%;
+}
+
+.loginButtons button:nth-child(2)::before {
+  content: url(../../assets/images/login-methods/email.svg);
+  position: absolute;
+  top: 1.2rem;
+  left: 0.4rem;
+  width: 20%;
+}
+
+.loginButtons button:nth-child(3)::before {
+  content: url(../../assets/images/login-methods/phone.svg);
+  position: absolute;
+  top: 1.2rem;
+  left: 0.4rem;
+  width: 20%;
+}

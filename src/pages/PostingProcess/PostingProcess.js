@@ -50,8 +50,18 @@ class PostingProcess extends Component {
   };
 
   quitWritingHandler = () => {
-    sessionStorage.clear();
-    this.props.history.push("/");
+    // preserve after-tutorial status if true
+    let isOldUser = sessionStorage.getItem("doneTutorial");
+    let registeredUser = sessionStorage.getItem("registeredUser");
+    if (isOldUser || registeredUser) {
+      sessionStorage.clear();
+      sessionStorage.setItem("doneTutorial", isOldUser);
+      sessionStorage.setItem("doneTutorial", registeredUser);
+      this.props.history.push("/");
+    } else {
+      sessionStorage.clear();
+      this.props.history.push("/");
+    }
   };
 
   goBackHandler = () => {

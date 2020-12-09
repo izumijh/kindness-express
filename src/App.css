@@ -19,3 +19,28 @@
   flex: 0 0 100%;
   max-width: 100%;
 }
+
+/* edit react bootstrap's carousel settings */
+.carousel-indicators {
+  position: absolute;
+  bottom: -2rem;
+  left: 0;
+  right: unset;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  margin-right: 0;
+  margin-left: 0;
+  list-style: none;
+  transition: 0.5s;
+}
+
+.carousel-indicators li {
+  background-color: #abdaea;
+  height: 0.4rem;
+}
+
+.carousel-indicators li.active {
+  background-color: #f8b67b;
+}

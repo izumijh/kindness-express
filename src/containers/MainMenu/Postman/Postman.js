@@ -13,6 +13,7 @@ import RenderChatBubbles from "./RenderChatBubbles/RenderChatBubbles";
 
 // Import dialoguesList
 import * as dialogues from "./DialoguesList/DialoguesList";
+import * as registered from "./DialoguesList/registeredDialoguesList";
 
 // import css modules
 import classes from "./Postman.module.css";
@@ -31,34 +32,65 @@ const Postman = (props) => {
 
   // Check if old user
   let isOldUser = sessionStorage.getItem("doneTutorial");
+  let isRegisteredUser = sessionStorage.getItem("registeredUser");
+  let isNewlyRegisteredUser = sessionStorage.getItem("isNewlyRegisteredUser");
 
   // Component did mount
   useEffect(() => {
-    // Show different dialogue if it's a new user
+    console.log("running useEffect for Determining Chatbot Dialogue");
+    // Show different dialogue depending on circumstances
+
     if (isOldUser) {
+      console.log("default to guest chat");
+
       nextPage(0);
       nextTopic(dialogues["defaultChat"]);
+      if (isRegisteredUser) {
+        console.log("isRegisteredUser!");
+
+        nextPage(0);
+        nextTopic(registered["newDefaultChat"]);
+        if (
+          isNewlyRegisteredUser === "true" ||
+          isNewlyRegisteredUser === true
+        ) {
+          console.log("isNEWRegisteredUser!");
+
+          nextPage(0);
+          nextTopic(registered["profileIntro"]);
+        }
+      }
     }
-  }, [isOldUser]);
+  }, [isRegisteredUser, isNewlyRegisteredUser, isOldUser]);
 
   const userRespondedHandler = (response) => {
     // lets say user selected response number 0
     // what is the next action? for response number 0
     const action = currentTopic[pageInTopic].responseHandler[response]; //returns an action name
 
-    // check if a topic change is required
+    // check for command to follow
     if (action === "next") {
       nextPage(pageInTopic + 1);
       nextTopic(currentTopic);
     } else if (action === "quit") {
-      sessionStorage.setItem("doneTutorial", "true");
+      sessionStorage.setItem("doneTutorial", true);
       nextPage(0);
       nextTopic(dialogues["defaultChat"]);
       props.clicked();
-    } else {
-      // if not required, we change topic => to our response topic
+    } else if (action === "viewMyProfile") {
+      sessionStorage.removeItem("isNewlyRegisteredUser");
       nextPage(0);
-      nextTopic(dialogues[action]);
+      nextTopic(registered["newDefaultChat"]);
+    } else {
+      // if command doesn't match the above, it's probably a topic command
+      // in which case, we determine if user is registered or not
+      if (isRegisteredUser) {
+        nextPage(0);
+        nextTopic(registered[action]);
+      } else {
+        nextPage(0);
+        nextTopic(dialogues[action]);
+      }
     }
   };
 
@@ -66,8 +98,14 @@ const Postman = (props) => {
     // check if pageinTopic is 0
     if (pageInTopic === 0) {
       // if yes, go back to default chat
-      nextPage(0);
-      nextTopic(dialogues["defaultChat"]);
+      // but check first if its a registered or old user
+      if (isRegisteredUser) {
+        nextPage(0);
+        nextTopic(registered["newDefaultChat"]);
+      } else {
+        nextPage(0);
+        nextTopic(dialogues["defaultChat"]);
+      }
     } else {
       // if pageinTopic is not 0
       // go back 1 page
@@ -109,6 +147,15 @@ const Postman = (props) => {
             isOldUser
               ? `${classes.notifBubble}`
               : `${classes.notifBubble} ${classes.active}`
+          }
+        />
+        <Image
+          src={bubble}
+          alt="postman icon"
+          className={
+            currentTopic === registered["profileIntro"]
+              ? `${classes.notifBubble} ${classes.active}`
+              : `${classes.notifBubble} `
           }
         />
       </div>

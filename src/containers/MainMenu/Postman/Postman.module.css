@@ -61,6 +61,7 @@
 .options {
   position: relative;
   margin-bottom: 20%;
+  margin-top: 6%;
 
   opacity: 0;
   z-index: 2;

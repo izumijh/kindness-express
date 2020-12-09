@@ -22,7 +22,8 @@ const Navbar = (props) => {
     props.currentLocation === "/postman" ||
     props.currentLocation === "/letter" ||
     props.currentLocation === "/post-kind-words" ||
-    props.currentLocation === "/post-a-story"
+    props.currentLocation === "/post-a-story" || 
+    props.currentLocation === "/login"
   ) {
     showGoBackToHomepage = true;
   }

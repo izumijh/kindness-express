@@ -16,9 +16,9 @@ const RenderChatBubbles = (props) => {
         clicked={props.clicked}
         postmanEmote={props.postmanEmote}
       />
-      {props.chat.map((c) => {
+      {props.chat.map((c, id) => {
         return (
-          <div key={c} className={classes.animated}>
+          <div key={c + id} className={classes.animated}>
             <ChatBubble>{c}</ChatBubble>
           </div>
         );
