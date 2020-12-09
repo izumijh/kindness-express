@@ -156,7 +156,11 @@ const SignUpModal = (props) => {
                 {errors.name && errors.language && errors.colour ? (
                   <p className={classes.error}>{errors.name}</p>
                 ) : null}
-                <NextBackButtons back="Cancel" next="Done" />
+                <NextBackButtons
+                  back="Cancel"
+                  next="Done"
+                  goBack={props.quitLogin}
+                />
               </Form>
             )}
           </Formik>

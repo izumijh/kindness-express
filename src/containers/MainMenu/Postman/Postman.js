@@ -78,7 +78,7 @@ const Postman = (props) => {
       nextTopic(dialogues["defaultChat"]);
       props.clicked();
     } else if (action === "viewMyProfile") {
-      sessionStorage.setItem("isNewlyRegisteredUser", false);
+      sessionStorage.removeItem("isNewlyRegisteredUser");
       nextPage(0);
       nextTopic(registered["newDefaultChat"]);
     } else {
@@ -144,9 +144,18 @@ const Postman = (props) => {
           src={bubble}
           alt="postman icon"
           className={
-            isOldUser || isNewlyRegisteredUser
+            isOldUser
               ? `${classes.notifBubble}`
               : `${classes.notifBubble} ${classes.active}`
+          }
+        />
+        <Image
+          src={bubble}
+          alt="postman icon"
+          className={
+            currentTopic === registered["profileIntro"]
+              ? `${classes.notifBubble} ${classes.active}`
+              : `${classes.notifBubble} `
           }
         />
       </div>

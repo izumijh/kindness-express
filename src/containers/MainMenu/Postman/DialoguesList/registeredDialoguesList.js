@@ -57,7 +57,7 @@ export const newAboutCampaign = [
         This is <b>the Kindness Express</b>!
       </>,
       `People come here to talk about their personal experiences with kindness.`,
-      `I think you should come here often!`,
+      <b>you should come here often!</b>,
     ],
     response: [`Why?`],
     responseHandler: ["next"],
@@ -67,12 +67,15 @@ export const newAboutCampaign = [
     postmanEmote: 3,
     chat: [
       <>
-        Well, why not?
-        <b>This is a Wholesome Social Media!</b>
+        Well, why not? <b>This is a Wholesome Social Media!</b>
       </>,
-      `All the good news and good people 
-        live here.`,
-      `Besides, we are donating to Malaysia’s biggest charities depending on how posts people have made.`,
+      <>
+        Besides,
+        <b>
+          we are donating to Malaysian charities based on how many posts people
+          have made.
+        </b>
+      </>,
     ],
     response: [`Wow, how does it work?`],
     responseHandler: ["next"],
@@ -99,7 +102,7 @@ export const addToHomepage = [
     chat: [
       `I can do that for you!`,
       `So that you can launch this website anytime! Like an app on your phone!`,
-      `Would you like me to do that for you?`,
+      `Would you like that?`,
     ],
     response: [`Yes, install`, `No, not now`],
     responseHandler: ["next", "next"],

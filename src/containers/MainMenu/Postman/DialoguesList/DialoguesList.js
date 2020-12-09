@@ -21,7 +21,7 @@ export const aboutCampaign = [
         This is <b>the Kindness Express</b>!
       </>,
       `People come here to talk about their personal experiences with kindness.`,
-      `I think you should come here often!`,
+      <b>You should come here often!</b>,
     ],
     response: [`Why?`],
     responseHandler: ["next"],
@@ -34,9 +34,13 @@ export const aboutCampaign = [
         Well, why not?
         <b>This is a Wholesome Social Media!</b>
       </>,
-      `All the good news and good people 
-      live here.`,
-      `Besides, we are donating to Malaysia’s biggest charities depending on how posts people have made.`,
+      <>
+        Besides,
+        <b>
+          we are donating to Malaysian charities based on how many posts people
+          have made.
+        </b>
+      </>,
     ],
     response: [`Wow, how does it work?`],
     responseHandler: ["next"],
@@ -61,7 +65,9 @@ export const whatDoNow = [
     chat: [
       <b>Hm, you should try posting something!</b>,
       `Anything! Even if you have nothing to post about!`,
-      `Or send kind words to wish someone a great day!`,
+      <>
+        Or you could <b>send kind words</b> to people who might need it today.
+      </>,
     ],
     response: [`You want me to post something?`],
     responseHandler: ["next"],
@@ -72,7 +78,9 @@ export const whatDoNow = [
     chat: [
       `Try it out for me, okay?`,
       `You’ll need an account for posting, but…`,
-      `Come back to me after you made an account, and I will have a new feature for you!`,
+      <>
+        <b>After you made an account,</b> and I'll have a new feature for you!
+      </>,
     ],
     response: [`I'll try.`],
     responseHandler: ["next"],
@@ -94,7 +102,7 @@ export const addToHomepage = [
     chat: [
       `I can do that for you!`,
       `So that you can launch this website anytime! Like an app on your phone!`,
-      `Would you like me to do that for you?`,
+      `Would you like that?`,
     ],
     response: [`Yes, install`, `No, not now`],
     responseHandler: ["next", "next"],
@@ -127,7 +135,7 @@ export const newbieIntro = [
     postmanEmote: 0,
     chat: [
       `And I’m glad you have!!`,
-      `I work here at the Kindness Express!`,
+      <b>I work here at the Kindness Express!</b>,
       `Feel free to tap on my head to see what I do here!`,
     ],
     response: [`Ok, sure!`],
