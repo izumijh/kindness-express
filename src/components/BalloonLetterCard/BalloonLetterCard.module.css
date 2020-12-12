@@ -1,0 +1,68 @@
+/* Default Values, Don't Tamper */
+.st0 {
+  fill: url(#SVGID_1_);
+}
+.st1 {
+  fill: #ffffff;
+}
+.st2 {
+  fill: #547394;
+}
+.st3 {
+  font-family: "Lato-Regular";
+}
+.st4 {
+  font-size: 0.9rem;
+}
+.st5 {
+  fill: #f7f7f7;
+}
+.st6 {
+  fill: #496d99;
+}
+.st7 {
+  fill: #4e6f95;
+}
+.st8 {
+  fill: #9fd7e8;
+}
+.st9 {
+  fill: #4770a2;
+}
+.st10 {
+  fill: #ffb46d;
+}
+.st11 {
+  fill: #a0daec;
+}
+.st12 {
+  fill: #fbacaa;
+}
+.st13 {
+  fill: #fdfc8c;
+}
+
+/* manual CSS */
+.wrapper {
+  height: auto;
+  width: 30%;
+  overflow: visible;
+}
+
+.small {
+  height: 15vh;
+  width: 15vw;
+}
+
+.WhiteCircle {
+  position: absolute;
+}
+
+.Letter {
+  position: absolute;
+  transform: scale(0.7) translateY(-48%) translateX(27%) rotate(6deg);
+}
+
+.transition {
+  transition: 0.3s;
+}

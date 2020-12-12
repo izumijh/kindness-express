@@ -23,7 +23,8 @@ const Navbar = (props) => {
     props.currentLocation === "/letter" ||
     props.currentLocation === "/post-kind-words" ||
     props.currentLocation === "/post-a-story" || 
-    props.currentLocation === "/login"
+    props.currentLocation === "/login" ||
+    props.currentLocation === "/profile"
   ) {
     showGoBackToHomepage = true;
   }

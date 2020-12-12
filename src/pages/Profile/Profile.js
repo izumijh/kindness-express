@@ -1,37 +1,45 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-export default class Profile extends Component {
-    constructor(props) {
-        super(props)
+// import layout
+import Layout from "../../hocs/Layout/Layout";
 
-        this.state = {
-                 
-        }
+// Import required components
+import TopSpacing from "../../components/TopSpacing/TopSpacing";
+import MedalBlock from "../../containers/MedalBlock/MedalBlock";
+import DailyKindTasks from "../../containers/DailyKindTasks/DailyKindTasks";
+import RecentStories from "../../containers/RecentStories/RecentStories";
+import MyStories from "../../containers/MyStories/MyStories";
 
-        this.handleEvent = this.handleEvent.bind(this)
-    }
+// Import Router Props
+import { withRouter } from "react-router-dom";
 
-    componentDidMount() {
-        
-    }
+// import css module
+// import classes from "./Profile.module.css";
 
-    componentDidUpdate(prevProps, prevState, snapshot) { if (prevState.name !== this.state.name) { this.handler() } }
+class Profile extends Component {
+  state = {};
 
-    componentWillUnmount() {
-        
-    }
+  clickedBackButtonHandler = () => {
+    this.props.history.push("/");
+    this.setState({ composeMenuisOpen: false, postmanMenuisOpen: false });
+  };
 
-    // Prototype methods, Bind in Constructor (ES2015)
-    handleEvent() {}
-
-    // Class Properties (Stage 3 Proposal)
-    handler = () => { this.setState() }
-
-    render() {
-        return (
-            <>
-                
-            </>
-        )
-    }
+  render() {
+    return (
+      <>
+        <Layout
+          currentLocation={this.props.location.pathname}
+          clickedBackButton={this.clickedBackButtonHandler}
+        >
+          <TopSpacing />
+          <MedalBlock />
+          <DailyKindTasks />
+          <RecentStories />
+          <MyStories />
+        </Layout>
+      </>
+    );
+  }
 }
+
+export default withRouter(Profile);

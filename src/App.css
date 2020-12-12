@@ -44,3 +44,37 @@
 .carousel-indicators li.active {
   background-color: #f8b67b;
 }
+
+/* special settings for daily kind tasks carousel */
+.KindTasks .carousel-indicators {
+  position: absolute;
+  bottom: unset;
+  bottom: -1rem;
+  left: unset;
+  right: unset;
+  z-index: 15;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  margin-right: 0;
+  margin-left: 0;
+  list-style: none;
+  transition: 0.5s;
+}
+
+.KindTasks .carousel-indicators li {
+  background-color: #abdaea;
+  height: 0.7rem;
+  width: 0.7rem;
+  border-radius: 50%;
+  margin: 0 .5rem;
+}
+
+.KindTasks .carousel-indicators li.active {
+  background-color: #f8b67b;
+}
+
+.RecentStories .carousel-inner {
+  overflow: visible;
+}
