@@ -9,7 +9,7 @@
 
 .firstBalloon {
   position: relative;
-  left: -42%;
+  left: -40%;
   animation: float-up 6s linear;
   animation-delay: 2s;
 
@@ -17,16 +17,16 @@
 }
 
 .thirdBalloon {
-  position: absolute;
+  position: relative;
   left: 65%;
-  animation: float-up 6s linear;
-  animation-delay: 2s;
+  animation: float-up-slower 6s linear;
+  animation-delay: 4s;
 
   opacity: 0;
 }
 
 /* target the svg */
- .middleBalloon svg {
+.middleBalloon svg {
   animation: scale 6s linear;
 }
 
@@ -37,8 +37,8 @@
 
 .thirdBalloon svg {
   animation: scale 6s linear;
-  animation-delay: 2s;
-} 
+  animation-delay: 4s;
+}
 
 /* setting keyframes */
 @keyframes float-up {
@@ -58,7 +58,36 @@
   }
 }
 
-@keyframes scale {
+@keyframes float-up-slower {
+  0% {
+    top: 5vh;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: -40vh;
+    opacity: 0;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(4deg);
+  }
+  50% {
+    transform: rotate(-4deg);
+  }
+  100% {
+    transform: rotate(4deg);
+  }
+}
+
+@keyframes scale-375 {
   0% {
     transform: scale(0.5);
   }
@@ -66,19 +95,54 @@
     transform: scale(0.8);
   }
   100% {
-    transform: scale(0.9);
+    transform: scale(0.8);
   }
 }
 
-@keyframes rotate {
+@keyframes scale-below375 {
   0% {
-    transform:rotate(4deg);
+    transform: scale(0.2);
   }
-  50% {
-    transform:rotate(-4deg);
+  10% {
+    transform: scale(0.6);
   }
   100% {
-    transform:rotate(4deg);
+    transform: scale(0.7);
   }
 }
 
+/* bigger devices like iphone X */
+@media only screen and (min-device-width: 375px) {
+  /* target the svg */
+  .middleBalloon svg {
+    animation: scale-375 6s linear;
+  }
+
+  .firstBalloon svg {
+    animation: scale-375 6s linear;
+    animation-delay: 2s;
+  }
+
+  .thirdBalloon svg {
+    animation: scale-375 6s linear;
+    animation-delay: 4s;
+  }
+}
+
+/* smaller devices like iphone 5 */
+@media only screen and (max-device-width: 374px) {
+  /* target the svg */
+  .middleBalloon svg {
+    animation: scale-below375 6s linear;
+  }
+
+  .firstBalloon svg {
+    animation: scale-below375 6s linear;
+    animation-delay: 2s;
+  }
+
+  .thirdBalloon svg {
+    animation: scale-below375 6s linear;
+    animation-delay: 4s;
+  }
+}

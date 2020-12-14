@@ -1,0 +1,29 @@
+.composeIcon {
+  position: absolute;
+  top: -9%;
+  transform: scale(1.3);
+
+  /* center the icon */
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.textWrapper h2 {
+  margin-top: 3rem;
+  margin-bottom: 0.2rem;
+}
+
+.textWrapper p {
+  margin-bottom: 0.2rem;
+}
+
+.textWrapper {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.button {
+  margin-bottom: 3rem;
+}

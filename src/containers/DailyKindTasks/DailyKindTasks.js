@@ -44,7 +44,9 @@ const DailyKindTasks = (props) => {
                   <div style={{ backgroundColor: task.colour }}>
                     <FontAwesomeIcon icon={task.icon} />
                     <p>{task.task}</p>
-                    <ActionButton>Post a Story about This!</ActionButton>
+                    <ActionButton clicked={props.clickedPost}>
+                      Post a Story about This!
+                    </ActionButton>
                   </div>
                 </Carousel.Item>
               );

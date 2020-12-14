@@ -12,6 +12,8 @@ import MyStories from "../../containers/MyStories/MyStories";
 import ShareProfile from "../../containers/ShareProfile/ShareProfile";
 import HowScoringWorks from "../../containers/HowScoringWorks/HowScoringWorks";
 import OtherProfileActions from "../../containers/OtherProfileActions/OtherProfileActions";
+import FeatureWIPModal from "../../containers/FeatureWIPModal/FeatureWIPModal";
+import RedirectModal from "../../containers/RedirectModal/RedirectModal";
 
 // Import Router Props
 import { withRouter } from "react-router-dom";
@@ -23,11 +25,23 @@ class Profile extends Component {
   state = {
     howToLevelIsOpen: false,
     otherMenuIsOpen: false,
+    featureNotAvailable: false,
+    redirecting: false,
   };
 
   clickedBackButtonHandler = () => {
     this.props.history.push("/");
     this.setState({ composeMenuisOpen: false, postmanMenuisOpen: false });
+  };
+
+  logOutHandler = () => {
+    sessionStorage.removeItem("registeredUser");
+    this.props.history.push("/");
+  };
+
+  redirectHandler = () => {
+    this.setState({ redirecting: false });
+    this.props.history.push("/post-a-story");
   };
 
   render() {
@@ -44,19 +58,43 @@ class Profile extends Component {
           <MedalBlock
             toggleHowToLevel={() => this.setState({ howToLevelIsOpen: true })}
           />
-          <DailyKindTasks />
-          <RecentStories />
-          <MyStories />
-          <ShareProfile />
+          <DailyKindTasks
+            clickedPost={() => this.setState({ redirecting: true })}
+          />
+          <RecentStories
+            clickedSeeAll={() => this.setState({ featureNotAvailable: true })}
+          />
+          <MyStories
+            clickedSeeAll={() => this.setState({ featureNotAvailable: true })}
+          />
+          <ShareProfile
+            clickedShareProfile={() =>
+              this.setState({ featureNotAvailable: true })
+            }
+          />
 
           {/* Slide Up Modals */}
           <HowScoringWorks
             activateIf={this.state.howToLevelIsOpen}
             clickedExit={() => this.setState({ howToLevelIsOpen: false })}
           />
+          <RedirectModal
+            activateIf={this.state.redirecting}
+            clickedExit={() => this.setState({ redirecting: false })}
+            clickedRedirect={this.redirectHandler}
+          />
           <OtherProfileActions
             activateIf={this.state.otherMenuIsOpen}
             clickedExit={() => this.setState({ otherMenuIsOpen: false })}
+            clickedShareProfile={() =>
+              this.setState({ featureNotAvailable: true })
+            }
+            clickedEditPref={() => this.setState({ featureNotAvailable: true })}
+            clickedLogOut={this.logOutHandler}
+          />
+          <FeatureWIPModal
+            activateIf={this.state.featureNotAvailable}
+            clickedExit={() => this.setState({ featureNotAvailable: false })}
           />
         </Layout>
       </>

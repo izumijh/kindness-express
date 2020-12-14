@@ -23,6 +23,7 @@ const MyStories = (props) => {
       <Col xs={12} className={classes.wrapper}>
         <Content>
           <h3>My Stories</h3>
+          <h3 onClick={props.clickedSeeAll}>See All</h3>
           <div className={classes.carouselContainer}>
             {balloonDesigns.map((balloon, id) => {
               return (

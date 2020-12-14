@@ -25,15 +25,15 @@ const OtherProfileActions = (props) => {
     >
       <p>Other Actions</p>
       <ul className={classes.menuWrapper}>
-        <li>
+        <li onClick={props.clickedShareProfile}>
           <FontAwesomeIcon icon={faShareAlt} />
           Share My Profile
         </li>
-        <li>
+        <li onClick={props.clickedEditPref}>
           <img src={cog} alt="cogs" />
           Edit Preferences
         </li>
-        <li>
+        <li onClick={props.clickedLogOut}>
           <img src={exit} alt="log out" />
           Log Out
         </li>

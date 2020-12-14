@@ -24,7 +24,7 @@ const ShareProfile = (props) => {
         <Content>
           <p>Show people how you're doing!</p>
 
-          <ActionButton white fullWidth>
+          <ActionButton white fullWidth clicked={props.clickedShareProfile}>
             <FontAwesomeIcon icon={faShareAlt} />
             Share My Profile to...
           </ActionButton>
