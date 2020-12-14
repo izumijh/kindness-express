@@ -52,17 +52,11 @@
 
 /* manual CSS */
 .wrapper {
-  height: 30vh;
-  width: 30vw;
-}
-
-.small {
-  height: 15vh;
-  width: 15vw;
+  height: 38vh;
+  width: 36vw;
 }
 
 .transition {
   transition: 0.3s;
 }
-
 

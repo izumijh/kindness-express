@@ -79,6 +79,7 @@ const Postman = (props) => {
       props.clicked();
     } else if (action === "viewMyProfile") {
       sessionStorage.removeItem("isNewlyRegisteredUser");
+      props.routeToProfile();
       nextPage(0);
       nextTopic(registered["newDefaultChat"]);
     } else {

@@ -1,0 +1,31 @@
+.headerWrapper {
+  margin-bottom: .5rem;
+}
+
+.headerWrapper h2 {
+  margin-bottom: 0.2rem;
+}
+
+.itemsWrapper {
+  text-align: left;
+}
+
+/* target left columns */
+.itemsWrapper > div:nth-child(1) {
+  padding-top: 1rem;
+}
+
+/* target right columns */
+.itemsWrapper > div:nth-child(2) {
+  padding: 1rem 0.5rem;
+}
+
+.itemsWrapper h3,
+.itemsWrapper p {
+  margin-bottom: 0.2rem;
+  font-size: 1rem;
+}
+
+.itemsWrapper p {
+  color: rgb(72, 172, 150);
+}

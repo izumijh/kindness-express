@@ -7,6 +7,7 @@ import Col from "react-bootstrap/Col";
 // Import Variations of Navbar
 import Logo from "./Logo/Logo";
 import BackButton from "./BackButton/BackButton";
+import MoreButton from "./MoreButton/MoreButton";
 
 // Import CSS module
 import classes from "./Navbar.module.css";
@@ -22,10 +23,20 @@ const Navbar = (props) => {
     props.currentLocation === "/postman" ||
     props.currentLocation === "/letter" ||
     props.currentLocation === "/post-kind-words" ||
-    props.currentLocation === "/post-a-story" || 
-    props.currentLocation === "/login"
+    props.currentLocation === "/post-a-story" ||
+    props.currentLocation === "/login" ||
+    props.currentLocation === "/profile"
   ) {
     showGoBackToHomepage = true;
+  }
+
+  // Show "More" Button in these circumstances
+  let showMoreButton = false;
+  if (
+    props.currentLocation === "/letter" ||
+    props.currentLocation === "/profile"
+  ) {
+    showMoreButton = true;
   }
 
   return (
@@ -37,7 +48,7 @@ const Navbar = (props) => {
       }
     >
       <Col
-        xs={10}
+        xs={9}
         className={classes.logoContainer}
         style={{ padding: "3rem 1rem" }}
       >
@@ -58,6 +69,12 @@ const Navbar = (props) => {
         >
           Quit Writing
         </BackButton>
+      </Col>
+      <Col xs={3} style={{ padding: "3rem 1rem" }}>
+        <MoreButton
+          isShown={showMoreButton}
+          clicked={props.clickedMoreButton}
+        />
       </Col>
     </Row>
   );

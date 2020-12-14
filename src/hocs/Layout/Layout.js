@@ -17,6 +17,7 @@ class Layout extends Component {
         <Navbar
           currentLocation={this.props.currentLocation}
           clickedBackButton={this.props.clickedBackButton}
+          clickedMoreButton={this.props.clickedMoreButton}
         />
         {this.props.children}
         <Clouds />

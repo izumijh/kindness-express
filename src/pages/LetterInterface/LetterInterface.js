@@ -14,6 +14,7 @@ import ReactionToolbar from "../../components/ReactionToolbar/ReactionToolbar";
 import ActionButton from "../../components/ActionButton/ActionButton";
 import RepostModal from "../../containers/RepostModal/RepostModal";
 import ReactModal from "../../containers/ReactModal/ReactModal";
+import OtherLetterActions from "../../containers/OtherLetterActions/OtherLetterActions";
 
 // import SVG image
 import calendar from "../../assets/images/calendar.svg";
@@ -29,6 +30,7 @@ class LetterInterface extends Component {
     isReacting: false,
     pickedReaction: null,
     doneReacting: false,
+    isShowingMoreMenu: false,
   };
 
   render() {
@@ -36,6 +38,7 @@ class LetterInterface extends Component {
       <Layout
         currentLocation={this.props.location.pathname}
         clickedBackButton={() => this.props.history.push("/")}
+        clickedMoreButton={() => this.setState({ isShowingMoreMenu: true })}
       >
         <TopSpacing />
         <Row>
@@ -101,6 +104,10 @@ class LetterInterface extends Component {
           currentReaction={this.state.pickedReaction}
           doneReacting={this.state.doneReacting}
           clickedSend={() => this.setState({ doneReacting: true })}
+        />
+        <OtherLetterActions
+          activateIf={this.state.isShowingMoreMenu}
+          clickedExit={() => this.setState({ isShowingMoreMenu: false })}
         />
       </Layout>
     );

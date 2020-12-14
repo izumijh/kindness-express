@@ -16,6 +16,7 @@ import PostaStory from "./pages/PostaStory/PostaStory";
 import PostingProcess from "./pages/PostingProcess/PostingProcess";
 import LetterInterface from "./pages/LetterInterface/LetterInterface";
 import RegistrationPage from "./pages/RegistrationPage/RegistrationPage";
+import Profile from "./pages/Profile/Profile";
 
 import "./App.css";
 
@@ -29,6 +30,7 @@ class App extends Component {
           atActive={{ opacity: 1 }}
           className="switch-wrapper"
         >
+          <Route path="/profile" component={Profile} exact />
           <Route path="/post-kind-words" component={PostaMessage} exact />
           <Route path="/post-a-story" component={PostaStory} exact />
           <Route

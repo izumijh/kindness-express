@@ -25,6 +25,7 @@ const MainMenu = (props) => {
           composeMenuisOpen={props.composeMenuisOpen}
           postmanMenuisOpen={props.postmanMenuisOpen}
           clicked={props.togglePostman}
+          routeToProfile={props.routeToProfile}
         />
       </Col>
       <Col

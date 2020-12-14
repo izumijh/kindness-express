@@ -1,0 +1,42 @@
+.wrapper > div {
+  height: 30vh;
+}
+
+/* target the header */
+.wrapper > div > h3:first-child {
+  display: inline-block;
+  width: 70%;
+}
+
+/* target the "See All" button */
+.wrapper > div > h3:nth-child(2) {
+  display: inline-block;
+  width: 30%;
+  text-align: right;
+  color: #c3b613;
+  z-index: 5;
+  position: relative;
+}
+
+.carouselContainer {
+  overflow-x: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  position: absolute;
+  width: 100%;
+  top: 3rem;
+  left: 0;
+}
+
+.carouselContainer svg {
+  flex: 0 0 auto;
+  margin-right: 0.3rem;
+  width: 70vw;
+}
+
+.carouselContainer svg:first-child {
+  flex: 0 0 auto;
+  margin-left: 2rem;
+  margin-right: 0.3rem;
+  width: 70vw;
+}

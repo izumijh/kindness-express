@@ -9,8 +9,10 @@ import classes from "./SlideUpModal.module.css";
 
 // function: to wrap slide up contents
 const SlideUpModal = (props) => {
+  // can pass "withHandle" prop to show the miniBar
+
   return (
-    <Row>
+    <Row className={props.withHandle ? classes.minibarEnabler : null}>
       <Col
         className={
           props.activateIf
