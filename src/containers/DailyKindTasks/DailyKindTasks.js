@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 // import React Bootstrap components
 import Row from "react-bootstrap/Row";
@@ -19,14 +19,18 @@ import ActionButton from "../../components/ActionButton/ActionButton";
 import classes from "./DailyKindTasks.module.css";
 
 const DailyKindTasks = (props) => {
-  let duplicateTaskList = [...KindTasksList];
-  let available = duplicateTaskList.length - 3;
-  let randomisedTasks = duplicateTaskList.splice(
-    Math.floor(Math.random() * available),
-    3
-  );
+  const [currentTasks, newTasks] = useState([]);
 
-  console.log(randomisedTasks);
+  useEffect(() => {
+    let duplicateTaskList = [...KindTasksList];
+    let available = duplicateTaskList.length - 3;
+    let randomisedTasks = duplicateTaskList.splice(
+      Math.floor(Math.random() * available),
+      3
+    );
+
+    newTasks(randomisedTasks);
+  }, []);
 
   return (
     <Row className="KindTasks">
@@ -34,7 +38,7 @@ const DailyKindTasks = (props) => {
         <Content>
           <h3>Daily Kind Tasks</h3>
           <Carousel controls={false} interval={null}>
-            {randomisedTasks.map((task, id) => {
+            {currentTasks.map((task, id) => {
               return (
                 <Carousel.Item className={classes.carouselPage} key={task + id}>
                   <div style={{ backgroundColor: task.colour }}>

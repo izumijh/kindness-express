@@ -12,17 +12,27 @@ import BalloonLetterCard from "../../components/BalloonLetterCard/BalloonLetterC
 import classes from "./MyStories.module.css";
 
 const MyStories = (props) => {
+  const balloonDesigns = [
+    { colour: "#ABDAEA", design: 4 },
+    { colour: "#F8B67B", design: 2 },
+    { colour: "#91D8C9", design: 0 },
+  ];
+
   return (
     <Row className="MyStories">
       <Col xs={12} className={classes.wrapper}>
         <Content>
           <h3>My Stories</h3>
           <div className={classes.carouselContainer}>
-            <BalloonLetterCard />
-            <BalloonLetterCard />
-            <BalloonLetterCard />
-            <BalloonLetterCard />
-            <BalloonLetterCard />
+            {balloonDesigns.map((balloon, id) => {
+              return (
+                <BalloonLetterCard
+                  key={balloon + id}
+                  currentColour={balloon.colour}
+                  currentDesign={balloon.design}
+                />
+              );
+            })}
           </div>
         </Content>
       </Col>

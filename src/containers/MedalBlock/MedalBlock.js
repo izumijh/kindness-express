@@ -73,7 +73,7 @@ const MedalBlock = (props) => {
           <div className={classes.contentText}>
             <h1>Level {userLevel}</h1>
             <p>You donated {"RM" + userLevel} to charity!</p>
-            <ActionButton white fullWidth>
+            <ActionButton white fullWidth clicked={props.toggleHowToLevel}>
               How to Level Up?
             </ActionButton>
           </div>

@@ -9,7 +9,7 @@
 
 .firstBalloon {
   position: relative;
-  left: -30%;
+  left: -42%;
   animation: float-up 6s linear;
   animation-delay: 2s;
 
@@ -17,16 +17,16 @@
 }
 
 .thirdBalloon {
-  position: relative;
-  left: 1%;
+  position: absolute;
+  left: 65%;
   animation: float-up 6s linear;
-  animation-delay: 4s;
+  animation-delay: 2s;
 
   opacity: 0;
 }
 
 /* target the svg */
-.middleBalloon svg {
+ .middleBalloon svg {
   animation: scale 6s linear;
 }
 
@@ -37,8 +37,8 @@
 
 .thirdBalloon svg {
   animation: scale 6s linear;
-  animation-delay: 4s;
-}
+  animation-delay: 2s;
+} 
 
 /* setting keyframes */
 @keyframes float-up {
