@@ -15,6 +15,7 @@ const Logo = (props) => {
       className={
         props.isShown ? `${classes.active} ${classes.wrapper}` : classes.wrapper
       }
+      onClick={props.clicked}
     >
       <Image src={logo} alt="logo" fluid />
     </div>

@@ -17,6 +17,10 @@ import PostingProcess from "./pages/PostingProcess/PostingProcess";
 import LetterInterface from "./pages/LetterInterface/LetterInterface";
 import RegistrationPage from "./pages/RegistrationPage/RegistrationPage";
 import Profile from "./pages/Profile/Profile";
+import FAQPage from "./pages/FAQPage/FAQPage";
+import NewsPage from "./pages/NewsPage/NewsPage";
+import AboutPage from "./pages/AboutPage/AboutPage";
+import CreditsPage from "./pages/CreditsPage/CreditsPage";
 
 import "./App.css";
 
@@ -40,6 +44,10 @@ class App extends Component {
           />
           <Route path="/login" component={RegistrationPage} exact />
           <Route path="/letter" component={LetterInterface} exact />
+          <Route path="/faq" component={FAQPage} exact />
+          <Route path="/news" component={NewsPage} exact />
+          <Route path="/about" component={AboutPage} exact />
+          <Route path="/credits" component={CreditsPage} exact />
           <Route path="/" component={HomePage} />
           <Redirect to="/" />
         </AnimatedSwitch>

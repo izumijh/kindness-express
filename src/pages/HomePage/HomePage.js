@@ -51,7 +51,14 @@ class HomePage extends Component {
       <>
         <Layout
           currentLocation={this.props.location.pathname}
+          // Navigation Menu functions
+          clickedNav={() => this.props.history.push("/menu")}
           clickedBackButton={this.clickedBackButtonHandler}
+          clickedExit={() => this.props.history.push("/")}
+          launchFAQ={() => this.props.history.push("/faq")}
+          launchNews={() => this.props.history.push("/news")}
+          launchAbout={() => this.props.history.push("/about")}
+          launchCredits={() => this.props.history.push("/credits")}
         >
           <TopSpacing />
           <span
