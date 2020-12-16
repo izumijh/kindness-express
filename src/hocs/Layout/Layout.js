@@ -15,9 +15,18 @@ class Layout extends Component {
     return (
       <>
         <Navbar
+          // General Functions
           currentLocation={this.props.currentLocation}
+          clickedNav={this.props.clickedNav}
           clickedBackButton={this.props.clickedBackButton}
           clickedMoreButton={this.props.clickedMoreButton}
+          
+          // Navigation Menu Functions
+          launchFAQ={this.props.launchFAQ}
+          launchNews={this.props.launchNews}
+          launchAbout={this.props.launchAbout}
+          launchCredits={this.props.launchCredits}
+          clickedExit={this.props.clickedExit}
         />
         {this.props.children}
         <Clouds />

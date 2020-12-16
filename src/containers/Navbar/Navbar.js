@@ -8,6 +8,7 @@ import Col from "react-bootstrap/Col";
 import Logo from "./Logo/Logo";
 import BackButton from "./BackButton/BackButton";
 import MoreButton from "./MoreButton/MoreButton";
+import NavigationMenu from "../../components/NavigationMenu/NavigationMenu";
 
 // Import CSS module
 import classes from "./Navbar.module.css";
@@ -25,7 +26,11 @@ const Navbar = (props) => {
     props.currentLocation === "/post-kind-words" ||
     props.currentLocation === "/post-a-story" ||
     props.currentLocation === "/login" ||
-    props.currentLocation === "/profile"
+    props.currentLocation === "/profile" ||
+    props.currentLocation === "/faq" ||
+    props.currentLocation === "/news" ||
+    props.currentLocation === "/about" ||
+    props.currentLocation === "/credits"
   ) {
     showGoBackToHomepage = true;
   }
@@ -40,43 +45,57 @@ const Navbar = (props) => {
   }
 
   return (
-    <Row
-      className={
-        props.currentLocation === "/"
-          ? `${classes.navWrapper} ${classes.moreSpace}`
-          : `${classes.navWrapper}`
-      }
-    >
-      <Col
-        xs={9}
-        className={classes.logoContainer}
-        style={{ padding: "3rem 1rem" }}
+    <>
+      <Row
+        className={
+          props.currentLocation === "/"
+            ? `${classes.navWrapper} ${classes.moreSpace}`
+            : `${classes.navWrapper}`
+        }
       >
-        <Logo isShown={props.currentLocation === "/" ? true : false} />
-
-        <BackButton
-          isShown={showGoBackToHomepage}
-          clicked={props.clickedBackButton}
+        <Col
+          xs={9}
+          className={classes.logoContainer}
+          style={{ padding: "3rem 1rem" }}
         >
-          Go back to Home
-        </BackButton>
+          <Logo
+            isShown={props.currentLocation === "/" ? true : false}
+            clicked={props.clickedNav}
+          />
 
-        <BackButton
-          isShown={
-            props.currentLocation === "/post-a-story/process" ? true : false
-          }
-          clicked={props.clickedBackButton}
-        >
-          Quit Writing
-        </BackButton>
-      </Col>
-      <Col xs={3} style={{ padding: "3rem 1rem" }}>
-        <MoreButton
-          isShown={showMoreButton}
-          clicked={props.clickedMoreButton}
-        />
-      </Col>
-    </Row>
+          <BackButton
+            isShown={showGoBackToHomepage}
+            clicked={props.clickedBackButton}
+          >
+            Go back to Home
+          </BackButton>
+
+          <BackButton
+            isShown={
+              props.currentLocation === "/post-a-story/process" ? true : false
+            }
+            clicked={props.clickedBackButton}
+          >
+            Quit Writing
+          </BackButton>
+        </Col>
+        <Col xs={3} style={{ padding: "3rem 1rem" }}>
+          <MoreButton
+            isShown={showMoreButton}
+            clicked={props.clickedMoreButton}
+          />
+        </Col>
+      </Row>
+      <NavigationMenu
+        activateIf={props.currentLocation === "/menu"}
+        clickedExit={props.clickedExit}
+        // Redirect to other pages
+        launchFAQ={props.launchFAQ}
+        launchNews={props.launchNews}
+        launchAbout={props.launchAbout}
+        launchCredits={props.launchCredits}
+      />
+    </>
   );
 };
 
