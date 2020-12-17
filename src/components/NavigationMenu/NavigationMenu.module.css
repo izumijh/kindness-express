@@ -112,8 +112,9 @@
 .menu > li:nth-child(3) {
   color: #91d8c9;
   line-height: 2rem;
-  padding-bottom: 1rem;
   padding: 0 0.6rem;
+  padding-bottom: 1rem;
+
 }
 
 .menu > li:nth-child(3) > p {
