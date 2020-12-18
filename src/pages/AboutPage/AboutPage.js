@@ -51,27 +51,28 @@ class AboutPage extends Component {
                 <div className={classes.logo}>
                   <Image src={logo} alt="The Kindness Express" fluid />
                 </div>
-                <p>
-                  <b>The Kindness Express</b> is brought to you by{" "}
-                  <b>Kindness Malaysia</b> and <b>Pos Malaysia </b>. It is a
-                  social good campaign that is running in spirits of celebrating
-                  the International Kindness Day (Nov 13).
-                </p>
-                <p>
-                  At the end of this digital campaign, based on the number of
-                  stories submitted,{" "}
-                  <b>
-                    we will donate to several Malaysian charity organisations -
-                    such as CHILD, CPS and SPCA Malaysia.
-                  </b>
-                </p>
-                <p>
-                  From now onwards until the end of November 2021, be sure to
-                  come back often for your dose of local heartwarming stories!
-                  This platform can be your <b>wholesome social media</b>.
-                </p>
-                <p>Let’s remind each other of the magic in kindness!</p>
-
+                <div className={classes.bodytext}>
+                  <p>
+                    <b>The Kindness Express</b> is brought to you by{" "}
+                    <b>Kindness Malaysia</b> and <b>Pos Malaysia </b>. It is a
+                    social good campaign that is running in spirits of
+                    celebrating the International Kindness Day (Nov 13).
+                  </p>
+                  <p>
+                    At the end of this digital campaign, based on the number of
+                    stories submitted,{" "}
+                    <b>
+                      we will donate to several Malaysian charity organisations
+                      - such as CHILD, Murni and SPCA Malaysia.
+                    </b>
+                  </p>
+                  <p>
+                    From now onwards until the end of November 2021, be sure to
+                    come back often for your dose of local heartwarming stories!
+                    This platform can be your <b>wholesome social media</b>.
+                  </p>
+                  <p>Let’s remind each other of the magic in kindness!</p>
+                </div>
                 <div className={classes.socials}>
                   <FontAwesomeIcon icon={faInstagram} />
                   <p>@Kindness.Express</p>

@@ -1,3 +1,23 @@
+.firstPage.active {
+  /* overlaying it on top */
+  position: absolute;
+  left: 0;
+  top: 14vh;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+
+  opacity: 1;
+  transform: translateX(0);
+  transition: 0.6s;
+}
+
+.firstPage {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: 0.6s;
+}
+
 .wrapper {
   text-align: center;
 }
@@ -12,6 +32,7 @@
   padding: 1rem;
 }
 
+/* Non Expanded Post Settings */
 .post {
   text-align: left;
   margin-top: 1rem;
@@ -27,10 +48,55 @@
 }
 
 .date {
-  margin-bottom: 1rem;
+  margin-bottom: 1rem !important;
 }
 
 .text {
   margin: 0;
 }
 
+/* Expanded Post Settings */
+.secondPage {
+  /* overlaying it on top */
+  position: absolute;
+  left: 0;
+  top: 14vh;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.expandedPost {
+  text-align: left;
+  color: #547394;
+  font-family: "Lato";
+
+  opacity: 0;
+  z-index: -2;
+  transform: translateX(100%);
+  transition: 0.6s;
+}
+
+.expandedPost.active {
+  transform: translateX(0%);
+  z-index: 2;
+  opacity: 1;
+}
+
+.expandedPost > div {
+  padding: 1.2rem 1.5rem;
+}
+
+.expandedPost h3 {
+  margin: 0;
+  margin-top: 1rem;
+}
+
+.expandedPost p {
+  margin: 0.5rem 0 2rem;
+}
+
+.expandedPost button {
+  width: 100% !important;
+  margin: 0 0 1rem;
+}
