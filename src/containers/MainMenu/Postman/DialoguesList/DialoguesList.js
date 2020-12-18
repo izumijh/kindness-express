@@ -100,8 +100,7 @@ export const addToHomepage = [
   {
     postmanEmote: 1,
     chat: [
-      `I can do that for you!`,
-      `So that you can launch this website anytime! Like an app on your phone!`,
+      `After installing, you can launch this website like an app on your phone!`,
       `Would you like that?`,
     ],
     response: [`Yes, install`, `No, not now`],

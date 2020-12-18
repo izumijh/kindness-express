@@ -3,6 +3,10 @@ import React, { Component } from "react";
 // import layout
 import Layout from "../../hocs/Layout/Layout";
 
+// import React Bootstrap components
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+
 // Import required components
 import MainMenu from "../../containers/MainMenu/MainMenu";
 import BalloonFeed from "../../containers/BalloonFeed/BalloonFeed";
@@ -61,17 +65,20 @@ class HomePage extends Component {
           launchCredits={() => this.props.history.push("/credits")}
         >
           <TopSpacing />
-          <span
+          <Row
+            style={{ overflow: "hidden", maxHeight: "70vh" }}
             className={
               this.props.location.pathname === "/"
                 ? `${classes.balloons} ${classes.active}`
                 : `${classes.balloons}`
             }
           >
-            <BalloonFeed
-              clickedOnLetter={() => this.props.history.push("/letter")}
-            />
-          </span>
+            <Col xs={12}>
+              <BalloonFeed
+                clickedOnLetter={() => this.props.history.push("/letter")}
+              />
+            </Col>
+          </Row>
           <MainMenu
             composeMenuisOpen={
               this.props.location.pathname === "/compose"
