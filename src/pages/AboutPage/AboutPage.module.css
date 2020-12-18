@@ -1,3 +1,46 @@
 .wrapper {
   text-align: center;
 }
+
+.wrapper h2 {
+  margin: 0;
+  line-height: 2rem !important;
+}
+
+.wrapper > div {
+  min-height: 0;
+  padding: 1rem;
+}
+
+.logo {
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.bodytext {
+  padding: 1.5rem 0;
+  border-top: 2px dashed #547394;
+  border-bottom: 2px dashed #547394;
+}
+
+/* Affect Social wrapper */
+.socials {
+  color: rgb(52, 158, 135);
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  min-height: 0;
+  padding: 1.2rem 1.5rem;
+}
+
+.socials * {
+  color: rgb(60, 170, 146);
+  margin: 0 0.4rem;
+}
+
+/* All divs in social */
+.socials p {
+  font-size: 1.1rem !important;
+  margin-bottom: 0;
+  line-height: 1.8rem;
+}

@@ -1,3 +1,21 @@
 .wrapper {
   text-align: center;
 }
+
+.wrapper h2 {
+  margin: 0;
+  line-height: 2rem !important;
+}
+
+.wrapper > div {
+  min-height: 0;
+  padding: 1rem;
+}
+
+.body h3 {
+  margin: 0;
+}
+
+.body img {
+  margin: .5rem 0 2rem;
+}
