@@ -26,7 +26,9 @@ const OtherProfileActions = (props) => {
       <p>Other Actions</p>
       <ul className={classes.menuWrapper}>
         <li onClick={props.clickedShareProfile}>
-          <FontAwesomeIcon icon={faShareAlt} />
+          <span style={{ fontSize: "1.2rem" }}>
+            <FontAwesomeIcon icon={faShareAlt} />
+          </span>
           Share My Profile
         </li>
         <li onClick={props.clickedEditPref}>

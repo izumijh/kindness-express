@@ -143,7 +143,7 @@ const Postman = (props) => {
         <Image src={icon} alt="postman icon" />
         <Image
           src={bubble}
-          alt="postman icon"
+          alt="tap on me"
           className={
             isOldUser
               ? `${classes.notifBubble}`
@@ -152,7 +152,7 @@ const Postman = (props) => {
         />
         <Image
           src={bubble}
-          alt="postman icon"
+          alt="tap on me"
           className={
             currentTopic === registered["profileIntro"]
               ? `${classes.notifBubble} ${classes.active}`

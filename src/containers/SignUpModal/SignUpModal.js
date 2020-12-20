@@ -27,6 +27,7 @@ const SignUpModal = (props) => {
   const [defaultColour, setColour] = useState("");
 
   useEffect(() => {
+    // Convert value into string
     console.log(JSON.stringify(defaultLanguage));
   }, [defaultLanguage]);
 
@@ -92,7 +93,7 @@ const SignUpModal = (props) => {
                   aria-labelledby="sign-up"
                   className={classes.formWrapper}
                 >
-                  <h1>Almost There!</h1>
+                  <h2>Almost There!</h2>
                   <p style={{ marginBottom: "1.5rem" }}>
                     We want to know more about you!
                   </p>
@@ -153,7 +154,7 @@ const SignUpModal = (props) => {
                     })}
                   </div>
                 </div>
-                {errors.name && errors.language && errors.colour ? (
+                {errors.name || errors.language || errors.colour ? (
                   <p className={classes.error}>{errors.name}</p>
                 ) : null}
                 <NextBackButtons

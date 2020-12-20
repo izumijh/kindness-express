@@ -16,11 +16,13 @@
   top: -30%;
   left: 80%;
   opacity: 0;
+  pointer-events: none;
 }
 
 .notifBubble.active {
   animation: notif 0.6s forwards;
   animation-delay: 1.5s;
+  pointer-events: auto;
 }
 
 @keyframes notif {
@@ -49,7 +51,7 @@
   padding: 5px 0 5px 5px;
   width: 90vw;
   opacity: 0;
-  
+
   z-index: -2;
 }
 
@@ -93,7 +95,7 @@
 
   font-family: "Lato";
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   transition: 0.5s;
 }
 

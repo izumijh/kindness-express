@@ -3,9 +3,6 @@ import React from "react";
 // import ActionButtons and ChatBubbles
 import ActionButton from "../../../../components/ActionButton/ActionButton";
 
-// import css modules
-// import classes from "./UserChoices.module.css";
-
 const UserChoices = (props) => {
   return (
     <>

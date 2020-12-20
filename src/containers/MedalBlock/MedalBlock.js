@@ -26,8 +26,8 @@ const MedalBlock = (props) => {
   const imgArray = [LV1, LV2, LV3, LV4, LV5];
   const [expBar, updateExp] = useState(0);
 
-  const userLevel = 4;
-  const userExp = 60;
+  const userLevel = 2;
+  const userExp = 25;
 
   useEffect(() => {
     for (let i = expBar; i < userExp; i++) {

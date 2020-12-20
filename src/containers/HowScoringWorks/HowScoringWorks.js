@@ -52,7 +52,7 @@ const HowScoringWorks = (props) => {
         </Col>
       </Row>
 
-      <Row className={classes.itemsWrapper}>
+      <Row className={classes.itemsWrapper} style={{marginBottom: ".5rem"}}>
         <Col xs={5} style={{ paddingRight: 0 }}>
           <Image src={photo3} alt="instagram" fluid />
         </Col>

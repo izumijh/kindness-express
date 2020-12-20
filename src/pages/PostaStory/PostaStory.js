@@ -28,6 +28,8 @@ class PostaStory extends Component {
   };
 
   render() {
+    let username = sessionStorage.getItem("username");
+
     return (
       <>
         <Layout
@@ -39,9 +41,9 @@ class PostaStory extends Component {
             <Col
               xs={12}
               className="text-center"
-              style={{ padding: "5vh 1.9rem" }}
+              style={{ padding: "2vh 5vw" }}
             >
-              <h1>Hello, You!</h1>
+              <h1>Hello, {username ? username : "You"}!</h1>
               <h2> Are you ready to spread some positivity?</h2>
               <Image
                 src={illustration}
