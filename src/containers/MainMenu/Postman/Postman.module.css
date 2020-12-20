@@ -41,6 +41,10 @@
   pointer-events: none;
 }
 
+.iconContainer.active .notifBubble {
+  pointer-events: none;
+}
+
 .notifBubble.active {
   animation: notif 0.6s forwards;
   animation-delay: 1.5s;
@@ -62,12 +66,15 @@
 .iconContainer.active {
   bottom: 20rem;
   opacity: 0;
+  z-index: -2;
+  pointer-events: none;
 }
 
 /* When other menus are activated */
 .iconContainer.inactive {
   opacity: 0;
-  z-index: -1;
+  z-index: -2;
+  pointer-events: none;
 }
 
 .chatWrapper {

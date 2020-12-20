@@ -3,6 +3,9 @@ import React, { Component } from "react";
 // import balloons component
 import BalloonLetter from "../../components/BalloonLetter/BalloonLetter";
 
+// import paper plane component
+import PaperPlane from "../../components/PaperPlane/PaperPlane";
+
 // import css modules
 import classes from "./BalloonFeed.module.css";
 
@@ -68,6 +71,13 @@ class BalloonFeed extends Component {
             currentDesign={this.state.balloons[2].design}
             clicked={this.props.clickedOnLetter}
           />
+        </span>
+        <span
+          className={classes.paperPlanes}
+          key={"plane no. " + this.state.key}
+        >
+          <PaperPlane />
+          <PaperPlane />
         </span>
       </span>
     );

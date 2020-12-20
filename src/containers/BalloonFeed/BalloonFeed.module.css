@@ -1,3 +1,4 @@
+/* Balloon Animations */
 /* target the wrapper */
 .middleBalloon {
   position: relative;
@@ -43,7 +44,7 @@
 /* setting keyframes */
 @keyframes float-up {
   0% {
-    top: 50vh;
+    top: 45vh;
     opacity: 0;
   }
   5% {
@@ -60,7 +61,7 @@
 
 @keyframes float-up-slower {
   0% {
-    top: 5vh;
+    top: 0;
     opacity: 0;
   }
   5% {
@@ -72,18 +73,6 @@
   100% {
     top: -40vh;
     opacity: 0;
-  }
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(4deg);
-  }
-  50% {
-    transform: rotate(-4deg);
-  }
-  100% {
-    transform: rotate(4deg);
   }
 }
 
@@ -144,5 +133,52 @@
   .thirdBalloon svg {
     animation: scale-below375 6s linear;
     animation-delay: 4s;
+  }
+}
+
+/* Paper Plane Animations */
+/* First Paper Plane Left to Right */
+.paperPlanes div:first-child {
+  animation: leftToRight 3s linear;
+  animation-delay: 1.5s;
+}
+
+/* Second Paper Plan Right to Left */
+.paperPlanes div:nth-child(2) {
+  animation: rightToLeft 3s linear;
+  animation-delay: 7s;
+}
+
+@keyframes leftToRight {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(250%, -140%);
+  }
+}
+
+@keyframes rightToLeft {
+  0% {
+    opacity: 0;
+    transform: translate(250%, -80%) scaleX(-1);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, -480%) scaleX(-1);
   }
 }
