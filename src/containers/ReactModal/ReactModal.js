@@ -93,8 +93,8 @@ const ReactModal = (props) => {
         >
           {props.doneReacting ? <SuccessAnim /> : null}
           <span style={{ display: "block", transform: "translateY(-20%)" }}>
-            <h1>Story Successfully Reposted!</h1>
-            <p>Thanks for sharing a great story with others!</p>
+            <h1>Reaction Successfully Sent!</h1>
+            <p>Thanks! We're sure they will appreciate it.</p>
             <ActionButton clicked={props.clickedExit}> Done </ActionButton>
           </span>
         </div>

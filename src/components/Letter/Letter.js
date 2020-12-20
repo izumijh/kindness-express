@@ -13,7 +13,7 @@ const Letter = (props) => {
   return (
     <div className={classes.wrapper}>
       <div style={{ textAlign: "right", marginBottom: "2rem" }}>
-        <Image src={stamp} style={{ width: "50%" }} />
+        <Image src={stamp} style={{ width: "47%" }} />
       </div>
       {props.children}
     </div>

@@ -1,9 +1,9 @@
 .formWrapper h2 {
-  margin: 0 0 2rem;
+  margin: 0 0 1rem;
 }
 
 .formWrapper label {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   color: #547394;
 }
 
@@ -11,7 +11,7 @@
 .formWrapper input {
   border-radius: 6px;
   border: 2px dashed #547394;
-  width: 100%;
+  width: 100% !important;
   height: 2rem;
   padding: 1.4rem 1.2rem 1.4rem 3.2rem;
   font-size: 1.1rem;

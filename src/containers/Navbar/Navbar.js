@@ -56,7 +56,7 @@ const Navbar = (props) => {
         <Col
           xs={9}
           className={classes.logoContainer}
-          style={{ padding: "3rem 1rem" }}
+          style={{ padding: "2.5rem 1rem" }}
         >
           <Logo
             isShown={props.currentLocation === "/" ? true : false}
