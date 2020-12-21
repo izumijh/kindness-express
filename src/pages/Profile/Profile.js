@@ -18,9 +18,6 @@ import RedirectModal from "../../containers/RedirectModal/RedirectModal";
 // Import Router Props
 import { withRouter } from "react-router-dom";
 
-// import css module
-// import classes from "./Profile.module.css";
-
 class Profile extends Component {
   state = {
     howToLevelIsOpen: false,

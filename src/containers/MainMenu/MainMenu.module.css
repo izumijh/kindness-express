@@ -1,6 +1,7 @@
 .menu {
   position: fixed;
   bottom: -70vh;
+  z-index: 99;
 
   transition: 0.4s;
 }

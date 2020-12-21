@@ -23,6 +23,7 @@ const Navbar = (props) => {
     props.currentLocation === "/compose" ||
     props.currentLocation === "/postman" ||
     props.currentLocation === "/letter" ||
+    props.currentLocation === "/paperplane" ||
     props.currentLocation === "/post-kind-words" ||
     props.currentLocation === "/post-a-story" ||
     props.currentLocation === "/login" ||
@@ -39,6 +40,7 @@ const Navbar = (props) => {
   let showMoreButton = false;
   if (
     props.currentLocation === "/letter" ||
+    props.currentLocation === "/paperplane" ||
     props.currentLocation === "/profile"
   ) {
     showMoreButton = true;
@@ -79,7 +81,7 @@ const Navbar = (props) => {
             Quit Writing
           </BackButton>
         </Col>
-        <Col xs={3} style={{ padding: "3rem 1rem" }}>
+        <Col xs={3} style={{ padding: "2.5rem 1rem" }}>
           <MoreButton
             isShown={showMoreButton}
             clicked={props.clickedMoreButton}

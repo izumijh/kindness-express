@@ -21,9 +21,9 @@ import calendar from "../../assets/images/calendar.svg";
 import location from "../../assets/images/map-pin.svg";
 
 // import css modules
-import classes from "./LetterInterface.module.css";
+import classes from "./MessageInterface.module.css";
 
-class LetterInterface extends Component {
+class MessageInterface extends Component {
   state = {
     isReposting: false,
     doneReposting: false,
@@ -43,31 +43,20 @@ class LetterInterface extends Component {
         <TopSpacing />
         <Row>
           <Col xs={12} className={classes.wrapper}>
-            <Letter>
+            <Letter alt>
               <p>
-                <b>
-                  Dear stranger, I hope this story will prove that being kind is
-                  great!
-                </b>
-              </p>
-              <p>
-                I was heading to my car today and an aunty walked up to me
-                asking whether I have any parking coupons to sell her. ( She
-                doesn’t know how to use a smartphone to pay for parking. )
-              </p>
-              <p>
-                I found extras in my car, and I gave her one. She was happy and
-                wanted to pay me back, but I refused. It feels great to be able
-                to help someone out!
+                “You are more than the amount of productivity you have done
+                today. Remember to give yourself a lot of breaks and drink more
+                water!”
               </p>
 
-              <p>{`- L`}</p>
+              <p>{`- mel`}</p>
 
               <span className={classes.dashedLine}></span>
 
               <p className={classes.details}>
                 <Image src={calendar} alt="icon of a calendar" />
-                28/11/2020
+                30/12/2020
               </p>
               <p className={classes.details}>
                 <Image src={location} alt="icon that means location" />
@@ -76,7 +65,7 @@ class LetterInterface extends Component {
             </Letter>
             <ReactionCounter />
             <ReactionToolbar
-              passingOn="story"
+              passingOn="message"
               clickedRepost={() =>
                 this.setState({ isReposting: true, doneReposting: false })
               }
@@ -95,7 +84,7 @@ class LetterInterface extends Component {
           </Col>
         </Row>
         <RepostModal
-          repostingA="story"
+          repostingA="message"
           isReposting={this.state.isReposting}
           doneReposting={this.state.doneReposting}
           clickedRepost={() => this.setState({ doneReposting: true })}
@@ -118,4 +107,4 @@ class LetterInterface extends Component {
   }
 }
 
-export default LetterInterface;
+export default MessageInterface;

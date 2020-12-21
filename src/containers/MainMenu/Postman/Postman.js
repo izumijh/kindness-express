@@ -141,6 +141,15 @@ const Postman = (props) => {
       {/* Icon Container, Hidden When Menu is Open */}
       <div className={displayStatus} onClick={props.clicked}>
         <Image src={icon} alt="postman icon" />
+        <div
+          className={
+            isOldUser || currentTopic === registered["profileIntro"]
+              ? `${classes.notifCircle}`
+              : `${classes.notifCircle} ${classes.active}`
+          }
+        >
+          {1}
+        </div>
         <Image
           src={bubble}
           alt="tap on me"
