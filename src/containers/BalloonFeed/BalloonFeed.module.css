@@ -139,7 +139,7 @@
 /* Paper Plane Animations */
 /* First Paper Plane Left to Right */
 .paperPlanes div:first-child {
-  animation: leftToRight 3s linear;
+  animation: leftToRight 2.6s linear;
   animation-delay: 1.5s;
 }
 
@@ -162,14 +162,14 @@
   }
   100% {
     opacity: 0;
-    transform: translate(250%, -140%);
+    transform: translate(260%, -110%);
   }
 }
 
 @keyframes rightToLeft {
   0% {
     opacity: 0;
-    transform: translate(250%, -80%) scaleX(-1);
+    transform: translate(260%, -80%) scaleX(-1);
   }
   10% {
     opacity: 1;

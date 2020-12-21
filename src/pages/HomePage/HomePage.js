@@ -76,6 +76,7 @@ class HomePage extends Component {
             <Col xs={12}>
               <BalloonFeed
                 clickedOnLetter={() => this.props.history.push("/letter")}
+                clickedOnPlane={() => this.props.history.push("/paperplane")}
               />
             </Col>
           </Row>

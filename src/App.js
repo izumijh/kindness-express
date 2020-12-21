@@ -15,6 +15,7 @@ import PostaMessage from "./pages/PostaMessage/PostaMessage";
 import PostaStory from "./pages/PostaStory/PostaStory";
 import PostingProcess from "./pages/PostingProcess/PostingProcess";
 import LetterInterface from "./pages/LetterInterface/LetterInterface";
+import MessageInterface from "./pages/MessageInterface/MessageInterface";
 import RegistrationPage from "./pages/RegistrationPage/RegistrationPage";
 import Profile from "./pages/Profile/Profile";
 import FAQPage from "./pages/FAQPage/FAQPage";
@@ -43,6 +44,7 @@ class App extends Component {
             exact
           />
           <Route path="/login" component={RegistrationPage} exact />
+          <Route path="/paperplane" component={MessageInterface} exact />
           <Route path="/letter" component={LetterInterface} exact />
           <Route path="/faq" component={FAQPage} exact />
           <Route path="/news" component={NewsPage} exact />

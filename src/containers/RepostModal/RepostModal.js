@@ -14,8 +14,6 @@ import SuccessAnim from "../../assets/animations/success/success";
 import classes from "./RepostModal.module.css";
 
 const RepostModal = (props) => {
-  // If detected done reposting, change the interface
-
   return (
     <span className={classes.wrapper}>
       <SlideUpModal
@@ -38,7 +36,7 @@ const RepostModal = (props) => {
                 : `${classes.illust}`
             }
           />
-          <h1>Pass this story on?</h1>
+          <h1>Pass this {props.repostingA} on?</h1>
           <p>
             Give other people on this website a chance to read about this story
             too.
@@ -59,9 +57,18 @@ const RepostModal = (props) => {
               : `${classes.doneWrapper}`
           }
         >
-          {props.doneReposting ? <SuccessAnim /> : null}
-          <span style={{ display: "block", transform: "translateY(-20%)" }}>
-            <h1>Story Successfully Reposted!</h1>
+          {props.doneReposting ? (
+            <div style={{ transform: "translateY(-10%)" }}>
+              <SuccessAnim />
+            </div>
+          ) : null}
+          <span style={{ display: "block", transform: "translateY(-35%)" }}>
+            <h1>
+              <span style={{ textTransform: "capitalize" }}>
+                {props.repostingA}
+              </span>{" "}
+              is Reposted!
+            </h1>
             <p>Thanks for sharing a great story with others!</p>
             <ActionButton clicked={props.clickedExit}> Done </ActionButton>
           </span>

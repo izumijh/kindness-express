@@ -11,13 +11,14 @@ import send from "../../assets/images/buttons/send-btn.svg";
 import classes from "./ReactionToolbar.module.css";
 
 const ReactionToolbar = (props) => {
+  // Give a "passingOn" props to its parent JSX to set the Repost button text
   return (
     <div className={classes.container}>
       <Content>
         <p>Feel inspired? Spread the positivity!</p>
         <button className={classes.button} onClick={props.clickedRepost}>
           <img src={repost} alt="repost icon" className={classes.repostBtn} />
-          Pass this story on
+          Pass this {props.passingOn} on
         </button>
         <button className={classes.button} onClick={props.clickedReact}>
           <img src={send} alt="send icon" className={classes.sendBtn} />

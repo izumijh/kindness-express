@@ -28,3 +28,15 @@
   background: url(../../assets/images/letterframe.svg) top left repeat-x,
     url(../../assets/images/letterframe.svg) bottom left repeat-x;
 }
+
+.wrapper.alt:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url(../../assets/images/letterframe_alt.svg) top left repeat-x,
+    url(../../assets/images/letterframe_alt.svg) bottom left repeat-x;
+}

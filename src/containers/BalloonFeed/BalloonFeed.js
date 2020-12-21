@@ -72,12 +72,10 @@ class BalloonFeed extends Component {
             clicked={this.props.clickedOnLetter}
           />
         </span>
-        <span
-          className={classes.paperPlanes}
-          key={"plane no. " + this.state.key}
-        >
-          <PaperPlane />
-          <PaperPlane />
+
+        <span className={classes.paperPlanes}>
+          <PaperPlane clicked={this.props.clickedOnPlane} />
+          <PaperPlane clicked={this.props.clickedOnPlane} />
         </span>
       </span>
     );
