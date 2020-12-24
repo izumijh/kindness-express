@@ -51,7 +51,7 @@ class App extends Component {
           <Route path="/news" component={NewsPage} exact />
           <Route path="/about" component={AboutPage} exact />
           <Route path="/credits" component={CreditsPage} exact />
-          <Route path="/landing" component={LandingPage} />
+          <Route path="/landing" component={LandingPage} exact />
           <Route path="/" component={HomePage} />
           <Redirect to="/" />
         </AnimatedSwitch>

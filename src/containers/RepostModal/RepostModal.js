@@ -1,7 +1,7 @@
 import React from "react";
 
 // import Lottie
-import Lottie from "react-lottie";
+import Lottie from "react-lottie-wrapper";
 import * as animationData from "../../assets/animations/success/success.json";
 
 // import required components
@@ -18,7 +18,7 @@ const RepostModal = (props) => {
   const lottieOptions = {
     loop: false,
     autoplay: true,
-    animationData: animationData.default,
+    animationData: JSON.parse(JSON.stringify(animationData.default)),
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },

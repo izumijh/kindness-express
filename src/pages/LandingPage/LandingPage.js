@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 // import Lottie
-import Lottie from "react-lottie";
+import Lottie from "react-lottie-wrapper";
 import * as animationData from "../../assets/animations/loading/fetching.json";
 
 // Import Router Props
@@ -43,7 +43,7 @@ class LandingPage extends Component {
     const options = {
       loop: true,
       autoplay: true,
-      animationData: animationData.default,
+      animationData: JSON.parse(JSON.stringify(animationData.default)),
       rendererSettings: {
         preserveAspectRatio: "xMidYMid slice",
       },
