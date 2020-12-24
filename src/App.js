@@ -10,6 +10,7 @@ import { AnimatedSwitch } from "react-router-transition";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 // Import Pages
+import LandingPage from "./pages/LandingPage/LandingPage";
 import HomePage from "./pages/HomePage/HomePage";
 import PostaMessage from "./pages/PostaMessage/PostaMessage";
 import PostaStory from "./pages/PostaStory/PostaStory";
@@ -50,6 +51,7 @@ class App extends Component {
           <Route path="/news" component={NewsPage} exact />
           <Route path="/about" component={AboutPage} exact />
           <Route path="/credits" component={CreditsPage} exact />
+          <Route path="/landing" component={LandingPage} />
           <Route path="/" component={HomePage} />
           <Redirect to="/" />
         </AnimatedSwitch>
