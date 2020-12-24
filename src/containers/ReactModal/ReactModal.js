@@ -10,7 +10,7 @@ import Love from "./Reactions/Love";
 import Wow from "./Reactions/Wow";
 
 // import Lottie
-import Lottie from "react-lottie";
+import Lottie from "react-lottie-wrapper";
 import * as animationData from "../../assets/animations/success/success.json";
 
 // import css modules
@@ -20,7 +20,7 @@ const ReactModal = (props) => {
   const lottieOptions = {
     loop: false,
     autoplay: true,
-    animationData: animationData.default,
+    animationData: JSON.parse(JSON.stringify(animationData.default)),
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
