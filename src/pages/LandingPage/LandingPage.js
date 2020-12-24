@@ -35,7 +35,7 @@ class LandingPage extends Component {
     if (!this.state.loadComplete) {
       setTimeout(() => {
         this.setState({ loadComplete: true });
-      }, 2000);
+      }, 6000);
     }
   }
 

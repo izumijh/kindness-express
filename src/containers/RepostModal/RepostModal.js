@@ -1,5 +1,9 @@
 import React from "react";
 
+// import Lottie
+import Lottie from "react-lottie";
+import * as animationData from "../../assets/animations/success/success.json";
+
 // import required components
 import SlideUpModal from "../../components/SlideUpModal/SlideUpModal";
 import ActionButton from "../../components/ActionButton/ActionButton";
@@ -7,13 +11,19 @@ import ActionButton from "../../components/ActionButton/ActionButton";
 // import required svg Images
 import repost from "../../assets/images/illustrations/export-illust.svg";
 
-// import lottie animation
-import SuccessAnim from "../../assets/animations/success/success";
-
 // import css modules
 import classes from "./RepostModal.module.css";
 
 const RepostModal = (props) => {
+  const lottieOptions = {
+    loop: false,
+    autoplay: true,
+    animationData: animationData.default,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   return (
     <span className={classes.wrapper}>
       <SlideUpModal
@@ -57,11 +67,11 @@ const RepostModal = (props) => {
               : `${classes.doneWrapper}`
           }
         >
-          {props.doneReposting ? (
-            <div style={{ transform: "translateY(-10%)" }}>
-              <SuccessAnim />
-            </div>
-          ) : null}
+          <Lottie
+            options={lottieOptions}
+            width={"55%"}
+            isStopped={props.doneReposting === false}
+          />
           <span style={{ display: "block", transform: "translateY(-35%)" }}>
             <h1>
               <span style={{ textTransform: "capitalize" }}>

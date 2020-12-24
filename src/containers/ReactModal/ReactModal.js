@@ -9,13 +9,23 @@ import Haha from "./Reactions/Haha";
 import Love from "./Reactions/Love";
 import Wow from "./Reactions/Wow";
 
-// import lottie animation
-import SuccessAnim from "../../assets/animations/success/success";
+// import Lottie
+import Lottie from "react-lottie";
+import * as animationData from "../../assets/animations/success/success.json";
 
 // import css modules
 import classes from "./ReactModal.module.css";
 
 const ReactModal = (props) => {
+  const lottieOptions = {
+    loop: false,
+    autoplay: true,
+    animationData: animationData.default,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   return (
     <span className={classes.wrapper}>
       <SlideUpModal
@@ -91,7 +101,11 @@ const ReactModal = (props) => {
               : `${classes.doneWrapper}`
           }
         >
-          {props.doneReacting ? <SuccessAnim /> : null}
+          <Lottie
+            options={lottieOptions}
+            width={"55%"}
+            isStopped={props.doneReacting === false}
+          />
           <span style={{ display: "block", transform: "translateY(-20%)" }}>
             <h1>Reaction Successfully Sent!</h1>
             <p>Thanks! We're sure they will appreciate it.</p>
