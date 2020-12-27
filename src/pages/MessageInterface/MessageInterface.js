@@ -20,6 +20,9 @@ import OtherLetterActions from "../../containers/OtherLetterActions/OtherLetterA
 import calendar from "../../assets/images/calendar.svg";
 import location from "../../assets/images/map-pin.svg";
 
+// import kind words
+import { messages } from "../../database/kind-words/kind-words";
+
 // import css modules
 import classes from "./MessageInterface.module.css";
 
@@ -34,6 +37,8 @@ class MessageInterface extends Component {
   };
 
   render() {
+    let index = Math.floor(Math.random() * Math.floor(messages.length));
+
     return (
       <Layout
         currentLocation={this.props.location.pathname}
@@ -44,23 +49,19 @@ class MessageInterface extends Component {
         <Row>
           <Col xs={12} className={classes.wrapper}>
             <Letter alt>
-              <p>
-                “You are more than the amount of productivity you have done
-                today. Remember to give yourself a lot of breaks and drink more
-                water!”
-              </p>
+              {messages[index].content}
 
-              <p>{`- mel`}</p>
+              <p>{messages[index].author}</p>
 
               <span className={classes.dashedLine}></span>
 
               <p className={classes.details}>
                 <Image src={calendar} alt="icon of a calendar" />
-                30/12/2020
+                {messages[index].date}
               </p>
               <p className={classes.details}>
                 <Image src={location} alt="icon that means location" />
-                The One Academy, Malaysia
+                {messages[index].location}
               </p>
             </Letter>
             <ReactionCounter />

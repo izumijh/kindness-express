@@ -20,6 +20,9 @@ import OtherLetterActions from "../../containers/OtherLetterActions/OtherLetterA
 import calendar from "../../assets/images/calendar.svg";
 import location from "../../assets/images/map-pin.svg";
 
+// import kind stories
+import { stories } from "../../database/kind-stories/kind-stories";
+
 // import css modules
 import classes from "./LetterInterface.module.css";
 
@@ -34,6 +37,8 @@ class LetterInterface extends Component {
   };
 
   render() {
+    let story = Math.floor(Math.random() * Math.floor(stories.length));
+
     return (
       <Layout
         currentLocation={this.props.location.pathname}
@@ -44,34 +49,19 @@ class LetterInterface extends Component {
         <Row>
           <Col xs={12} className={classes.wrapper}>
             <Letter>
-              <p>
-                <b>
-                  Dear stranger, I hope this story will prove that being kind is
-                  great!
-                </b>
-              </p>
-              <p>
-                I was heading to my car today and an aunty walked up to me
-                asking whether I have any parking coupons to sell her. ( She
-                doesn’t know how to use a smartphone to pay for parking. )
-              </p>
-              <p>
-                I found extras in my car, and I gave her one. She was happy and
-                wanted to pay me back, but I refused. It feels great to be able
-                to help someone out!
-              </p>
+              {stories[story].content}
 
-              <p>{`- L`}</p>
+              <p>{stories[story].author}</p>
 
               <span className={classes.dashedLine}></span>
 
               <p className={classes.details}>
                 <Image src={calendar} alt="icon of a calendar" />
-                28/11/2020
+                {stories[story].date}
               </p>
               <p className={classes.details}>
                 <Image src={location} alt="icon that means location" />
-                The One Academy, Malaysia
+                {stories[story].location}
               </p>
             </Letter>
             <ReactionCounter />
