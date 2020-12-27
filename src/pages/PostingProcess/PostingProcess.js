@@ -62,23 +62,23 @@ class PostingProcess extends Component {
   };
 
   quitWritingHandler = () => {
-    // preserve after-tutorial status if true
-    let isOldUser = sessionStorage.getItem("doneTutorial");
-    let registeredUser = sessionStorage.getItem("registeredUser");
-    if (isOldUser || registeredUser) {
-      // sessionStorage.clear();
-      // sessionStorage.setItem("doneTutorial", isOldUser);
-      // sessionStorage.setItem("doneTutorial", registeredUser);
-      this.props.history.push("/");
-    } else {
-      // sessionStorage.clear();
-      this.props.history.push("/");
-    }
+    // remove all related details about that letter
+    sessionStorage.removeItem("currentDesign");
+    sessionStorage.removeItem("balloonColour");
+    sessionStorage.removeItem("starter");
+    sessionStorage.removeItem("story");
+    sessionStorage.removeItem("location");
+    sessionStorage.removeItem("date");
+    sessionStorage.removeItem("authorName");
+
+    // go back to homepage
+    this.props.history.push("/");
   };
 
   goBackHandler = () => {
     if (this.state.step === 1) {
       // If this is the first step, and we can't go back any further
+      // Remove all records
       this.setState({ isQuitting: true });
     } else {
       // If we can still move back a step
@@ -106,6 +106,7 @@ class PostingProcess extends Component {
 
   storySentHandler = () => {
     this.props.history.push("/");
+    sessionStorage.setItem("letterSent", true);
     this.setState({ sendingStory: false, stopAnimation: true });
   };
 

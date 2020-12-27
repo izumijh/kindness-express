@@ -36,6 +36,7 @@ class PostaMessage extends Component {
   };
 
   submitMessageHandler = () => {
+    sessionStorage.setItem("planeSent", true)
     this.setState({ sendingStory: true });
   };
 

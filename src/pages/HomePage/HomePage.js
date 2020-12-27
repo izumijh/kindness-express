@@ -11,6 +11,8 @@ import Col from "react-bootstrap/Col";
 import MainMenu from "../../containers/MainMenu/MainMenu";
 import BalloonFeed from "../../containers/BalloonFeed/BalloonFeed";
 import TopSpacing from "../../components/TopSpacing/TopSpacing";
+import BalloonLetter from "../../components/BalloonLetter/BalloonLetter";
+import PaperPlane from "../../components/PaperPlane/PaperPlane";
 
 // Import Router Props
 import { withRouter } from "react-router-dom";
@@ -47,6 +49,33 @@ class HomePage extends Component {
     } else {
       this.props.history.push("/postman");
       this.setState({ postmanMenuisOpen: true });
+    }
+  };
+
+  componentDidMount = () => {
+    if (sessionStorage.getItem("planeSent")) {
+      setTimeout(() => {
+        // Remove Kind Words Records 
+        sessionStorage.removeItem("kindwords");
+
+        // remove animation
+        sessionStorage.removeItem("planeSent");
+      }, 9000);
+    }
+    if (sessionStorage.getItem("letterSent")) {
+      setTimeout(() => {
+        // Remove all records
+        sessionStorage.removeItem("currentDesign");
+        sessionStorage.removeItem("balloonColour");
+        sessionStorage.removeItem("starter");
+        sessionStorage.removeItem("story");
+        sessionStorage.removeItem("location");
+        sessionStorage.removeItem("date");
+        sessionStorage.removeItem("authorName");
+
+        // remove animation
+        sessionStorage.removeItem("letterSent");
+      }, 9000);
     }
   };
 
@@ -100,6 +129,34 @@ class HomePage extends Component {
             startLogin={() => this.props.history.push("/login")}
             routeToProfile={() => this.props.history.push("/profile")}
           />
+          <Row>
+            <Col
+              xs={4}
+              className={
+                sessionStorage.getItem("letterSent")
+                  ? `${classes.newLetter} ${classes.active}`
+                  : classes.newLetter
+              }
+            >
+              <BalloonLetter
+                currentDesign={parseInt(
+                  sessionStorage.getItem("currentDesign")
+                )}
+                currentColour={sessionStorage.getItem("balloonColour")}
+              />
+            </Col>
+
+            <Col
+              xs={4}
+              className={
+                sessionStorage.getItem("planeSent")
+                  ? `${classes.newPlane} ${classes.active}`
+                  : classes.newPlane
+              }
+            >
+              <PaperPlane />
+            </Col>
+          </Row>
         </Layout>
       </>
     );
