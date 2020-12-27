@@ -80,6 +80,10 @@ textarea {
   color: #547394;
 }
 
+input[type="date"] {
+  background-color: #fdfdfd;
+}
+
 ::-webkit-inner-spin-button,
 ::-webkit-calendar-picker-indicator {
   display: none;

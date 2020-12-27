@@ -19,6 +19,7 @@ import FormStepTwo from "../../containers/Forms/StepTwo";
 import FormStepThree from "../../containers/Forms/StepThree";
 import FormStepFour from "../../containers/Forms/StepFour";
 import QuitWritingModal from "../../containers/QuitWritingModal/QuitWritingModal";
+import SendingModal from "../../containers/SendingModal/SendingModal";
 
 // import CSS modules
 import classes from "./PostingProcess.module.css";
@@ -28,6 +29,17 @@ class PostingProcess extends Component {
     step: 1,
     stepAnim: [classes.slideIn, classes.idle, classes.idle, classes.idle],
     isQuitting: false,
+    sendingStory: false,
+    stopAnimation: true,
+  };
+
+  componentDidUpdate = () => {
+    // Make animation happen after timer of 0.6s ends
+    if (this.state.sendingStory && this.state.stopAnimation) {
+      setTimeout(() => {
+        this.setState({ stopAnimation: false });
+      }, 600);
+    }
   };
 
   toggleQuitHandler = () => {
@@ -66,8 +78,10 @@ class PostingProcess extends Component {
 
   goBackHandler = () => {
     if (this.state.step === 1) {
+      // If this is the first step, and we can't go back any further
       this.setState({ isQuitting: true });
     } else {
+      // If we can still move back a step
       // create our own array
       let animations = [...this.state.stepAnim];
       // fade out current step
@@ -87,7 +101,12 @@ class PostingProcess extends Component {
     if (!sessionStorage.getItem("currentDesign")) {
       sessionStorage.setItem("currentDesign", 0);
     }
-    alert("letter submitted!");
+    this.setState({ sendingStory: true });
+  };
+
+  storySentHandler = () => {
+    this.props.history.push("/");
+    this.setState({ sendingStory: false, stopAnimation: true });
   };
 
   render() {
@@ -152,6 +171,18 @@ class PostingProcess extends Component {
             <QuitWritingModal
               quitWriting={this.quitWritingHandler}
               continueWriting={this.toggleQuitHandler}
+            />
+          </Row>
+          <Row
+            className={
+              this.state.sendingStory
+                ? `${classes.sendModal} ${classes.active}`
+                : `${classes.sendModal}`
+            }
+          >
+            <SendingModal
+              isStopped={this.state.stopAnimation}
+              afterAnimation={this.storySentHandler}
             />
           </Row>
         </Layout>

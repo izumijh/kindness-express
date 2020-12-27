@@ -1,3 +1,17 @@
 .error {
-    color: rgb(199, 48, 48);
+  color: rgb(199, 48, 48);
+}
+
+.formWrapper svg {
+  overflow: visible;
+}
+
+@media screen and (max-width: 374px) and (max-height: 811px) {
+  /* prevent clipping of envelope svg in smaller screen devices */
+  .formWrapper svg {
+    height: 40vh;
+    display: block;
+    margin: auto;
+    width: 31vw;
   }
+}

@@ -13,9 +13,9 @@ import classes from "./RecentStories.module.css";
 
 const RecentStories = (props) => {
   const balloonDesigns = [
-    { colour: "#F8B67B", design: 0 },
-    { colour: "#ABDAEA", design: 2 },
-    { colour: "#91D8C9", design: 4 },
+    { colour: "#F8B67B", design: 0, label: "A's Story" },
+    { colour: "#ABDAEA", design: 2, label: "B's Story" },
+    { colour: "#91D8C9", design: 4, label: "C's Story" },
   ];
 
   return (
@@ -27,11 +27,15 @@ const RecentStories = (props) => {
           <div className={classes.carouselContainer}>
             {balloonDesigns.map((balloon, id) => {
               return (
-                <BalloonLetterCard
-                  key={balloon + id}
-                  currentColour={balloon.colour}
-                  currentDesign={balloon.design}
-                />
+                <>
+                  <BalloonLetterCard
+                    key={balloon + id}
+                    label={balloon.label}
+                    currentColour={balloon.colour}
+                    currentDesign={balloon.design}
+                    clicked={props.clickedViewStory}
+                  />
+                </>
               );
             })}
           </div>

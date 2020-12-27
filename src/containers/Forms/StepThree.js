@@ -52,6 +52,7 @@ const StepThree = (props) => {
               type="text"
               name="location"
               className={classes.locationInput}
+              autoComplete="off"
             />
             {errors.location && touched.location ? (
               <p className={classes.error}>{errors.location}</p>
