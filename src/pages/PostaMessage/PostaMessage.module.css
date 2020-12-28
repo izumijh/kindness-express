@@ -28,3 +28,19 @@
   color: #f8b67b;
   margin: 0.2rem 0 0.5rem;
 }
+
+.sendModal > div {
+  opacity: 0;
+  z-index: -1;
+  transition: 0.6s ease;
+}
+
+.sendModal.active > div {
+  opacity: 1;
+  z-index: 99999;
+}
+
+/* make the white border lesser */
+.sendModal > div > div {
+  padding: 1.5rem 1.5rem;
+}

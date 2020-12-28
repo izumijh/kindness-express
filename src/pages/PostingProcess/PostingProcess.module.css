@@ -21,6 +21,22 @@
   z-index: 99999;
 }
 
+.sendModal > div {
+  opacity: 0;
+  z-index: -1;
+  transition: 0.6s ease;
+}
+
+.sendModal.active > div {
+  opacity: 1;
+  z-index: 99999;
+}
+
+/* make the white border lesser */
+.sendModal > div > div {
+  padding: 1.5rem 1.5rem;
+}
+
 /* Animation Classes */
 .idle {
   opacity: 0;

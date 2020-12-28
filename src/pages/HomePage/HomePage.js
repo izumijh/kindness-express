@@ -11,6 +11,9 @@ import Col from "react-bootstrap/Col";
 import MainMenu from "../../containers/MainMenu/MainMenu";
 import BalloonFeed from "../../containers/BalloonFeed/BalloonFeed";
 import TopSpacing from "../../components/TopSpacing/TopSpacing";
+import BalloonLetter from "../../components/BalloonLetter/BalloonLetter";
+import PaperPlane from "../../components/PaperPlane/PaperPlane";
+import FeatureWIPModal from "../../containers/FeatureWIPModal/FeatureWIPModal";
 
 // Import Router Props
 import { withRouter } from "react-router-dom";
@@ -47,6 +50,44 @@ class HomePage extends Component {
     } else {
       this.props.history.push("/postman");
       this.setState({ postmanMenuisOpen: true });
+    }
+  };
+
+  clickedOwnStoryHandler = () => {
+    // Check if there really is an animation playing right now
+    if (sessionStorage.getItem("letterSent")) {
+      // Tell the next page that user is currently reading own story
+      sessionStorage.setItem("readingOwnStory", true);
+
+      // Redirect the user
+      this.props.history.push("/letter");
+    }
+  };
+
+  clickedOwnMessageHandler = () => {
+    // Check if there really is an animation playing right now
+    if (sessionStorage.getItem("planeSent")) {
+      // Tell the next page that user is currently reading own story
+      sessionStorage.setItem("readingOwnMessage", true);
+
+      // Redirect the user
+      this.props.history.push("/paperplane");
+    }
+  };
+
+  componentDidMount = () => {
+    // If plane/story sent animation is playing. set timeout to remove its effects later
+    if (sessionStorage.getItem("planeSent")) {
+      setTimeout(() => {
+        // remove animation
+        sessionStorage.removeItem("planeSent");
+      }, 9000);
+    }
+    if (sessionStorage.getItem("letterSent")) {
+      setTimeout(() => {
+        // remove animation
+        sessionStorage.removeItem("letterSent");
+      }, 9000);
     }
   };
 
@@ -99,6 +140,42 @@ class HomePage extends Component {
             }
             startLogin={() => this.props.history.push("/login")}
             routeToProfile={() => this.props.history.push("/profile")}
+            featureNotAvailable={() =>
+              this.setState({ featureNotAvailable: true })
+            }
+          />
+          <Row>
+            <Col
+              xs={4}
+              className={
+                sessionStorage.getItem("letterSent")
+                  ? `${classes.newLetter} ${classes.active}`
+                  : classes.newLetter
+              }
+            >
+              <BalloonLetter
+                currentDesign={parseInt(
+                  sessionStorage.getItem("currentDesign")
+                )}
+                currentColour={sessionStorage.getItem("balloonColour")}
+                clicked={this.clickedOwnStoryHandler}
+              />
+            </Col>
+
+            <Col
+              xs={4}
+              className={
+                sessionStorage.getItem("planeSent")
+                  ? `${classes.newPlane} ${classes.active}`
+                  : classes.newPlane
+              }
+            >
+              <PaperPlane clicked={this.clickedOwnMessageHandler} />
+            </Col>
+          </Row>
+          <FeatureWIPModal
+            activateIf={this.state.featureNotAvailable}
+            clickedExit={() => this.setState({ featureNotAvailable: false })}
           />
         </Layout>
       </>

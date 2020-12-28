@@ -19,6 +19,7 @@ import FormStepTwo from "../../containers/Forms/StepTwo";
 import FormStepThree from "../../containers/Forms/StepThree";
 import FormStepFour from "../../containers/Forms/StepFour";
 import QuitWritingModal from "../../containers/QuitWritingModal/QuitWritingModal";
+import SendingModal from "../../containers/SendingModal/SendingModal";
 
 // import CSS modules
 import classes from "./PostingProcess.module.css";
@@ -28,6 +29,17 @@ class PostingProcess extends Component {
     step: 1,
     stepAnim: [classes.slideIn, classes.idle, classes.idle, classes.idle],
     isQuitting: false,
+    sendingStory: false,
+    stopAnimation: true,
+  };
+
+  componentDidUpdate = () => {
+    // Make animation happen after timer of 0.6s ends
+    if (this.state.sendingStory && this.state.stopAnimation) {
+      setTimeout(() => {
+        this.setState({ stopAnimation: false });
+      }, 600);
+    }
   };
 
   toggleQuitHandler = () => {
@@ -50,24 +62,26 @@ class PostingProcess extends Component {
   };
 
   quitWritingHandler = () => {
-    // preserve after-tutorial status if true
-    let isOldUser = sessionStorage.getItem("doneTutorial");
-    let registeredUser = sessionStorage.getItem("registeredUser");
-    if (isOldUser || registeredUser) {
-      // sessionStorage.clear();
-      // sessionStorage.setItem("doneTutorial", isOldUser);
-      // sessionStorage.setItem("doneTutorial", registeredUser);
-      this.props.history.push("/");
-    } else {
-      // sessionStorage.clear();
-      this.props.history.push("/");
-    }
+    // remove all related details about that letter
+    sessionStorage.removeItem("currentDesign");
+    sessionStorage.removeItem("balloonColour");
+    sessionStorage.removeItem("starter");
+    sessionStorage.removeItem("story");
+    sessionStorage.removeItem("location");
+    sessionStorage.removeItem("date");
+    sessionStorage.removeItem("authorName");
+
+    // go back to homepage
+    this.props.history.push("/");
   };
 
   goBackHandler = () => {
     if (this.state.step === 1) {
+      // If this is the first step, and we can't go back any further
+      // Remove all records
       this.setState({ isQuitting: true });
     } else {
+      // If we can still move back a step
       // create our own array
       let animations = [...this.state.stepAnim];
       // fade out current step
@@ -87,7 +101,13 @@ class PostingProcess extends Component {
     if (!sessionStorage.getItem("currentDesign")) {
       sessionStorage.setItem("currentDesign", 0);
     }
-    alert("letter submitted!");
+    this.setState({ sendingStory: true });
+  };
+
+  storySentHandler = () => {
+    this.props.history.push("/");
+    sessionStorage.setItem("letterSent", true);
+    this.setState({ sendingStory: false, stopAnimation: true });
   };
 
   render() {
@@ -152,6 +172,18 @@ class PostingProcess extends Component {
             <QuitWritingModal
               quitWriting={this.quitWritingHandler}
               continueWriting={this.toggleQuitHandler}
+            />
+          </Row>
+          <Row
+            className={
+              this.state.sendingStory
+                ? `${classes.sendModal} ${classes.active}`
+                : `${classes.sendModal}`
+            }
+          >
+            <SendingModal
+              isStopped={this.state.stopAnimation}
+              afterAnimation={this.storySentHandler}
             />
           </Row>
         </Layout>

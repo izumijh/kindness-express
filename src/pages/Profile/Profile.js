@@ -60,9 +60,15 @@ class Profile extends Component {
           />
           <RecentStories
             clickedSeeAll={() => this.setState({ featureNotAvailable: true })}
+            clickedViewStory={() =>
+              this.setState({ featureNotAvailable: true })
+            }
           />
           <MyStories
             clickedSeeAll={() => this.setState({ featureNotAvailable: true })}
+            clickedViewStory={() =>
+              this.setState({ featureNotAvailable: true })
+            }
           />
           <ShareProfile
             clickedShareProfile={() =>

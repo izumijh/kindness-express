@@ -26,6 +26,7 @@
   background: url(../../assets/images/map-pin.svg) no-repeat;
   background-size: 8%;
   background-position: 6% 47%;
+  background-color: #fdfdfd;
 }
 
 /* Hide Name buttons */

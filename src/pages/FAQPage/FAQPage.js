@@ -11,12 +11,6 @@ import { withRouter } from "react-router-dom";
 import Layout from "../../hocs/Layout/Layout";
 import TopSpacing from "../../components/TopSpacing/TopSpacing";
 
-// // import Font Awesome Package
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-// // import solid icons
-// import { faTimes } from "@fortawesome/free-solid-svg-icons";
-
 // import required components
 import Content from "../../components/Content/Content";
 import ActionButton from "../../components/ActionButton/ActionButton";
