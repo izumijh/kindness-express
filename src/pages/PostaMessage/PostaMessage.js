@@ -36,7 +36,7 @@ class PostaMessage extends Component {
   };
 
   submitMessageHandler = () => {
-    sessionStorage.setItem("planeSent", true)
+    sessionStorage.setItem("planeSent", true);
     this.setState({ sendingStory: true });
   };
 
@@ -99,12 +99,12 @@ class PostaMessage extends Component {
                       {errors.kindwords ? (
                         <p className={classes.error}>{errors.kindwords}</p>
                       ) : null}
+                      <ActionButton clicked={this.submitMessageHandler} forSubmit>
+                        Make Someone's Day Better
+                      </ActionButton>
                     </Form>
                   )}
                 </Formik>
-                <ActionButton clicked={this.submitMessageHandler}>
-                  Make Someone's Day Better
-                </ActionButton>
               </Content>
             </Col>
           </Row>

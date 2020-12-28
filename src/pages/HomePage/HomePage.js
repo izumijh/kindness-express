@@ -52,27 +52,38 @@ class HomePage extends Component {
     }
   };
 
+  clickedOwnStoryHandler = () => {
+    // Check if there really is an animation playing right now
+    if (sessionStorage.getItem("letterSent")) {
+      // Tell the next page that user is currently reading own story
+      sessionStorage.setItem("readingOwnStory", true);
+
+      // Redirect the user
+      this.props.history.push("/letter");
+    }
+  };
+
+  clickedOwnMessageHandler = () => {
+    // Check if there really is an animation playing right now
+    if (sessionStorage.getItem("planeSent")) {
+      // Tell the next page that user is currently reading own story
+      sessionStorage.setItem("readingOwnMessage", true);
+
+      // Redirect the user
+      this.props.history.push("/paperplane");
+    }
+  };
+
   componentDidMount = () => {
+    // If plane/story sent animation is playing. set timeout to remove its effects later
     if (sessionStorage.getItem("planeSent")) {
       setTimeout(() => {
-        // Remove Kind Words Records 
-        sessionStorage.removeItem("kindwords");
-
         // remove animation
         sessionStorage.removeItem("planeSent");
       }, 9000);
     }
     if (sessionStorage.getItem("letterSent")) {
       setTimeout(() => {
-        // Remove all records
-        sessionStorage.removeItem("currentDesign");
-        sessionStorage.removeItem("balloonColour");
-        sessionStorage.removeItem("starter");
-        sessionStorage.removeItem("story");
-        sessionStorage.removeItem("location");
-        sessionStorage.removeItem("date");
-        sessionStorage.removeItem("authorName");
-
         // remove animation
         sessionStorage.removeItem("letterSent");
       }, 9000);
@@ -143,6 +154,7 @@ class HomePage extends Component {
                   sessionStorage.getItem("currentDesign")
                 )}
                 currentColour={sessionStorage.getItem("balloonColour")}
+                clicked={this.clickedOwnStoryHandler}
               />
             </Col>
 
@@ -154,7 +166,7 @@ class HomePage extends Component {
                   : classes.newPlane
               }
             >
-              <PaperPlane />
+              <PaperPlane clicked={this.clickedOwnMessageHandler} />
             </Col>
           </Row>
         </Layout>

@@ -29,7 +29,7 @@ const RecentStories = (props) => {
               return (
                 <>
                   <BalloonLetterCard
-                    key={balloon + id}
+                    key={balloon.label + id}
                     label={balloon.label}
                     currentColour={balloon.colour}
                     currentDesign={balloon.design}

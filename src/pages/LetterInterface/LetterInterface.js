@@ -28,6 +28,7 @@ import classes from "./LetterInterface.module.css";
 
 class LetterInterface extends Component {
   state = {
+    randomNum: Math.floor(Math.random() * Math.floor(stories.length)),
     isReposting: false,
     doneReposting: false,
     isReacting: false,
@@ -36,32 +37,73 @@ class LetterInterface extends Component {
     isShowingMoreMenu: false,
   };
 
+  quitInterfaceHandler = () => {
+    if (sessionStorage.getItem("readingOwnStory")) {
+      // remove reading story status
+      sessionStorage.removeItem("readingOwnStory");
+
+      //  remove animation
+      sessionStorage.removeItem("letterSent");
+    }
+
+    //  Send user to homepage
+    this.props.history.push("/");
+  };
+
   render() {
-    let story = Math.floor(Math.random() * Math.floor(stories.length));
+    // randomly pick a story from database
+    let story = stories[this.state.randomNum];
+
+    // letter starter database
+    let starters = [
+      `Dear Stranger, today is going to be a good day! And here’s why…`,
+      `Dear stranger, I did something nice for someone today!`,
+      ``,
+    ];
+
+    // If user is reading their own story, publish user's content instead
+    if (sessionStorage.getItem("readingOwnStory")) {
+      story = {
+        author:
+          sessionStorage.getItem("authorName") === "initials"
+            ? `- ${sessionStorage.getItem("username").charAt(0)}`
+            : `- ${sessionStorage.getItem("username")}`,
+        date: sessionStorage.getItem("date"),
+        location: sessionStorage.getItem("location"),
+        content: (
+          <>
+            <p>
+              <b>{starters[sessionStorage.getItem("starter")]}</b>
+            </p>
+            <p>{sessionStorage.getItem("story")}</p>
+          </>
+        ),
+      };
+    }
 
     return (
       <Layout
         currentLocation={this.props.location.pathname}
-        clickedBackButton={() => this.props.history.push("/")}
+        clickedBackButton={this.quitInterfaceHandler}
         clickedMoreButton={() => this.setState({ isShowingMoreMenu: true })}
       >
         <TopSpacing />
         <Row>
           <Col xs={12} className={classes.wrapper}>
             <Letter>
-              {stories[story].content}
+              {story.content}
 
-              <p>{stories[story].author}</p>
+              <p>{story.author}</p>
 
               <span className={classes.dashedLine}></span>
 
               <p className={classes.details}>
                 <Image src={calendar} alt="icon of a calendar" />
-                {stories[story].date}
+                {story.date}
               </p>
               <p className={classes.details}>
                 <Image src={location} alt="icon that means location" />
-                {stories[story].location}
+                {story.location}
               </p>
             </Letter>
             <ReactionCounter />
@@ -78,7 +120,7 @@ class LetterInterface extends Component {
                 })
               }
             />
-            <ActionButton clicked={() => this.props.history.push("/")}>
+            <ActionButton clicked={this.quitInterfaceHandler}>
               Done
             </ActionButton>
             <TopSpacing />

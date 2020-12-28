@@ -28,7 +28,7 @@ const MyStories = (props) => {
             {balloonDesigns.map((balloon, id) => {
               return (
                 <BalloonLetterCard
-                  key={balloon + id}
+                  key={balloon.label + id}
                   label={balloon.label}
                   currentColour={balloon.colour}
                   currentDesign={balloon.design}
