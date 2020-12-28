@@ -53,7 +53,12 @@ class BalloonFeed extends Component {
           <BalloonLetter
             currentColour={this.state.balloons[0].colour}
             currentDesign={this.state.balloons[0].design}
-            clicked={this.props.clickedOnLetter}
+            clicked={() =>
+              this.props.clickedOnLetter(
+                this.state.balloons[0].colour,
+                this.state.balloons[0].design
+              )
+            }
           />
         </span>
 
@@ -61,7 +66,12 @@ class BalloonFeed extends Component {
           <BalloonLetter
             currentColour={this.state.balloons[1].colour}
             currentDesign={this.state.balloons[1].design}
-            clicked={this.props.clickedOnLetter}
+            clicked={() =>
+              this.props.clickedOnLetter(
+                this.state.balloons[1].colour,
+                this.state.balloons[1].design
+              )
+            }
           />
         </span>
 
@@ -69,7 +79,12 @@ class BalloonFeed extends Component {
           <BalloonLetter
             currentColour={this.state.balloons[2].colour}
             currentDesign={this.state.balloons[2].design}
-            clicked={this.props.clickedOnLetter}
+            clicked={() =>
+              this.props.clickedOnLetter(
+                this.state.balloons[2].colour,
+                this.state.balloons[2].design
+              )
+            }
           />
         </span>
 

@@ -12,6 +12,10 @@ import classes from "./PopUpModal.module.css";
 const PopUpModal = (props) => {
   return (
     <Col className={classes.wrapper} onClick={props.clicked}>
+      <span
+        className={classes.backgroundBlur}
+        onClick={props.clickedExit}
+      ></span>
       <Content>{props.children}</Content>
     </Col>
   );

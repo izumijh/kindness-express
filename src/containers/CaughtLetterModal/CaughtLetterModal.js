@@ -1,7 +1,7 @@
 import React from "react";
 
 // import React Bootstrap components
-import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 // import required components
 import PopUpModal from "../../components/PopUpModal/PopUpModal";
@@ -14,16 +14,19 @@ import classes from "./CaughtLetterModal.module.css";
 const CaughtLetterModal = (props) => {
   const activateIf = props.activateIf;
 
+  // balloon colour settings
+  let currentColour = props.currentColour ? props.currentColour : "#ABDAEA";
+  let currentDesign = props.currentDesign ? props.currentDesign : 0;
+
   return (
-    <Col
-      xs={12}
+    <Row
       className={
         activateIf
           ? `${classes.wrapper} ${classes.active}`
           : `${classes.wrapper}`
       }
     >
-      <PopUpModal>
+      <PopUpModal clickedExit={props.clickedExit}>
         <div
           className={
             activateIf
@@ -31,12 +34,17 @@ const CaughtLetterModal = (props) => {
               : `${classes.balloon}`
           }
         >
-          <BalloonLetter currentColour={"#abdaea"} currentDesign={0} />
+          <BalloonLetter
+            currentColour={currentColour}
+            currentDesign={currentDesign}
+          />
         </div>
         <p>Yay! You caught a letter.</p>
-        <ActionButton clicked={props.clickedOpenLetter}>Open Letter</ActionButton>
+        <ActionButton clicked={props.clickedOpenLetter}>
+          Open Letter
+        </ActionButton>
       </PopUpModal>
-    </Col>
+    </Row>
   );
 };
 
