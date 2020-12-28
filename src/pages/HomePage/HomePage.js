@@ -13,6 +13,8 @@ import BalloonFeed from "../../containers/BalloonFeed/BalloonFeed";
 import TopSpacing from "../../components/TopSpacing/TopSpacing";
 import BalloonLetter from "../../components/BalloonLetter/BalloonLetter";
 import PaperPlane from "../../components/PaperPlane/PaperPlane";
+import CaughtLetterModal from "../../containers/CaughtLetterModal/CaughtLetterModal";
+import CaughtPlaneModal from "../../containers/CaughtPlaneModal/CaughtPlaneModal";
 import FeatureWIPModal from "../../containers/FeatureWIPModal/FeatureWIPModal";
 
 // Import Router Props
@@ -25,7 +27,8 @@ class HomePage extends Component {
   state = {
     composeMenuisOpen: false,
     postmanMenuisOpen: false,
-    readingLetter: false,
+    selectedLetter: null,
+    selectedPlane: false,
   };
 
   clickedBackButtonHandler = () => {
@@ -51,6 +54,11 @@ class HomePage extends Component {
       this.props.history.push("/postman");
       this.setState({ postmanMenuisOpen: true });
     }
+  };
+
+  clickedLetterHandler = (colour, design) => {
+    // Record down the settings in state
+    this.setState({ selectedLetter: [colour, design] });
   };
 
   clickedOwnStoryHandler = () => {
@@ -109,15 +117,17 @@ class HomePage extends Component {
           <Row
             style={{ overflow: "hidden", maxHeight: "70vh" }}
             className={
-              this.props.location.pathname === "/"
+              this.props.location.pathname === "/" &&
+              this.state.selectedLetter === null && 
+              this.state.selectedPlane === false
                 ? `${classes.balloons} ${classes.active}`
                 : `${classes.balloons}`
             }
           >
             <Col xs={12}>
               <BalloonFeed
-                clickedOnLetter={() => this.props.history.push("/letter")}
-                clickedOnPlane={() => this.props.history.push("/paperplane")}
+                clickedOnLetter={this.clickedLetterHandler}
+                clickedOnPlane={() => this.setState({ selectedPlane: true })}
               />
             </Col>
           </Row>
@@ -173,6 +183,22 @@ class HomePage extends Component {
               <PaperPlane clicked={this.clickedOwnMessageHandler} />
             </Col>
           </Row>
+          <CaughtLetterModal
+            currentColour={
+              this.state.selectedLetter ? this.state.selectedLetter[0] : null
+            }
+            currentDesign={
+              this.state.selectedLetter ? this.state.selectedLetter[1] : null
+            }
+            activateIf={this.state.selectedLetter !== null}
+            clickedOpenLetter={() => this.props.history.push("/letter")}
+            clickedExit={() => this.setState({ selectedLetter: null })}
+          />
+          <CaughtPlaneModal
+            activateIf={this.state.selectedPlane}
+            clickedOpenPlane={() => this.props.history.push("/paperplane")}
+            clickedExit={() => this.setState({ selectedPlane: false })}
+          />
           <FeatureWIPModal
             activateIf={this.state.featureNotAvailable}
             clickedExit={() => this.setState({ featureNotAvailable: false })}

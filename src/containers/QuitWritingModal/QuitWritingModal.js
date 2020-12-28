@@ -15,7 +15,7 @@ import classes from "./QuitWritingModal.module.css";
 
 const QuitWritingModal = (props) => {
   return (
-    <PopUpModal clicked={props.continueWriting}>
+    <PopUpModal clicked={props.continueWriting} clickedExit={props.continueWriting}>
       <h1>Quit Writing?</h1>
       <p>Your progress will not be saved.</p>
       <div style={{ margin: "2rem" }}>
