@@ -88,11 +88,11 @@ class LandingPage extends Component {
                 <p>Oh? A letter came flying to you!</p>
               </div>
             </Col>
-            <CaughtLetterModal
-              activateIf={this.state.tappedOnLetter}
-              clickedOpenLetter={() => this.props.history.push("/letter")}
-            />
           </Row>
+          <CaughtLetterModal
+            activateIf={this.state.tappedOnLetter}
+            clickedOpenLetter={() => this.props.history.push("/letter")}
+          />
         </Layout>
       </>
     );
