@@ -15,55 +15,89 @@ import ActionButton from "../../components/ActionButton/ActionButton";
 import RepostModal from "../../containers/RepostModal/RepostModal";
 import ReactModal from "../../containers/ReactModal/ReactModal";
 import OtherLetterActions from "../../containers/OtherLetterActions/OtherLetterActions";
+import FeatureWIPModal from "../../containers/FeatureWIPModal/FeatureWIPModal";
 
 // import SVG image
 import calendar from "../../assets/images/calendar.svg";
 import location from "../../assets/images/map-pin.svg";
+
+// import kind words
+import { messages } from "../../database/kind-words/kind-words";
 
 // import css modules
 import classes from "./MessageInterface.module.css";
 
 class MessageInterface extends Component {
   state = {
+    randomNum: Math.floor(Math.random() * Math.floor(messages.length)),
     isReposting: false,
     doneReposting: false,
     isReacting: false,
     pickedReaction: null,
     doneReacting: false,
     isShowingMoreMenu: false,
+    featureNotAvailable: false,
+  };
+
+  quitInterfaceHandler = () => {
+    if (sessionStorage.getItem("readingOwnMessage")) {
+      // remove reading message status
+      sessionStorage.removeItem("readingOwnMessage");
+
+      //  remove animation
+      sessionStorage.removeItem("planeSent");
+    }
+
+    //  Send user to homepage
+    this.props.history.push("/");
   };
 
   render() {
+    // generate a random message from database
+    let message = messages[this.state.randomNum];
+
+    // if user is reading his own message, render his message instead
+    if (sessionStorage.getItem("readingOwnMessage", true)) {
+      message = {
+        author: `- ${sessionStorage.getItem("username")}`,
+        date: `30/12/2020`,
+        location: `The One Academy`,
+        content: (
+          <>
+            <p>{`"${sessionStorage.getItem("kindwords")}"`}</p>
+          </>
+        ),
+      };
+    }
+
     return (
       <Layout
         currentLocation={this.props.location.pathname}
-        clickedBackButton={() => this.props.history.push("/")}
+        clickedBackButton={this.quitInterfaceHandler}
         clickedMoreButton={() => this.setState({ isShowingMoreMenu: true })}
       >
         <TopSpacing />
         <Row>
           <Col xs={12} className={classes.wrapper}>
             <Letter alt>
-              <p>
-                “You are more than the amount of productivity you have done
-                today. Remember to give yourself a lot of breaks and drink more
-                water!”
-              </p>
+              {message.content}
 
-              <p>{`- mel`}</p>
+              <p>{message.author}</p>
 
               <span className={classes.dashedLine}></span>
 
               <p className={classes.details}>
                 <Image src={calendar} alt="icon of a calendar" />
-                30/12/2020
+                {message.date}
               </p>
               <p className={classes.details}>
                 <Image src={location} alt="icon that means location" />
-                The One Academy, Malaysia
+                {message.location}
               </p>
             </Letter>
-            <ReactionCounter />
+            <ReactionCounter
+              count={sessionStorage.getItem("readingOwnMessage") ? 0 : false}
+            />
             <ReactionToolbar
               passingOn="message"
               clickedRepost={() =>
@@ -77,7 +111,7 @@ class MessageInterface extends Component {
                 })
               }
             />
-            <ActionButton clicked={() => this.props.history.push("/")}>
+            <ActionButton clicked={this.quitInterfaceHandler}>
               Done
             </ActionButton>
             <TopSpacing />
@@ -101,6 +135,12 @@ class MessageInterface extends Component {
         <OtherLetterActions
           activateIf={this.state.isShowingMoreMenu}
           clickedExit={() => this.setState({ isShowingMoreMenu: false })}
+          clickedShare={() => this.setState({ featureNotAvailable: true })}
+          clickedReport={() => this.setState({ featureNotAvailable: true })}
+        />
+        <FeatureWIPModal
+          activateIf={this.state.featureNotAvailable}
+          clickedExit={() => this.setState({ featureNotAvailable: false })}
         />
       </Layout>
     );

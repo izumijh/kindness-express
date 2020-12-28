@@ -104,19 +104,26 @@ export const addToHomepage = [
       `Would you like that?`,
     ],
     response: [`Yes, install`, `No, not now`],
-    responseHandler: ["next", "next"],
+    responseHandler: ["featureNotAvailable", "next"],
     previousResponse: defaultChat[0].response[2],
   },
   {
-    postmanEmote: 0,
-    chat: [
-      `Done! Hope to see more of you soon!`,
-      `Is there anything else I can do for you?`,
-    ],
+    postmanEmote: 1,
+    chat: [`That's fine!`, `Just come back if you ever change your mind.`],
     response: defaultChat[0].response,
     responseHandler: defaultChat[0].responseHandler,
-    previousResponse: `Undo install`,
+    previousResponse: `No, not now`,
   },
+  // {
+  //   postmanEmote: 0,
+  //   chat: [
+  //     `Done! Hope to see more of you soon!`,
+  //     `Is there anything else I can do for you?`,
+  //   ],
+  //   response: defaultChat[0].response,
+  //   responseHandler: defaultChat[0].responseHandler,
+  //   previousResponse: `Undo install`,
+  // },
 ];
 
 // Newbie Intro

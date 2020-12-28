@@ -13,11 +13,32 @@ import repost from "../../assets/images/response-counter/repost.svg";
 import classes from "./ReactionCounter.module.css";
 
 const ReactionCounter = (props) => {
+  // Detect if props has passed down a number, if no number, select a random number from 0-9
   const reactions = [
-    { src: repost, counter: 7 },
-    { src: smile, counter: 2 },
-    { src: haha, counter: 2 },
-    { src: wow, counter: 2 },
+    {
+      src: repost,
+      counter: props.count
+        ? props.count
+        : Math.floor(Math.random() * Math.floor(9)),
+    },
+    {
+      src: smile,
+      counter: props.count
+        ? props.count
+        : Math.floor(Math.random() * Math.floor(9)),
+    },
+    {
+      src: haha,
+      counter: props.count
+        ? props.count
+        : Math.floor(Math.random() * Math.floor(9)),
+    },
+    {
+      src: wow,
+      counter: props.count
+        ? props.count
+        : Math.floor(Math.random() * Math.floor(9)),
+    },
   ];
 
   let items = reactions.map((r, id) => {

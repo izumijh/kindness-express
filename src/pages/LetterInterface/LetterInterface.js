@@ -15,63 +15,97 @@ import ActionButton from "../../components/ActionButton/ActionButton";
 import RepostModal from "../../containers/RepostModal/RepostModal";
 import ReactModal from "../../containers/ReactModal/ReactModal";
 import OtherLetterActions from "../../containers/OtherLetterActions/OtherLetterActions";
+import FeatureWIPModal from "../../containers/FeatureWIPModal/FeatureWIPModal";
 
 // import SVG image
 import calendar from "../../assets/images/calendar.svg";
 import location from "../../assets/images/map-pin.svg";
+
+// import kind stories
+import { stories } from "../../database/kind-stories/kind-stories";
 
 // import css modules
 import classes from "./LetterInterface.module.css";
 
 class LetterInterface extends Component {
   state = {
+    randomNum: Math.floor(Math.random() * Math.floor(stories.length)),
     isReposting: false,
     doneReposting: false,
     isReacting: false,
     pickedReaction: null,
     doneReacting: false,
     isShowingMoreMenu: false,
+    featureNotAvailable: false,
+  };
+
+  quitInterfaceHandler = () => {
+    if (sessionStorage.getItem("readingOwnStory")) {
+      // remove reading story status
+      sessionStorage.removeItem("readingOwnStory");
+
+      //  remove animation
+      sessionStorage.removeItem("letterSent");
+    }
+
+    //  Send user to homepage
+    this.props.history.push("/");
   };
 
   render() {
+    // randomly pick a story from database
+    let story = stories[this.state.randomNum];
+
+    // letter starter database
+    let starters = [
+      `Dear Stranger, today is going to be a good day! And here’s why…`,
+      `Dear stranger, I did something nice for someone today!`,
+      ``,
+    ];
+
+    // If user is reading their own story, publish user's content instead
+    if (sessionStorage.getItem("readingOwnStory")) {
+      story = {
+        author:
+          sessionStorage.getItem("authorName") === "initials"
+            ? `- ${sessionStorage.getItem("username").charAt(0)}`
+            : `- ${sessionStorage.getItem("username")}`,
+        date: sessionStorage.getItem("date"),
+        location: sessionStorage.getItem("location"),
+        content: (
+          <>
+            <p>
+              <b>{starters[sessionStorage.getItem("starter")]}</b>
+            </p>
+            <p>{sessionStorage.getItem("story")}</p>
+          </>
+        ),
+      };
+    }
+
     return (
       <Layout
         currentLocation={this.props.location.pathname}
-        clickedBackButton={() => this.props.history.push("/")}
+        clickedBackButton={this.quitInterfaceHandler}
         clickedMoreButton={() => this.setState({ isShowingMoreMenu: true })}
       >
         <TopSpacing />
         <Row>
           <Col xs={12} className={classes.wrapper}>
             <Letter>
-              <p>
-                <b>
-                  Dear stranger, I hope this story will prove that being kind is
-                  great!
-                </b>
-              </p>
-              <p>
-                I was heading to my car today and an aunty walked up to me
-                asking whether I have any parking coupons to sell her. ( She
-                doesn’t know how to use a smartphone to pay for parking. )
-              </p>
-              <p>
-                I found extras in my car, and I gave her one. She was happy and
-                wanted to pay me back, but I refused. It feels great to be able
-                to help someone out!
-              </p>
+              {story.content}
 
-              <p>{`- L`}</p>
+              <p>{story.author}</p>
 
               <span className={classes.dashedLine}></span>
 
               <p className={classes.details}>
                 <Image src={calendar} alt="icon of a calendar" />
-                28/11/2020
+                {story.date}
               </p>
               <p className={classes.details}>
                 <Image src={location} alt="icon that means location" />
-                The One Academy, Malaysia
+                {story.location}
               </p>
             </Letter>
             <ReactionCounter />
@@ -88,7 +122,7 @@ class LetterInterface extends Component {
                 })
               }
             />
-            <ActionButton clicked={() => this.props.history.push("/")}>
+            <ActionButton clicked={this.quitInterfaceHandler}>
               Done
             </ActionButton>
             <TopSpacing />
@@ -112,6 +146,12 @@ class LetterInterface extends Component {
         <OtherLetterActions
           activateIf={this.state.isShowingMoreMenu}
           clickedExit={() => this.setState({ isShowingMoreMenu: false })}
+          clickedShare={() => this.setState({ featureNotAvailable: true })}
+          clickedReport={() => this.setState({ featureNotAvailable: true })}
+        />
+        <FeatureWIPModal
+          activateIf={this.state.featureNotAvailable}
+          clickedExit={() => this.setState({ featureNotAvailable: false })}
         />
       </Layout>
     );

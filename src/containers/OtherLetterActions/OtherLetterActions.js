@@ -21,11 +21,11 @@ const OtherLetterActions = (props) => {
     >
       <p>Other Actions</p>
       <ul className={classes.menuWrapper}>
-        <li>
+        <li onClick={props.clickedShare}>
           <FontAwesomeIcon icon={faShareAlt} />
           Share this Story to...
         </li>
-        <li>
+        <li onClick={props.clickedReport}>
           <FontAwesomeIcon icon={faFlag} />
           Report this Story
         </li>

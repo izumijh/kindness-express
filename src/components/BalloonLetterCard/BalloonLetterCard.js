@@ -30,7 +30,13 @@ const BalloonLetter = (props) => {
 
   return (
     <>
-      <svg id="Layer_1" x="0px" y="0px" viewBox="0 0 199 139.3">
+      <svg
+        id="Layer_1"
+        x="0px"
+        y="0px"
+        viewBox="0 0 199 139.3"
+        onClick={props.clicked}
+      >
         <filter
           xmlns="http://www.w3.org/2000/svg"
           id="dropshadow"
@@ -80,7 +86,7 @@ const BalloonLetter = (props) => {
           transform="matrix(1 0 0 1 115 86)"
           className={`${classes.st2} ${classes.st3} ${classes.st4}`}
         >
-          A’s Story
+          {props.label}
         </text>
         <g id="envelope_1_">
           <g id="envelope">

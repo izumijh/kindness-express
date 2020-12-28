@@ -18,8 +18,9 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import Layout from "../../hocs/Layout/Layout";
 import TopSpacing from "../../components/TopSpacing/TopSpacing";
 
-// import content component
+// import required components
 import Content from "../../components/Content/Content";
+import FeatureWIPModal from "../../containers/FeatureWIPModal/FeatureWIPModal";
 
 // import required images
 import logo from "../../assets/images/Logo.svg";
@@ -28,6 +29,10 @@ import logo from "../../assets/images/Logo.svg";
 import classes from "./AboutPage.module.css";
 
 class AboutPage extends Component {
+  state = {
+    featureNotAvailable: false,
+  };
+
   clickedBackButtonHandler = () => {
     this.props.history.push("/");
   };
@@ -73,7 +78,10 @@ class AboutPage extends Component {
                   </p>
                   <p>Let’s remind each other of the magic in kindness!</p>
                 </div>
-                <div className={classes.socials}>
+                <div
+                  className={classes.socials}
+                  onClick={() => this.setState({ featureNotAvailable: true })}
+                >
                   <FontAwesomeIcon icon={faInstagram} />
                   <p>@Kindness.Express</p>
                 </div>
@@ -81,6 +89,10 @@ class AboutPage extends Component {
             </Col>
             <TopSpacing />
           </Row>
+          <FeatureWIPModal
+            activateIf={this.state.featureNotAvailable}
+            clickedExit={() => this.setState({ featureNotAvailable: false })}
+          />
         </Layout>
       </>
     );

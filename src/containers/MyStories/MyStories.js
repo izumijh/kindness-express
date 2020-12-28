@@ -13,9 +13,9 @@ import classes from "./MyStories.module.css";
 
 const MyStories = (props) => {
   const balloonDesigns = [
-    { colour: "#ABDAEA", design: 4 },
-    { colour: "#F8B67B", design: 2 },
-    { colour: "#91D8C9", design: 0 },
+    { colour: "#ABDAEA", design: 4, label:"16/11/20" },
+    { colour: "#F8B67B", design: 2, label:"30/11/20" },
+    { colour: "#91D8C9", design: 0, label:"2/12/20" },
   ];
 
   return (
@@ -28,9 +28,11 @@ const MyStories = (props) => {
             {balloonDesigns.map((balloon, id) => {
               return (
                 <BalloonLetterCard
-                  key={balloon + id}
+                  key={balloon.label + id}
+                  label={balloon.label}
                   currentColour={balloon.colour}
                   currentDesign={balloon.design}
+                  clicked={props.clickedViewStory}
                 />
               );
             })}

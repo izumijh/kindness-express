@@ -72,14 +72,14 @@ const RepostModal = (props) => {
             width={"55%"}
             isStopped={props.doneReposting === false}
           />
-          <span style={{ display: "block", transform: "translateY(-35%)" }}>
+          <span style={{ display: "block", transform: "translateY(-20%)" }}>
             <h1>
               <span style={{ textTransform: "capitalize" }}>
                 {props.repostingA}
               </span>{" "}
               is Reposted!
             </h1>
-            <p>Thanks for sharing a great story with others!</p>
+            <p>Thanks! We're sure they will appreciate it.</p>
             <ActionButton clicked={props.clickedExit}> Done </ActionButton>
           </span>
         </div>
