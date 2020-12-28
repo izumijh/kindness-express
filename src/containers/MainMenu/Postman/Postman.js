@@ -82,6 +82,8 @@ const Postman = (props) => {
       props.routeToProfile();
       nextPage(0);
       nextTopic(registered["newDefaultChat"]);
+    } else if (action === "featureNotAvailable") {
+      props.featureNotAvailable();
     } else {
       // if command doesn't match the above, it's probably a topic command
       // in which case, we determine if user is registered or not

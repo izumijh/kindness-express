@@ -13,6 +13,7 @@ import BalloonFeed from "../../containers/BalloonFeed/BalloonFeed";
 import TopSpacing from "../../components/TopSpacing/TopSpacing";
 import BalloonLetter from "../../components/BalloonLetter/BalloonLetter";
 import PaperPlane from "../../components/PaperPlane/PaperPlane";
+import FeatureWIPModal from "../../containers/FeatureWIPModal/FeatureWIPModal";
 
 // Import Router Props
 import { withRouter } from "react-router-dom";
@@ -139,6 +140,9 @@ class HomePage extends Component {
             }
             startLogin={() => this.props.history.push("/login")}
             routeToProfile={() => this.props.history.push("/profile")}
+            featureNotAvailable={() =>
+              this.setState({ featureNotAvailable: true })
+            }
           />
           <Row>
             <Col
@@ -169,6 +173,10 @@ class HomePage extends Component {
               <PaperPlane clicked={this.clickedOwnMessageHandler} />
             </Col>
           </Row>
+          <FeatureWIPModal
+            activateIf={this.state.featureNotAvailable}
+            clickedExit={() => this.setState({ featureNotAvailable: false })}
+          />
         </Layout>
       </>
     );

@@ -15,6 +15,7 @@ import ActionButton from "../../components/ActionButton/ActionButton";
 import RepostModal from "../../containers/RepostModal/RepostModal";
 import ReactModal from "../../containers/ReactModal/ReactModal";
 import OtherLetterActions from "../../containers/OtherLetterActions/OtherLetterActions";
+import FeatureWIPModal from "../../containers/FeatureWIPModal/FeatureWIPModal";
 
 // import SVG image
 import calendar from "../../assets/images/calendar.svg";
@@ -35,6 +36,7 @@ class MessageInterface extends Component {
     pickedReaction: null,
     doneReacting: false,
     isShowingMoreMenu: false,
+    featureNotAvailable: false,
   };
 
   quitInterfaceHandler = () => {
@@ -133,6 +135,12 @@ class MessageInterface extends Component {
         <OtherLetterActions
           activateIf={this.state.isShowingMoreMenu}
           clickedExit={() => this.setState({ isShowingMoreMenu: false })}
+          clickedShare={() => this.setState({ featureNotAvailable: true })}
+          clickedReport={() => this.setState({ featureNotAvailable: true })}
+        />
+        <FeatureWIPModal
+          activateIf={this.state.featureNotAvailable}
+          clickedExit={() => this.setState({ featureNotAvailable: false })}
         />
       </Layout>
     );
