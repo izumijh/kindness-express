@@ -58,9 +58,9 @@ class LetterInterface extends Component {
 
     // letter starter database
     let starters = [
-      `Dear Stranger, today is going to be a good day! And here’s why…`,
+      `Dear stranger, today is going to be a good day! And here’s why…`,
       `Dear stranger, I did something nice for someone today!`,
-      ``,
+      `Dear stranger,`,
     ];
 
     // If user is reading their own story, publish user's content instead

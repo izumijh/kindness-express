@@ -15,7 +15,6 @@
 
 .wrapper > div > div {
   padding: 3rem 2rem 2rem;
-  top: 55%;
   width: 80% !important;
 }
 
@@ -42,7 +41,7 @@
   }
 
   50% {
-    transform: scale(1.5) rotate(-5deg);
+    transform: scale(1.5) rotate(-6deg);
   }
 
   100% {

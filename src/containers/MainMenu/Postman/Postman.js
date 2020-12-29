@@ -42,20 +42,19 @@ const Postman = (props) => {
 
     if (isOldUser) {
       console.log("default to guest chat");
-
       nextPage(0);
       nextTopic(dialogues["defaultChat"]);
+
       if (isRegisteredUser) {
         console.log("isRegisteredUser!");
-
         nextPage(0);
         nextTopic(registered["newDefaultChat"]);
+
         if (
           isNewlyRegisteredUser === "true" ||
           isNewlyRegisteredUser === true
         ) {
           console.log("isNEWRegisteredUser!");
-
           nextPage(0);
           nextTopic(registered["profileIntro"]);
         }
@@ -80,8 +79,8 @@ const Postman = (props) => {
     } else if (action === "viewMyProfile") {
       sessionStorage.removeItem("isNewlyRegisteredUser");
       props.routeToProfile();
-      nextPage(0);
-      nextTopic(registered["newDefaultChat"]);
+      // nextPage(0);
+      // nextTopic(registered["newDefaultChat"]);
     } else if (action === "featureNotAvailable") {
       props.featureNotAvailable();
     } else {
@@ -145,9 +144,18 @@ const Postman = (props) => {
         <Image src={icon} alt="postman icon" />
         <div
           className={
-            isOldUser || currentTopic === registered["profileIntro"]
+            isOldUser
               ? `${classes.notifCircle}`
               : `${classes.notifCircle} ${classes.active}`
+          }
+        >
+          {1}
+        </div>
+        <div
+          className={
+            currentTopic === registered["profileIntro"]
+              ? `${classes.notifCircle} ${classes.active}`
+              : `${classes.notifCircle}`
           }
         >
           {1}
