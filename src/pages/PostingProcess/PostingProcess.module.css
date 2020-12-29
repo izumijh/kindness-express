@@ -1,6 +1,6 @@
 .stepsContainer {
   position: relative;
-  height: 70vh;
+  height: 65vh;
   overflow: hidden;
 }
 
@@ -120,7 +120,7 @@
 /* Configs for Smaller Mobile Screens */
 @media screen and (max-width: 992px) and (max-height: 750px) {
   .stepsContainer {
-    height: 130vh;
+    height: 100vh;
     overflow: visible;
     overflow-x: hidden;
   }
