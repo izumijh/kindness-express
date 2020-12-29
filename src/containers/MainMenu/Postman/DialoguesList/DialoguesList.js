@@ -31,11 +31,10 @@ export const aboutCampaign = [
     postmanEmote: 3,
     chat: [
       <>
-        Well, why not?
-        <b>This is a Wholesome Social Media!</b>
+        Well, why not? <b>This is a Wholesome Social Media!</b>
       </>,
       <>
-        Besides,
+        Besides,{" "}
         <b>
           we are donating to Malaysian charities based on how many posts people
           have made.
@@ -64,9 +63,9 @@ export const whatDoNow = [
     postmanEmote: 1,
     chat: [
       <b>Hm, you should try posting something!</b>,
-      `Anything! Even if you have nothing to post about!`,
+      `Even if you have nothing to post about!`,
       <>
-        Or you could <b>send kind words</b> to people who might need it today.
+        You could even <b>send kind words</b> to people who might need it today.
       </>,
     ],
     response: [`You want me to post something?`],
@@ -77,9 +76,10 @@ export const whatDoNow = [
     postmanEmote: 2,
     chat: [
       `Try it out for me, okay?`,
-      `You’ll need an account for posting, but…`,
+      `You’ll need to log in, but trust me it'll be worth it.`,
       <>
-        <b>After you made an account,</b> and I'll have a new feature for you!
+        <b>Come back when you've successfully logged in,</b> and I'll have a new
+        feature for you!
       </>,
     ],
     response: [`I'll try.`],
@@ -132,7 +132,7 @@ export const newbieIntro = [
     postmanEmote: 1,
     chat: [
       `Oh, hey there!`,
-      `Looks like you’ve already read some kind stories by yourself!`,
+      `Looks like you’ve already caught some balloons by yourself!`,
     ],
     response: [`I guess I have!`],
     responseHandler: ["next"],

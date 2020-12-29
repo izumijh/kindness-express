@@ -59,7 +59,12 @@ const StepThree = (props) => {
             ) : null}
 
             <label htmlFor="date">When did it happen?</label>
-            <Field type="date" name="date" placeholder="xx/xx/xx" />
+            <Field
+              type="date"
+              name="date"
+              placeholder="xx/xx/xx"
+              style={{ width: "75vw !important", height: "2.9rem" }}
+            />
             {errors.date && touched.date ? (
               <p className={classes.error}>{errors.date}</p>
             ) : null}

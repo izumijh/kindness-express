@@ -32,8 +32,11 @@ export const InstalltoHomepage = [
   {
     q: (
       <>
-        <b>The Kindness Express</b> is not installed on your phone’s home page
-        yet.
+        <b>The Kindness Express</b> is{" "}
+        <span style={{ color: "salmon" }}>
+          <b>not installed</b>{" "}
+        </span>
+        on your phone’s home page yet.
       </>
     ),
     a: `Install it now`,
