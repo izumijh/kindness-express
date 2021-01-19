@@ -1,5 +1,5 @@
 .carouselPage {
-  padding: 5% 4%;
+  padding: 0% 0% 5%;
   text-align: center;
 }
 
@@ -11,7 +11,7 @@
 
 .carouselPage h3 {
   font-size: 1.3rem !important;
-  margin: 8% 0 0 !important;
+  margin: 0% 0 0 !important;
 }
 
 .carouselPage p {
@@ -22,7 +22,7 @@
 .loginButtons {
   display: block;
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .loginButtons > button {
