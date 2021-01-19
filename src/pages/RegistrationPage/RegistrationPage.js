@@ -101,7 +101,7 @@ class RegistrationPage extends Component {
             <Col xs={12} className={`loginCarousel ${classes.wrapper}`}>
               <Carousel
                 controls={false}
-                interval={this.state.signUpStatus !== null ? null : 3000}
+                interval={this.state.signUpStatus !== null ? null : 4000}
               >
                 <Carousel.Item className={classes.carouselPage}>
                   <Lottie options={optionOne} width={"100%"} />
