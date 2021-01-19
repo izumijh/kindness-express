@@ -5,6 +5,12 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Carousel from "react-bootstrap/Carousel";
 
+// import Lottie
+import Lottie from "react-lottie-wrapper";
+import * as animationOne from "../../assets/animations/registration-carousel/1.json";
+import * as animationTwo from "../../assets/animations/registration-carousel/3.json";
+import * as animationThree from "../../assets/animations/registration-carousel/2.json";
+
 // Import Router Props
 import { withRouter } from "react-router-dom";
 
@@ -14,11 +20,6 @@ import TopSpacing from "../../components/TopSpacing/TopSpacing";
 
 // import required components
 import SignUpModal from "../../containers/SignUpModal/SignUpModal";
-
-// import required SVG images
-import one from "../../assets/images/registration-carousel/1.svg";
-import two from "../../assets/images/registration-carousel/2.svg";
-import three from "../../assets/images/registration-carousel/3.svg";
 
 // import CSS modules
 import classes from "./RegistrationPage.module.css";
@@ -61,6 +62,34 @@ class RegistrationPage extends Component {
   }
 
   render() {
+    const optionOne = {
+      loop: true,
+      autoplay: true,
+      speed: 3,
+      animationData: JSON.parse(JSON.stringify(animationOne.default)),
+      rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice",
+      },
+    };
+
+    const optionTwo = {
+      loop: true,
+      autoplay: true,
+      animationData: JSON.parse(JSON.stringify(animationTwo.default)),
+      rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice",
+      },
+    };
+
+    const optionThree = {
+      loop: true,
+      autoplay: true,
+      animationData: JSON.parse(JSON.stringify(animationThree.default)),
+      rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice",
+      },
+    };
+
     return (
       <>
         <Layout
@@ -69,21 +98,18 @@ class RegistrationPage extends Component {
         >
           <TopSpacing />
           <Row>
-            <Col xs={12} className={classes.wrapper}>
+            <Col xs={12} className={`loginCarousel ${classes.wrapper}`}>
               <Carousel
                 controls={false}
-                interval={this.state.signUpStatus !== null ? null : 5000}
+                interval={this.state.signUpStatus !== null ? null : 4000}
               >
                 <Carousel.Item className={classes.carouselPage}>
-                  <img src={one} alt="hot air balloon" />
+                  <Lottie options={optionOne} width={"100%"} />
                   <h3>Let's start some noise!</h3>
                   <p>Together, we can remind people of kindness again!</p>
                 </Carousel.Item>
                 <Carousel.Item className={classes.carouselPage}>
-                  <img
-                    src={two}
-                    alt="letters tied to balloons floating around"
-                  />
+                  <Lottie options={optionTwo} width={"100%"} />
                   <h3>Your Stories Make Real Impact.</h3>
                   <p>
                     The more stories shared, the more we will donate to the
@@ -91,7 +117,7 @@ class RegistrationPage extends Component {
                   </p>
                 </Carousel.Item>
                 <Carousel.Item className={classes.carouselPage}>
-                  <img src={three} alt="you and your personal mailbox" />
+                  <Lottie options={optionThree} width={"100%"} />
                   <h3>Never Lose Your Positive Energy!</h3>
                   <p>
                     Access features such as personal goals, daily kind tasks and

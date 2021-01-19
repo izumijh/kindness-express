@@ -20,33 +20,7 @@
   max-width: 100%;
 }
 
-/* edit react bootstrap's carousel settings */
 .carousel-indicators {
-  position: absolute;
-  bottom: -2rem;
-  left: 0;
-  right: unset;
-  z-index: 15;
-  display: flex;
-  justify-content: center;
-  padding-left: 0;
-  margin-right: 0;
-  margin-left: 0;
-  list-style: none;
-  transition: 0.5s;
-}
-
-.carousel-indicators li {
-  background-color: #abdaea;
-  height: 0.4rem;
-}
-
-.carousel-indicators li.active {
-  background-color: #f8b67b;
-}
-
-/* special settings for daily kind tasks carousel */
-.KindTasks .carousel-indicators {
   position: absolute;
   bottom: unset;
   bottom: -1rem;
@@ -63,7 +37,7 @@
   transition: 0.5s;
 }
 
-.KindTasks .carousel-indicators li {
+.carousel-indicators li {
   background-color: #abdaea;
   height: 0.7rem;
   width: 0.7rem;
@@ -71,10 +45,15 @@
   margin: 0 .5rem;
 }
 
-.KindTasks .carousel-indicators li.active {
+.carousel-indicators li.active {
   background-color: #f8b67b;
 }
 
 .RecentStories .carousel-inner {
   overflow: visible;
+}
+
+/* special settings for login carousel */
+.loginCarousel .carousel-indicators {
+  bottom: -3rem;
 }
