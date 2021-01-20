@@ -6,9 +6,8 @@ export const defaultChat = [
     response: [
       `About this campaign`,
       `What should I do now?`,
-      `Install this site to my homepage`,
     ],
-    responseHandler: ["aboutCampaign", "whatDoNow", "addToHomepage"],
+    responseHandler: ["aboutCampaign", "whatDoNow"],
   },
 ];
 
@@ -93,37 +92,6 @@ export const whatDoNow = [
     responseHandler: defaultChat[0].responseHandler,
     previousResponse: `I'll try.`,
   },
-];
-
-// Add to Homepage
-export const addToHomepage = [
-  {
-    postmanEmote: 1,
-    chat: [
-      `After installing, you can launch this website like an app on your phone!`,
-      `Would you like that?`,
-    ],
-    response: [`Yes, install`, `No, not now`],
-    responseHandler: ["featureNotAvailable", "next"],
-    previousResponse: defaultChat[0].response[2],
-  },
-  {
-    postmanEmote: 1,
-    chat: [`That's fine!`, `Just come back if you ever change your mind.`],
-    response: defaultChat[0].response,
-    responseHandler: defaultChat[0].responseHandler,
-    previousResponse: `No, not now`,
-  },
-  // {
-  //   postmanEmote: 0,
-  //   chat: [
-  //     `Done! Hope to see more of you soon!`,
-  //     `Is there anything else I can do for you?`,
-  //   ],
-  //   response: defaultChat[0].response,
-  //   responseHandler: defaultChat[0].responseHandler,
-  //   previousResponse: `Undo install`,
-  // },
 ];
 
 // Newbie Intro

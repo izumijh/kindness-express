@@ -44,7 +44,7 @@
 /* changing the colour of individual section headers */
 /* access section header wrapper */
 .intro > .section > div:first-child {
-  background-color: #dff0f588;
+  background-color: #DCF3FA;
 }
 
 .features > .section > div:first-child {
