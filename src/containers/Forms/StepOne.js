@@ -17,6 +17,7 @@ const schema = Yup.object().shape({
 });
 
 const StepOne = (props) => {
+  // State is just for recording which <p> should be highlighted
   const [currentPick, updatePick] = useState("0");
 
   return (
