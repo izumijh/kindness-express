@@ -8,6 +8,7 @@ import Col from "react-bootstrap/Col";
 import top from "../../assets/images/tutorial-overlay/top.svg";
 import middle from "../../assets/images/tutorial-overlay/middle.svg";
 import bottom from "../../assets/images/tutorial-overlay/bottom.svg";
+import bottomS from "../../assets/images/tutorial-overlay/bottom-s.svg";
 
 // import css modules
 import classes from "./TutorialOverlay.module.css";
@@ -35,6 +36,10 @@ const TutorialOverlay = (props) => {
         <img
           src={bottom}
           alt="chatbot at the left, compose feature at the right"
+        />
+        <img
+          src={bottomS}
+          alt="kind stories from your location at the middle of screen"
         />
       </Col>
     </Row>
