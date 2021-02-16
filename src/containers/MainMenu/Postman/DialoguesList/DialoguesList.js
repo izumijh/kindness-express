@@ -3,10 +3,7 @@ export const defaultChat = [
   {
     postmanEmote: 0,
     chat: [`Hello there!`, `What can I do for you?`],
-    response: [
-      `About this campaign`,
-      `What should I do now?`,
-    ],
+    response: [`About this campaign`, `What should I do now?`],
     responseHandler: ["aboutCampaign", "whatDoNow"],
   },
 ];
@@ -62,10 +59,7 @@ export const whatDoNow = [
     postmanEmote: 1,
     chat: [
       <b>Hm, you should try posting something!</b>,
-      `Even if you have nothing to post about!`,
-      <>
-        You could even <b>send kind words</b> to people who might need it today.
-      </>,
+      `Post about a kind experience, or send someone some kind words!`,
     ],
     response: [`You want me to post something?`],
     responseHandler: ["next"],
@@ -102,18 +96,33 @@ export const newbieIntro = [
       `Oh, hey there!`,
       `Looks like you’ve already caught some balloons by yourself!`,
     ],
-    response: [`I guess I have!`],
+    response: [`What do you mean?`],
     responseHandler: ["next"],
+  },
+  {
+    postmanEmote: 2,
+    chat: [
+      <>
+        See those balloons? They are{" "}
+        <b>
+          kind stories that the people at your current location have shared with
+          us!
+        </b>
+      </>,
+      `You could call this place a social media for kindness.`,
+    ],
+    response: [`Ah, I see.`],
+    responseHandler: ["next"],
+    previousResponse: `What do you mean?`,
   },
   {
     postmanEmote: 0,
     chat: [
-      `And I’m glad you have!!`,
-      <b>I work here at the Kindness Express!</b>,
-      `Feel free to tap on my head to see what I do here!`,
+      `That's all you need to know for now.`,
+      `You can tap on my head if you ever need help.`,
     ],
     response: [`Ok, sure!`],
     responseHandler: ["quit"],
-    previousResponse: `I guess I have!`,
+    previousResponse: `Ah, I see.`,
   },
 ];

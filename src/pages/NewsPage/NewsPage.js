@@ -82,7 +82,7 @@ class NewsPage extends Component {
                 <Content>
                   <p className={classes.date}> 17 December 2020</p>
                   <Image src={post1} alt="kindness express logo" fluid />
-                  <h3>Welcome to the Kindness Express!</h3>
+                  <h3>Kindness is Everywhere!</h3>
                   <p className={classes.text}>
                     We hope everyone had fun in the web application today! Feel
                     free to visit us…
