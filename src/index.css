@@ -41,6 +41,12 @@ body {
   font-weight: 400;
 }
 
+@font-face {
+  font-family: "Spectral";
+  src: url(./assets/fonts/Spectral-Bold.ttf);
+  font-weight: 600;
+}
+
 h1 {
   font-family: "Lato";
   font-weight: 700 !important;

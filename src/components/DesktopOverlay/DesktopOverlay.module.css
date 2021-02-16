@@ -1,0 +1,108 @@
+.bg {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 12px;
+  background: linear-gradient(
+    rgba(242, 247, 255, 1) 0%,
+    rgba(240, 249, 252, 1) 9%,
+    rgba(247, 247, 247, 1) 76%,
+    rgba(246, 245, 255, 1) 100%
+  );
+
+  display: flex;
+  justify-content: center;
+}
+
+.left {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+}
+
+.left video {
+  margin-top: 6%;
+  margin-left: 6%;
+  width: 87%;
+  height: auto;
+}
+
+.left img {
+  width: 100%;
+  position: absolute;
+}
+
+.align {
+  height: 100%;
+  width: 100%;
+
+  margin: 30% 0;
+}
+
+.rightAlign {
+  height: 65vh;
+  width: 100%;
+
+  position: relative;
+  margin: 20% 0;
+}
+
+.rightAlign div:nth-child(2) {
+  position: absolute;
+  bottom: 0;
+}
+
+.right {
+  height: 100%;
+  width: 100%;
+  padding: 0 0 0 7%;
+}
+
+.right h1 {
+  font-family: "Spectral";
+  font-weight: 600;
+  font-size: 3.5rem !important;
+}
+
+.right h3 {
+  font-size: 1.5rem !important;
+  font-weight: 400 !important;
+}
+
+.right p {
+  font-size: 0.9rem !important;
+  font-weight: 400 !important;
+  margin: 0;
+}
+
+.right img {
+  margin-top: 1rem;
+  height: 15vh;
+}
+
+.desktopOnly {
+  opacity: 0;
+  z-index: -2;
+  transition: opacity 0.2s;
+}
+
+/* only show these when desktop mode */
+@media only screen and (min-width: 700px) {
+  .desktopOnly {
+    opacity: 1;
+    z-index: 999999;
+  }
+}
+
+/* desktop mode but slim */
+@media only screen and (max-width: 699px) {
+  .desktopOnly {
+    opacity: 1;
+    z-index: 999999;
+  }
+
+  .rightAlign {
+    height: 80vh;
+  }
+}
