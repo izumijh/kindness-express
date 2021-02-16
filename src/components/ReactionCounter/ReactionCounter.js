@@ -1,63 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 
-// import required components
-import Content from "../Content/Content";
-
-// import svg Images
-import haha from "../../assets/images/response-counter/haha.svg";
-import smile from "../../assets/images/response-counter/smile.svg";
-import wow from "../../assets/images/response-counter/wow.svg";
-import repost from "../../assets/images/response-counter/repost.svg";
+// import svg components
+import Haha from "./Reactions/Haha";
+import Love from "./Reactions/Love";
+import Wow from "./Reactions/Wow";
 
 // import css modules
 import classes from "./ReactionCounter.module.css";
 
 const ReactionCounter = (props) => {
+  const [selectedReactions, select] = useState([false, false, false]);
+
   // Detect if props has passed down a number, if no number, select a random number from 0-9
   const reactions = [
     {
-      src: repost,
-      counter: props.count
-        ? props.count
-        : Math.floor(Math.random() * Math.floor(9)),
+      name: "love",
+      selected: selectedReactions[0],
+      counter: selectedReactions[0] ? props.count[0] + 1 : props.count[0],
     },
     {
-      src: smile,
-      counter: props.count
-        ? props.count
-        : Math.floor(Math.random() * Math.floor(9)),
+      name: "haha",
+      selected: selectedReactions[1],
+      counter: selectedReactions[1] ? props.count[1] + 1 : props.count[1],
     },
     {
-      src: haha,
-      counter: props.count
-        ? props.count
-        : Math.floor(Math.random() * Math.floor(9)),
-    },
-    {
-      src: wow,
-      counter: props.count
-        ? props.count
-        : Math.floor(Math.random() * Math.floor(9)),
+      name: "wow",
+      selected: selectedReactions[2],
+      counter: selectedReactions[2] ? props.count[2] + 1 : props.count[2],
     },
   ];
 
+  const icons = [Love, Haha, Wow];
+
+  const clickedReact = (id) => {
+    let newArray = [...selectedReactions];
+    newArray[id] = !newArray[id];
+    select(newArray);
+  };
+
   let items = reactions.map((r, id) => {
+    let Component = icons[id];
+
     return (
-      <span className={classes.reactionWrapper} key={id}>
-        <img src={r.src} alt="times reposted" />
+      <button
+        className={
+          r.selected
+            ? `${classes.reactionWrapper} ${classes.active}`
+            : `${classes.reactionWrapper}`
+        }
+        key={id}
+        onClick={() => clickedReact(id)}
+      >
+        <Component isActive={r.selected ? true : false} />
         {r.counter}
-      </span>
+      </button>
     );
   });
 
-  return (
-    <div className={classes.container}>
-      <Content>
-        <p>Responses Received</p>
-        {items}
-      </Content>
-    </div>
-  );
+  return <div className={classes.container}>{items}</div>;
 };
 
 export default ReactionCounter;

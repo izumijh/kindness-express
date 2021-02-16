@@ -9,12 +9,13 @@
 
 .button {
   color: #547394;
-  border: 2px dashed #547394;
+  border: 2px dashed #5473949c;
   border-radius: 12px;
-  padding: 0.8rem 0 0.9rem 3rem;
+  padding: 0.8rem 1.8rem 0.9rem 6.8rem;
   margin: 0.4rem 0;
-  background: none;
+  background-color: rgba(235, 247, 253, 0.808);
   width: 100%;
+  height: 12vh;
   position: relative;
 
   font-family: "Lato";
@@ -24,12 +25,8 @@
 
 .repostBtn {
   position: absolute;
-  left: 7%;
-  top: 17%;
-}
+  left: 10%;
+  top: 18%;
 
-.sendBtn {
-  position: absolute;
-  left: 7%;
-  top: 23%;
+  max-height: 8vh;
 }

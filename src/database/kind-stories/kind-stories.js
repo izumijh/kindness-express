@@ -25,6 +25,7 @@ export const stories = [
         </p>
       </>
     ),
+    reactions: [0, 2, 4],
   },
   {
     colour: `#F8B67B`,
@@ -52,6 +53,7 @@ export const stories = [
         </p>
       </>
     ),
+    reactions: [2, 1, 2],
   },
   {
     colour: `#91D8C9`,
@@ -79,6 +81,7 @@ export const stories = [
         </p>
       </>
     ),
+    reactions: [7, 1, 1],
   },
   {
     colour: `#91D8C9`,
@@ -105,6 +108,7 @@ export const stories = [
         </p>
       </>
     ),
+    reactions: [3, 4, 7],
   },
   {
     colour: `#91D8C9`,
@@ -132,5 +136,6 @@ export const stories = [
         </p>
       </>
     ),
+    reactions: [6, 4, 3],
   },
 ];
