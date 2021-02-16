@@ -7,6 +7,7 @@ import ReactionCounter from "../../components/ReactionCounter/ReactionCounter";
 // import svg icons
 import repost from "../../assets/images/buttons/repost-btn.svg";
 import reposted from "../../assets/images/buttons/reposted-btn.svg";
+import info from "../../assets/images/info-btn.svg";
 
 // import css modules
 import classes from "./ReactionToolbar.module.css";
@@ -16,8 +17,20 @@ const ReactionToolbar = (props) => {
   return (
     <div className={classes.container}>
       <Content>
-        <h3>What an amazing story!</h3>
-        <button className={classes.button} onClick={props.clickedRepost}>
+        <h3 className={classes.miniheader}>
+          What an amazing {props.isMessage ? "message" : "story"}!
+        </h3>
+        <span className={classes.infoBtn} onClick={props.clickedInfo}>
+          <img src={info} alt="info button" />
+        </span>
+        <button
+          className={
+            props.isReposted
+              ? `${classes.button} ${classes.active}`
+              : classes.button
+          }
+          onClick={props.clickedRepost}
+        >
           {props.isReposted ? (
             <>
               <img
@@ -26,9 +39,7 @@ const ReactionToolbar = (props) => {
                 className={classes.repostBtn}
                 style={{ top: "22%" }}
               />
-              {props.passingOn.charAt(0).toUpperCase() +
-                props.passingOn.slice(1)}{" "}
-              reposted!
+              {props.isMessage ? "Message" : "Story"} reposted!
             </>
           ) : (
             <>
@@ -37,7 +48,8 @@ const ReactionToolbar = (props) => {
                 alt="repost icon"
                 className={classes.repostBtn}
               />
-              Repost this {props.passingOn} for others to see!
+              Repost {props.isMessage ? "message" : "this story"} for others to
+              see!
             </>
           )}
         </button>

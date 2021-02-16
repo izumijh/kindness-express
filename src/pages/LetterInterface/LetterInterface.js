@@ -13,6 +13,7 @@ import ReactionToolbar from "../../components/ReactionToolbar/ReactionToolbar";
 import ActionButton from "../../components/ActionButton/ActionButton";
 import RepostModal from "../../containers/RepostModal/RepostModal";
 import UndoRepostModal from "../../containers/UndoRepostModal/UndoRepostModal";
+import RepostInfoModal from "../../containers/RepostInfoModal/RepostInfoModal";
 import OtherLetterActions from "../../containers/OtherLetterActions/OtherLetterActions";
 import FeatureWIPModal from "../../containers/FeatureWIPModal/FeatureWIPModal";
 
@@ -33,6 +34,7 @@ class LetterInterface extends Component {
     doneReposting: false,
     showReposted: false,
     inUndoingRepost: false,
+    showRepostInfo: false,
     isShowingMoreMenu: false,
     featureNotAvailable: false,
   };
@@ -108,8 +110,9 @@ class LetterInterface extends Component {
               </p>
             </Letter>
             <ReactionToolbar
-              passingOn="story"
+              passingOn="this story"
               isReposted={this.state.showReposted}
+              clickedInfo={() => this.setState({ showRepostInfo: true })}
               clickedRepost={() =>
                 //  if already reposted, run Undo repost modal instead of repost modal
                 this.state.showReposted
@@ -125,7 +128,6 @@ class LetterInterface extends Component {
           </Col>
         </Row>
         <RepostModal
-          repostingA="story"
           isReposting={this.state.isReposting}
           doneReposting={this.state.doneReposting}
           clickedRepost={() =>
@@ -147,6 +149,10 @@ class LetterInterface extends Component {
           clickedExit={() => this.setState({ isShowingMoreMenu: false })}
           clickedShare={() => this.setState({ featureNotAvailable: true })}
           clickedReport={() => this.setState({ featureNotAvailable: true })}
+        />
+        <RepostInfoModal
+          activateIf={this.state.showRepostInfo}
+          clickedExit={() => this.setState({ showRepostInfo: false })}
         />
         <FeatureWIPModal
           activateIf={this.state.featureNotAvailable}

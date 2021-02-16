@@ -21,6 +21,13 @@
   font-family: "Lato";
   font-weight: bold;
   font-size: 1rem;
+
+  transition: 0.3s;
+}
+
+.button.active {
+  border: 2px dashed #547394;
+  background-color: #ddf4ff;
 }
 
 .repostBtn {
@@ -29,4 +36,19 @@
   top: 18%;
 
   max-height: 8vh;
+}
+
+.miniheader {
+  display: inline-block;
+  width: 80%;
+}
+
+.infoBtn {
+  display: inline-block;
+  text-align: right;
+  width: 20%;
+}
+
+.infoBtn > img {
+  height: 1.5rem;
 }
