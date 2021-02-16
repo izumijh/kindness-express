@@ -207,8 +207,8 @@ class HomePage extends Component {
             clickedExit={() => this.setState({ featureNotAvailable: false })}
           />
           <TutorialOverlay
-            // activateIf={this.state.showTutorial}
-            activateIf={true}
+            activateIf={this.state.showTutorial}
+            // activateIf={true}
             hideTutorial={() => this.setState({ showTutorial: false })}
           />
         </Layout>

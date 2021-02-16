@@ -52,7 +52,7 @@ const StepOne = (props) => {
             </label>
             <label className={currentPick === "1" ? classes.active : null}>
               <Field type="radio" name="picked" value="1" />
-              <p>I did something nice for someone today!"</p>
+              <p>I did something nice for someone today, and it felt great!"</p>
             </label>
             <label>
               <Field type="radio" name="picked" value="2" />
