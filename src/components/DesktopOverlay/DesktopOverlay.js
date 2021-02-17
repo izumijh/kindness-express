@@ -4,8 +4,13 @@ import React from 'react';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-// import preview video
-import preview from "../../assets/videos/preview.mp4";
+// import Lottie
+import Lottie from "react-lottie-wrapper";
+
+// import preview animation
+import * as preview from "../../assets/animations/preview/preview.json";
+
+// import other image assets
 import frame from "../../assets/images/iphone-frame.png";
 import qr from "../../assets/images/QR/TKE-QR.svg";
 
@@ -14,16 +19,21 @@ import classes from './DesktopOverlay.module.css';
 
 // Put this overlay in the Layout.js File
 const DesktopOverlay = () => {
+    const options = {
+        loop: true,
+        autoplay: true,
+        animationData: JSON.parse(JSON.stringify(preview.default)),
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice",
+        },
+    };
+
     return (
         <Row className={`${classes.bg} ${classes.desktopOnly}`}>
             <Col xs={4} lg={2} className={classes.left}>
                 <div className={classes.align}>
                     <img src={frame} alt="mobile phone frame" />
-                    <div style={{ borderRadius: "12px" }}>
-                        <video width="886" height="1920" autoPlay loop muted>
-                            <source src={preview} type="video/mp4" />
-                        </video>
-                    </div>
+                    <Lottie options={options} width={"auto"} height={"auto"} />
                 </div>
             </Col>
 
