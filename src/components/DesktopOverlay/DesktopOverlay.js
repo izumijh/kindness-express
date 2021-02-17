@@ -29,7 +29,7 @@ const DesktopOverlay = () => {
     };
 
     return (
-        <Row className={`${classes.bg} ${classes.desktopOnly}`}>
+        <Row className={`${classes.bg} ${classes.fadeIn}`}>
             <Col xs={4} lg={2} className={classes.left}>
                 <div className={classes.align}>
                     <img src={frame} alt="mobile phone frame" />

@@ -14,6 +14,23 @@ import DesktopOverlay from "../../components/DesktopOverlay/DesktopOverlay";
 
 /* Every child is required to be wrapped in <Row></Row>. */
 class Layout extends Component {
+  state = {
+    isDesktop: false,
+  }
+
+  checkScreenRes = () => {
+    this.setState({ isDesktop: window.innerWidth >= 500 });
+  }
+
+  componentDidMount = () => {
+    this.checkScreenRes();
+    window.addEventListener("resize", this.checkScreenRes);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.checkScreenRes);
+  }
+
   render() {
     return (
       <>
@@ -23,7 +40,7 @@ class Layout extends Component {
           clickedNav={this.props.clickedNav}
           clickedBackButton={this.props.clickedBackButton}
           clickedMoreButton={this.props.clickedMoreButton}
-          
+
           // Navigation Menu Functions
           launchFAQ={this.props.launchFAQ}
           launchNews={this.props.launchNews}
@@ -34,7 +51,8 @@ class Layout extends Component {
         {this.props.children}
         <Clouds />
         <Footer />
-        <DesktopOverlay />
+
+        {this.state.isDesktop ? <DesktopOverlay /> : null}
       </>
     );
   }
