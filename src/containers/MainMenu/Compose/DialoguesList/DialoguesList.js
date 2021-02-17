@@ -2,7 +2,7 @@
 export const defaultMenu = [
   {
     chat: [`What should I do today?`],
-    response: [`Post a Story`, `Post Kind Words`],
+    response: [`Post a Story`, `Say Kind Words`],
     responseHandler: ["wantToPostStory", "wantToPostMessage"],
   },
 ];
