@@ -46,17 +46,16 @@ const RepostModal = (props) => {
                 : `${classes.illust}`
             }
           />
-          <h1>Pass this {props.isMessage ? "message" : "story"} on?</h1>
+          <h1>Repost this {props.isMessage ? "message" : "story"}?</h1>
           <p>
-            Give other people on this website a chance to read about this{" "}
-            {props.isMessage ? "message" : "story"} too.
+            Give other people on this website a chance to read about this too.
           </p>
           <ActionButton white clicked={props.clickedExit}>
             Not Now
           </ActionButton>
           <ActionButton clicked={props.clickedRepost}>
             {" "}
-            Yes, pass it on!{" "}
+            Yes, repost it!{" "}
           </ActionButton>
         </div>
 
