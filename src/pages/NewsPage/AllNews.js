@@ -6,7 +6,7 @@ export const news = [
   {
     image: post1,
     date: "9 December 2020",
-    headline: "Welcome to the Kindness Express!",
+    headline: "Kindness is Everywhere!",
     post: (
       <>
         <p>

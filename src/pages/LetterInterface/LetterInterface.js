@@ -9,11 +9,11 @@ import Image from "react-bootstrap/Image";
 import Layout from "../../hocs/Layout/Layout";
 import Letter from "../../components/Letter/Letter";
 import TopSpacing from "../../components/TopSpacing/TopSpacing";
-import ReactionCounter from "../../components/ReactionCounter/ReactionCounter";
 import ReactionToolbar from "../../components/ReactionToolbar/ReactionToolbar";
 import ActionButton from "../../components/ActionButton/ActionButton";
 import RepostModal from "../../containers/RepostModal/RepostModal";
-import ReactModal from "../../containers/ReactModal/ReactModal";
+import UndoRepostModal from "../../containers/UndoRepostModal/UndoRepostModal";
+import RepostInfoModal from "../../containers/RepostInfoModal/RepostInfoModal";
 import OtherLetterActions from "../../containers/OtherLetterActions/OtherLetterActions";
 import FeatureWIPModal from "../../containers/FeatureWIPModal/FeatureWIPModal";
 
@@ -32,9 +32,9 @@ class LetterInterface extends Component {
     randomNum: Math.floor(Math.random() * Math.floor(stories.length)),
     isReposting: false,
     doneReposting: false,
-    isReacting: false,
-    pickedReaction: null,
-    doneReacting: false,
+    showReposted: false,
+    inUndoingRepost: false,
+    showRepostInfo: false,
     isShowingMoreMenu: false,
     featureNotAvailable: false,
   };
@@ -59,7 +59,7 @@ class LetterInterface extends Component {
     // letter starter database
     let starters = [
       `Dear stranger, today is going to be a good day! And here’s why…`,
-      `Dear stranger, I did something nice for someone today!`,
+      `Dear stranger, I did something nice for someone today, and it felt great!`,
       `Dear stranger,`,
     ];
 
@@ -80,6 +80,7 @@ class LetterInterface extends Component {
             <p>{sessionStorage.getItem("story")}</p>
           </>
         ),
+        reactions: [0, 0, 0],
       };
     }
 
@@ -108,19 +109,17 @@ class LetterInterface extends Component {
                 {story.location}
               </p>
             </Letter>
-            <ReactionCounter />
             <ReactionToolbar
-              passingOn="story"
+              passingOn="this story"
+              isReposted={this.state.showReposted}
+              clickedInfo={() => this.setState({ showRepostInfo: true })}
               clickedRepost={() =>
-                this.setState({ isReposting: true, doneReposting: false })
+                //  if already reposted, run Undo repost modal instead of repost modal
+                this.state.showReposted
+                  ? this.setState({ isUndoingRepost: true })
+                  : this.setState({ isReposting: true, doneReposting: false })
               }
-              clickedReact={() =>
-                this.setState({
-                  isReacting: true,
-                  pickedReaction: null,
-                  doneReacting: false,
-                })
-              }
+              count={story.reactions}
             />
             <ActionButton clicked={this.quitInterfaceHandler}>
               Done
@@ -129,25 +128,31 @@ class LetterInterface extends Component {
           </Col>
         </Row>
         <RepostModal
-          repostingA="story"
           isReposting={this.state.isReposting}
           doneReposting={this.state.doneReposting}
-          clickedRepost={() => this.setState({ doneReposting: true })}
+          clickedRepost={() =>
+            this.setState({ doneReposting: true, showReposted: true })
+          }
           clickedExit={() => this.setState({ isReposting: false })}
         />
-        <ReactModal
-          isReacting={this.state.isReacting}
-          clickedExit={() => this.setState({ isReacting: false })}
-          pickedReaction={(r) => this.setState({ pickedReaction: r })}
-          currentReaction={this.state.pickedReaction}
-          doneReacting={this.state.doneReacting}
-          clickedSend={() => this.setState({ doneReacting: true })}
+        <UndoRepostModal
+          activateIf={this.state.isUndoingRepost}
+          clickedExit={() => {
+            this.setState({ isUndoingRepost: false });
+          }}
+          clickedUndoRepost={() =>
+            this.setState({ showReposted: false, isUndoingRepost: false })
+          }
         />
         <OtherLetterActions
           activateIf={this.state.isShowingMoreMenu}
           clickedExit={() => this.setState({ isShowingMoreMenu: false })}
           clickedShare={() => this.setState({ featureNotAvailable: true })}
           clickedReport={() => this.setState({ featureNotAvailable: true })}
+        />
+        <RepostInfoModal
+          activateIf={this.state.showRepostInfo}
+          clickedExit={() => this.setState({ showRepostInfo: false })}
         />
         <FeatureWIPModal
           activateIf={this.state.featureNotAvailable}

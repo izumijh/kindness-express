@@ -10,21 +10,32 @@ import Designs from "./Designs/Designs";
 const DesignToolbar = (props) => {
   return (
     <div className={classes.toolbarWrapper}>
-      <div className={classes.header}>
-        <span
-          type="span"
-          className={classes.backButton}
+      {/* Header */}
+      <div className={classes.headerGroup}>
+        <h3
           onClick={props.toggleToolbar}
-        >{`<`}</span>
-        <h3>
-          {props.activeToolbar === 0 ? "Balloon Colour" : "Letter Design"}
+          className={
+            props.activeToolbar === 0
+              ? `${classes.header} ${classes.active}`
+              : classes.header
+          }
+        >
+          Balloon
         </h3>
-        <span
-          type="span"
-          className={classes.nextButton}
+
+        <h3
           onClick={props.toggleToolbar}
-        >{`>`}</span>
+          className={
+            props.activeToolbar !== 0
+              ? `${classes.header} ${classes.active}`
+              : classes.header
+          }
+        >
+          Envelope
+        </h3>
       </div>
+
+      {/* Contents */}
       <div className={classes.body}>
         <div
           className={

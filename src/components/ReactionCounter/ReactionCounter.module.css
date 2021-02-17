@@ -1,21 +1,37 @@
 .container {
-  /* center the container */
-  width: 88vw;
-  float: none;
-  display: block;
-  margin: 4% auto;
-  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .reactionWrapper {
-  display: inline-block;
-  width: 25%;
-  text-align: center;
-  font-family: "Lato";
   color: #547394;
-  margin-bottom: 0.5rem;
+  border: 2px dashed #5473949c;
+  border-radius: 12px;
+  padding: 0 0 0 2.5rem;
+  background-color: rgba(235, 247, 253, 0.808);
+  width: 32%;
+  height: 3rem;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+
+  font-family: "Lato";
+  font-weight: bold;
+  font-size: 1rem;
+
+  transition: 0.3s;
 }
 
-.reactionWrapper img {
-  margin-right: 0.5rem;
+.reactionWrapper > svg {
+  height: 2.5rem;
+  position: absolute;
+  top: 1px;
+  left: 5%;
+}
+
+.reactionWrapper.active {
+  border: 2px dashed #547394;
+  background-color: #DDF4FF;
 }

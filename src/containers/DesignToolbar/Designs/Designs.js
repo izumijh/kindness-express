@@ -29,7 +29,7 @@ const Designs = (props) => {
           style={
             props.currentDesign === id
               ? { border: "3px solid #547394" }
-              : { opacity: "0.5" }
+              : { opacity: "0.5", border: "3px dashed #547394" }
           }
           // clicking on design sets the design for balloon in parent JSX
           onClick={() => props.setDesign(id)}

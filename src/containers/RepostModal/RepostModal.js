@@ -46,10 +46,10 @@ const RepostModal = (props) => {
                 : `${classes.illust}`
             }
           />
-          <h1>Pass this {props.repostingA} on?</h1>
+          <h1>Pass this {props.isMessage ? "message" : "story"} on?</h1>
           <p>
-            Give other people on this website a chance to read about this story
-            too.
+            Give other people on this website a chance to read about this{" "}
+            {props.isMessage ? "message" : "story"} too.
           </p>
           <ActionButton white clicked={props.clickedExit}>
             Not Now
@@ -75,9 +75,9 @@ const RepostModal = (props) => {
           <span style={{ display: "block", transform: "translateY(-20%)" }}>
             <h1>
               <span style={{ textTransform: "capitalize" }}>
-                {props.repostingA}
+                {props.isMessage ? "Message" : "Story"}
               </span>{" "}
-              is Reposted!
+              Reposted!
             </h1>
             <p>Thanks! We're sure they will appreciate it.</p>
             <ActionButton clicked={props.clickedExit}> Done </ActionButton>

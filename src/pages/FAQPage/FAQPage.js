@@ -86,6 +86,7 @@ class FAQPage extends Component {
                     key={faq.q}
                     question={faq.q}
                     answer={faq.a}
+                    borderColor={"#DCF3FA"}
                     active={this.state.currentlyActive.about === id}
                     clicked={() => this.expandHandler("about", id)}
                   />

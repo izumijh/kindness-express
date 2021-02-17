@@ -9,6 +9,7 @@ export const messages = [
         Remember to give yourself a lot of breaks and drink more water!”
       </p>
     ),
+    reactions: [6, 4, 3],
   },
   {
     author: `- P`,
@@ -20,6 +21,7 @@ export const messages = [
         some: 'You did amazing today!'”
       </p>
     ),
+    reactions: [1, 4, 2],
   },
   {
     author: `- R`,
@@ -28,6 +30,7 @@ export const messages = [
     content: (
       <p>“I'm having a bad day, but this website made my day feel less bad.”</p>
     ),
+    reactions: [1, 1, 2],
   },
   {
     author: `- T`,
@@ -36,5 +39,6 @@ export const messages = [
     content: (
       <p>“I hope something good happens to you today, to me as well.”</p>
     ),
+    reactions: [1, 1, 5],
   },
 ];
