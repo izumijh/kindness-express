@@ -21,16 +21,14 @@
   padding: 0;
 }
 
-.left video {
-  margin-top: 6%;
-  margin-left: 6%;
-  width: 87%;
-  height: auto;
+.align > div {
+  padding: 10% 7%;
 }
 
 .left img {
   width: 100%;
   position: absolute;
+  z-index: 1000000;
 }
 
 .align {
@@ -96,7 +94,7 @@
 }
 
 /* desktop mode but slim */
-@media only screen and (max-width: 699px) {
+@media only screen and (min-width: 500px) and (max-width: 699px) {
   .desktopOnly {
     opacity: 1;
     z-index: 999999;
