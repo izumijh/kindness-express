@@ -127,7 +127,7 @@ class MessageInterface extends Component {
           clickedExit={() => this.setState({ isReposting: false })}
         />
         <UndoRepostModal
-          undoingRepostOf="this message"
+          isMessage
           activateIf={this.state.isUndoingRepost}
           clickedExit={() => {
             this.setState({ isUndoingRepost: false });

@@ -78,6 +78,11 @@ p {
   color: #547394;
 }
 
+span.blue {
+  color: #55abf5;
+  font-weight: 700 !important;
+}
+
 textarea {
   font-family: "Patrick Hand" !important;
   letter-spacing: 0.05rem;

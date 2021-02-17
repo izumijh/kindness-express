@@ -9,8 +9,8 @@ export const stories = [
       <>
         <p>
           <b>
-            Dear stranger, I hope this story will prove that being kind is
-            great!
+            Dear stranger, I hope this story will prove that <span class="blue">being kind is
+            great!</span>
           </b>
         </p>
         <p>
@@ -19,8 +19,8 @@ export const stories = [
           to use a smartphone to pay for parking. )
         </p>
         <p>
-          I found extras in my car, and I gave her one. She was happy and wanted
-          to pay me back, but I refused. It feels great to be able to help
+          I found extras in my car, and I gave her one. She was <span class="blue">happy</span> and wanted
+          to pay me back, but I refused. It feels <span class="blue">great</span> to be able to help
           someone out!
         </p>
       </>
@@ -37,7 +37,7 @@ export const stories = [
       <>
         <p>
           <b>
-            Dear stranger, This made my day! So I was hoping it will make your
+            Dear stranger, <span class="blue">this made my day!</span> So I was hoping it will make your
             day too:
           </b>
         </p>
@@ -48,8 +48,8 @@ export const stories = [
         </p>
         <p>
           A while later, he visited us again, carrying a package of trash bags.
-          He picked up a pack for us while he was outside! This kindness has
-          brightened my day.
+          He picked up a pack for us while he was outside! <span class="blue">This kindness has
+          brightened my day.</span>
         </p>
       </>
     ),
@@ -65,19 +65,18 @@ export const stories = [
       <>
         <p>
           <b>
-            Dear stranger, Today is going to be a great day! And here’s why:
+            Dear stranger, <span class="blue">today is going to be a great day!</span> And here’s why:
           </b>
         </p>
         <p>
-          I helped out someone at the post office! There happened to be a long
+          I <span class="blue">helped</span> someone out at the post office! There happened to be a long
           queue there today, and I spent a lot of time queueing for my turn. But
-          alas, I have to go for class and couldn’t wait any longer. I figured
-          it would be a waste to just throw away my queue number, so I looked
+          alas, I have to go and couldn’t wait any longer. It felt like a waste to just throw away my queue number, so I looked
           around me and saw an old lady with a queue number way behind mine! I
           gave it to her!
         </p>
         <p>
-          Classes at school suck, but man this made me feel like a superhero.
+          Classes at school suck, but man this made me feel like a <span class="blue">superhero.</span>
         </p>
       </>
     ),
@@ -93,7 +92,7 @@ export const stories = [
       <>
         <p>
           <b>
-            Dear stranger, Today is going to be a great day! And here’s why:
+            Dear stranger, <span class="blue">today is going to be a great day!</span> And here’s why:
           </b>
         </p>
         <p>
@@ -104,7 +103,7 @@ export const stories = [
         </p>
         <p>
           Perhaps it's because it was their closing hours and they had leftover
-          sushis, but it felt nice.
+          sushis, but it felt <span class="blue">nice.</span>
         </p>
       </>
     ),
@@ -120,14 +119,14 @@ export const stories = [
       <>
         <p>
           <b>
-            Dear stranger, Today is going to be a great day! And here’s why:
+            Dear stranger, <span class="blue">today is going to be a great day!</span> And here’s why:
           </b>
         </p>
         <p>
           I forgot the time I was supposed to board the bus home for Christmas,
           and arrived an hour late. It was terrible, and I even begged the coach
           to let me onto the next bus. Everything seemed hopeless until this
-          very kind woman stepped up to offer me a seat on the bus!
+          very <span class="blue">kind</span> woman stepped up to offer me a seat on the bus!
         </p>
         <p>
           It was meant to be a seat for her daughter, who didn't come to the
