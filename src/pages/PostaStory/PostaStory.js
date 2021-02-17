@@ -44,7 +44,7 @@ class PostaStory extends Component {
               style={{ padding: "2vh 5vw" }}
             >
               <h1>Hello, {username ? username : "You"}!</h1>
-              <h2> Are you ready to make an impact?</h2>
+              <h2>Smelled kindness in the air today?</h2>
               <Image
                 src={illustration}
                 alt="image of an empty paper and a pencil for you."

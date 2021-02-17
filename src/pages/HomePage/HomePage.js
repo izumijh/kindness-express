@@ -16,6 +16,7 @@ import PaperPlane from "../../components/PaperPlane/PaperPlane";
 import CaughtLetterModal from "../../containers/CaughtLetterModal/CaughtLetterModal";
 import CaughtPlaneModal from "../../containers/CaughtPlaneModal/CaughtPlaneModal";
 import FeatureWIPModal from "../../containers/FeatureWIPModal/FeatureWIPModal";
+import TutorialOverlay from "../../components/TutorialOverlay/TutorialOverlay";
 
 // Import Router Props
 import { withRouter } from "react-router-dom";
@@ -29,6 +30,7 @@ class HomePage extends Component {
     postmanMenuisOpen: false,
     selectedLetter: null,
     selectedPlane: false,
+    showTutorial: false,
   };
 
   clickedBackButtonHandler = () => {
@@ -118,7 +120,7 @@ class HomePage extends Component {
             style={{ overflow: "hidden", maxHeight: "70vh" }}
             className={
               this.props.location.pathname === "/" &&
-              this.state.selectedLetter === null && 
+              this.state.selectedLetter === null &&
               this.state.selectedPlane === false
                 ? `${classes.balloons} ${classes.active}`
                 : `${classes.balloons}`
@@ -153,6 +155,7 @@ class HomePage extends Component {
             featureNotAvailable={() =>
               this.setState({ featureNotAvailable: true })
             }
+            showTutorial={() => this.setState({ showTutorial: true })}
           />
           <Row>
             <Col
@@ -202,6 +205,11 @@ class HomePage extends Component {
           <FeatureWIPModal
             activateIf={this.state.featureNotAvailable}
             clickedExit={() => this.setState({ featureNotAvailable: false })}
+          />
+          <TutorialOverlay
+            activateIf={this.state.showTutorial}
+            // activateIf={true}
+            hideTutorial={() => this.setState({ showTutorial: false })}
           />
         </Layout>
       </>

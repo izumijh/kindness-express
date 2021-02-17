@@ -80,7 +80,7 @@
 }
 
 .letterWrapper.letterInstructions::before {
-  content: url(../../assets/images/tap-bubble.svg);
+  content: url(../../assets/images/tap-to-open.svg);
   position: absolute;
   right: 12%;
   top: -240%;
@@ -89,7 +89,7 @@
 }
 
 .letterWrapper.active .letterInstructions::before {
-  content: url(../../assets/images/tap-bubble.svg);
+  content: url(../../assets/images/tap-to-open.svg);
   position: absolute;
   right: 8%;
   top: -240%;

@@ -9,6 +9,9 @@ import Clouds from "../../components/Clouds/Clouds";
 // import Footer Component
 import Footer from "../../containers/Footer/Footer";
 
+// import overlay for desktops
+import DesktopOverlay from "../../components/DesktopOverlay/DesktopOverlay";
+
 /* Every child is required to be wrapped in <Row></Row>. */
 class Layout extends Component {
   render() {
@@ -31,6 +34,7 @@ class Layout extends Component {
         {this.props.children}
         <Clouds />
         <Footer />
+        <DesktopOverlay />
       </>
     );
   }

@@ -1,0 +1,145 @@
+import React from "react";
+
+// import css modules
+import classes from "./Reactions.module.css";
+
+const Haha = (props) => {
+  const smiley = props.isActive
+    ? `${classes.smiley} ${classes.active}`
+    : `${classes.smiley}`;
+
+  const effects = props.isActive
+    ? `${classes.effects} ${classes.active}`
+    : `${classes.effects}`;
+
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      xlinkHref="http://www.w3.org/1999/xlink"
+      viewBox="0 0 86.25 72.09"
+    >
+      <g style={{ isolation: "isolate" }}>
+        <g id="haha">
+          <g id="effects" className={effects}>
+            <line
+              x1="65.54"
+              y1="9.92"
+              x2="70.67"
+              y2="2.48"
+              fill="none"
+              stroke="#96b8e2"
+              strokeMiterlimit="10"
+              strokeWidth="3"
+            />
+            <line
+              x1="69.59"
+              y1="14.27"
+              x2="77.51"
+              y2="9.23"
+              fill="none"
+              stroke="#96b8e2"
+              strokeMiterlimit="10"
+              strokeWidth="3"
+            />
+            <line
+              x1="72.66"
+              y1="20.11"
+              x2="81.75"
+              y2="17.77"
+              fill="none"
+              stroke="#96b8e2"
+              strokeMiterlimit="10"
+              strokeWidth="3"
+            />
+          </g>
+          <g id="smiley" className={smiley}>
+            <image
+              width="73"
+              height="73"
+              transform="translate(6.89 2.12)"
+              opacity="0.2"
+              xlinkHref="data:image/png;base64,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"
+              style={{ mixBlendMode: "multiply" }}
+            />
+            <path
+              d="M42.48,8A29.28,29.28,0,1,1,13.21,37.23h0A29.28,29.28,0,0,1,42.48,8Z"
+              fill="#fafabf"
+            />
+            <path
+              d="M42.48,8A29.28,29.28,0,1,1,13.21,37.23h0A29.28,29.28,0,0,1,42.48,8Z"
+              fill="none"
+              stroke="#597685"
+              strokeMiterlimit="10"
+              strokeWidth="3"
+            />
+            <ellipse
+              cx="30.21"
+              cy="30.05"
+              rx="3.97"
+              ry="2.24"
+              fill="#fffa5a"
+              opacity="0.62"
+              style={{ isolation: "isolate" }}
+            />
+            <ellipse
+              cx="55.54"
+              cy="30.05"
+              rx="3.97"
+              ry="2.24"
+              fill="#fffa5a"
+              opacity="0.62"
+              style={{ isolation: "isolate" }}
+            />
+            <path
+              d="M25.26,36.22s.24-6.84,4.95-6.84,4.95,6.84,4.95,6.84"
+              fill="#fafabf"
+              stroke="#597685"
+              strokeLinecap="round"
+              strokeMiterlimit="10"
+              strokeWidth="2.5"
+            />
+            <path
+              d="M60.49,36.22s-.24-6.84-5-6.84-4.95,6.84-4.95,6.84"
+              fill="#fafabf"
+              stroke="#597685"
+              strokeLinecap="round"
+              strokeMiterlimit="10"
+              strokeWidth="2.5"
+            />
+            <path
+              d="M34.47,43.25a1.26,1.26,0,0,0-1.26,1.25.86.86,0,0,0,0,.16,9.5,9.5,0,0,0,18.86,0A1.27,1.27,0,0,0,51,43.26H34.47Z"
+              fill="#fbacaa"
+              stroke="#597685"
+              strokeMiterlimit="10"
+              strokeWidth="2"
+            />
+            <ellipse cx="20.97" cy="39.02" rx="4.57" ry="1.74" fill="#fbacaa" />
+            <ellipse cx="64.15" cy="39.02" rx="4.57" ry="1.74" fill="#fbacaa" />
+            <path
+              d="M47.76,49.79c0,1.48-2.37,2.45-5.11,2.45s-4.83-1-4.83-2.45,2.22-2.68,5-2.68S47.76,48.31,47.76,49.79Z"
+              fill="#ffe6e6"
+            />
+            <path
+              d="M36,10.82S20.78,15.25,17.81,28.55"
+              fill="none"
+              stroke="#fff"
+              strokeLinecap="round"
+              strokeMiterlimit="10"
+              strokeWidth="2"
+            />
+            <path
+              d="M49.35,63.23S64.6,58.79,67.58,45.49"
+              fill="none"
+              stroke="#fffa5a"
+              strokeLinecap="round"
+              strokeMiterlimit="10"
+              strokeWidth="3"
+            />
+          </g>
+        </g>
+      </g>
+    </svg>
+  );
+};
+
+export default Haha;

@@ -19,7 +19,7 @@ const schema = Yup.object().shape({
 const StepTwo = (props) => {
   const starters = [
     `Today is going to be a good day! And here’s why…`,
-    `I did something nice for someone today!`,
+    `I did something nice for someone today, and it felt great!`,
     `I'll write my own custom starter.`,
   ];
 

@@ -27,15 +27,13 @@ const RecentStories = (props) => {
           <div className={classes.carouselContainer}>
             {balloonDesigns.map((balloon, id) => {
               return (
-                <>
-                  <BalloonLetterCard
-                    key={balloon.label + id}
-                    label={balloon.label}
-                    currentColour={balloon.colour}
-                    currentDesign={balloon.design}
-                    clicked={props.clickedViewStory}
-                  />
-                </>
+                <BalloonLetterCard
+                  key={balloon.label + id}
+                  label={balloon.label}
+                  currentColour={balloon.colour}
+                  currentDesign={balloon.design}
+                  clicked={props.clickedViewStory}
+                />
               );
             })}
           </div>

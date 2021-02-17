@@ -8,13 +8,12 @@ import bigsmile from "../../../../assets/images/postman-emotes/big-smile.svg"; /
 import xd from "../../../../assets/images/postman-emotes/xd.svg"; //1
 import smile from "../../../../assets/images/postman-emotes/smile.svg"; //2
 import cry from "../../../../assets/images/postman-emotes/cry.svg"; //3
-import notif from "../../../../assets/images/postman-emotes/notif.svg"; //4
 
 // import css modules
 import classes from "./PostmanEmotes.module.css";
 
 const PostmanEmotes = (props) => {
-  const emotes = [bigsmile, xd, smile, cry, notif];
+  const emotes = [bigsmile, xd, smile, cry];
 
   let emoting = bigsmile;
   if (props.postmanEmote) {

@@ -1,0 +1,45 @@
+.postmanIcon {
+  position: absolute;
+  top: -24%;
+
+  /* center the icon */
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chatbubble {
+  position: absolute;
+  top: -24%;
+  left: 63%;
+}
+
+.textWrapper h2 {
+  margin-bottom: 0.2rem;
+}
+
+.textWrapper p {
+  margin-bottom: 0.2rem;
+}
+
+.textWrapper {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.button {
+  margin-bottom: 3rem;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
