@@ -26,7 +26,7 @@ const UndoRepostModal = (props) => {
       </div>
       <div className={classes.textWrapper}>
         <h2>Undo Repost?</h2>
-        <p>This will undo the repost of {props.undoingRepostOf}.</p>
+        <p>This will undo the repost of this {props.isMessage ? "message" : "story"}.</p>
       </div>
       <div className={classes.button}>
         <ActionButton white clicked={props.clickedExit}>
