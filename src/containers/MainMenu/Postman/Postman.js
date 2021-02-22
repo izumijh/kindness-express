@@ -6,6 +6,7 @@ import Image from "react-bootstrap/Image";
 // import SVG image
 import icon from "../../../assets/images/postman-default.svg";
 import bubble from "../../../assets/images/postman-chatbubble.svg";
+import newfeaturebubble from "../../../assets/images/new-feature.svg";
 
 // import Required Components
 import UserChoices from "./UserChoices/UserChoices";
@@ -171,8 +172,8 @@ const Postman = (props) => {
           }
         />
         <Image
-          src={bubble}
-          alt="tap on me"
+          src={newfeaturebubble}
+          alt="new feature"
           className={
             currentTopic === registered["profileIntro"]
               ? `${classes.notifBubble} ${classes.active}`
