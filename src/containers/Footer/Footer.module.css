@@ -1,5 +1,5 @@
 .footerContainer {
-  background: url(../../assets/images/cityscape.png);
+  background: url(../../assets/images/cityscape.svg);
   background-repeat: no-repeat;
   background-size: 110%;
   background-position: center;
@@ -10,4 +10,38 @@
   height: 50%;
 
   z-index: -1;
+}
+
+.footerContainer::after {
+  content: "";
+  background: url(../../assets/images/bandarsunway.svg);
+  background-repeat: no-repeat;
+  background-size: 110%;
+  background-position: center;
+
+  width: 100%;
+  position: fixed;
+  bottom: -19%;
+  height: 50%;
+
+  opacity: 0;
+  z-index: -1;
+}
+
+.footerContainer.active::after {
+  opacity: 1;
+}
+
+.footerContainer.fadeIn::after {
+  animation: fadeIn 0.4s linear forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

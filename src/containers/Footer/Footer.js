@@ -8,7 +8,7 @@ import classes from "./Footer.module.css";
 
 class Footer extends Component {
   render() {
-    return <Row className={classes.footerContainer}></Row>;
+    return <Row className={this.props.currentLocation === "/" || this.props.currentLocation === "/postman" || this.props.currentLocation === "/compose" ? `${classes.footerContainer} ${classes.fadeIn}` : `${classes.footerContainer} ${classes.active}`}></Row>;
   }
 }
 
