@@ -69,8 +69,8 @@ class PostaMessage extends Component {
           <Row style={{ width: "100vw", padding: ".5rem" }}>
             <Col xs={12} className={classes.wrapper}>
               <Content>
-                <h2>Send Some Kind Words!</h2>
-                <p>Your messages will be posted out in a paper plane!</p>
+                <h2>Say Some Kind Words!</h2>
+                <p>Kind words are sent out in paper planes.</p>
               </Content>
               <Content>
                 <Formik
