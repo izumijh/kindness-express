@@ -50,7 +50,9 @@ class Layout extends Component {
         />
         {this.props.children}
         <Clouds />
-        <Footer />
+        <Footer
+          currentLocation={this.props.currentLocation}
+        />
 
         {this.state.isDesktop ? <DesktopOverlay /> : null}
       </>

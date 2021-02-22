@@ -21,14 +21,15 @@
   background-color: #f8ffff;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
+  transition: background-color 0.4s;
 }
 
 .header.active {
-  background-color: #ecf0f7;
+  background-color: #dff3ffc2;
 }
 
 .body {
-  background-color: #ecf0f7;
+  background-color: #dff3ffc2;
   width: 100%;
   border-radius: 6px;
   padding: 0.5rem 0.8rem;
