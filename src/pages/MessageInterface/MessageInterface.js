@@ -112,7 +112,7 @@ class MessageInterface extends Component {
               count={message.reactions}
             />
             <ActionButton clicked={this.quitInterfaceHandler}>
-              Done
+              Done Reading
             </ActionButton>
             <TopSpacing />
           </Col>
