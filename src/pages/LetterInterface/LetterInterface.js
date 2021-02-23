@@ -122,7 +122,7 @@ class LetterInterface extends Component {
               count={story.reactions}
             />
             <ActionButton clicked={this.quitInterfaceHandler}>
-              Done
+              Done Reading
             </ActionButton>
             <TopSpacing />
           </Col>
