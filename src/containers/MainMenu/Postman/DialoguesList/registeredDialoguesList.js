@@ -30,7 +30,7 @@ export const profileIntro = [
       `About this campaign`,
       `Install this site to my homepage`,
     ],
-    responseHandler: ["viewMyProfile", "aboutCampaign", "addToHomepage"],
+    responseHandler: ["viewMyProfile", "newAboutCampaign", "addToHomepage"],
     previousResponse: `Got it!`,
   },
 ];
